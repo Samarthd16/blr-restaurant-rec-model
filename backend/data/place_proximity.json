@@ -1,0 +1,1607 @@
+[
+  {
+    "place_a": "ChIJI07gg0IVrjsRbzuWqyD8tjE",
+    "place_b": "ChIJY9ddbwAVrjsRqcG83nfkjC0",
+    "distance_km": 0.091
+  },
+  {
+    "place_a": "ChIJ-3cMy7oWrjsRu8up6eYKXaI",
+    "place_b": "ChIJE_BzHGIXrjsR9tTS_Y54QGs",
+    "distance_km": 0.051
+  },
+  {
+    "place_a": "ChIJ-3cMy7oWrjsRu8up6eYKXaI",
+    "place_b": "ChIJ23MwSgYXrjsRSD83SzhRHZQ",
+    "distance_km": 0.053
+  },
+  {
+    "place_a": "ChIJ-3cMy7oWrjsRu8up6eYKXaI",
+    "place_b": "ChIJF-ugihwUrjsRrxKf2eXicok",
+    "distance_km": 0.058
+  },
+  {
+    "place_a": "ChIJ-3cMy7oWrjsRu8up6eYKXaI",
+    "place_b": "ChIJV54y6swXrjsRhHo7UCh61mo",
+    "distance_km": 0.059
+  },
+  {
+    "place_a": "ChIJYyvzFKUWrjsRQxHn48rD5T8",
+    "place_b": "ChIJc0JAFaUWrjsRRXSXJPX7YFo",
+    "distance_km": 0.045
+  },
+  {
+    "place_a": "ChIJF-ugihwUrjsRrxKf2eXicok",
+    "place_b": "ChIJYyvzFKUWrjsRQxHn48rD5T8",
+    "distance_km": 0.119
+  },
+  {
+    "place_a": "ChIJYyvzFKUWrjsRQxHn48rD5T8",
+    "place_b": "ChIJp3wKBqUWrjsR41St0QjwjQk",
+    "distance_km": 0.13
+  },
+  {
+    "place_a": "ChIJ69xysHUXrjsRBVDrBIzfCL8",
+    "place_b": "ChIJYyvzFKUWrjsRQxHn48rD5T8",
+    "distance_km": 0.146
+  },
+  {
+    "place_a": "ChIJ7VssrhwUrjsRsUVHewyWzbM",
+    "place_b": "ChIJGQGs7yMVrjsRqqRDoWoc3Pk",
+    "distance_km": 0.057
+  },
+  {
+    "place_a": "ChIJGQGs7yMVrjsRqqRDoWoc3Pk",
+    "place_b": "ChIJqwAjOQAVrjsR0uSIXyQW80Y",
+    "distance_km": 0.098
+  },
+  {
+    "place_a": "ChIJ4Y0h9hoVrjsRzjwTlHwsLKU",
+    "place_b": "ChIJGQGs7yMVrjsRqqRDoWoc3Pk",
+    "distance_km": 0.101
+  },
+  {
+    "place_a": "ChIJGQGs7yMVrjsRqqRDoWoc3Pk",
+    "place_b": "ChIJiYNImeMVrjsRYpFnzgV1ORk",
+    "distance_km": 0.102
+  },
+  {
+    "place_a": "ChIJC8MZ42gVrjsR28n5C85sHEM",
+    "place_b": "ChIJp3wKBqUWrjsR41St0QjwjQk",
+    "distance_km": 0.058
+  },
+  {
+    "place_a": "ChIJC8MZ42gVrjsR28n5C85sHEM",
+    "place_b": "ChIJj4w7PuUXrjsRGwjDfUAZ8Qs",
+    "distance_km": 0.092
+  },
+  {
+    "place_a": "ChIJC8MZ42gVrjsR28n5C85sHEM",
+    "place_b": "ChIJheRXNQMUrjsRL0w-oYW9yBg",
+    "distance_km": 0.122
+  },
+  {
+    "place_a": "ChIJC8MZ42gVrjsR28n5C85sHEM",
+    "place_b": "ChIJNyq8wKUWrjsRRnrVyj_jLOQ",
+    "distance_km": 0.124
+  },
+  {
+    "place_a": "ChIJ23MwSgYXrjsRSD83SzhRHZQ",
+    "place_b": "ChIJV54y6swXrjsRhHo7UCh61mo",
+    "distance_km": 0.034
+  },
+  {
+    "place_a": "ChIJE_BzHGIXrjsR9tTS_Y54QGs",
+    "place_b": "ChIJV54y6swXrjsRhHo7UCh61mo",
+    "distance_km": 0.046
+  },
+  {
+    "place_a": "ChIJV54y6swXrjsRhHo7UCh61mo",
+    "place_b": "ChIJmdq205oXrjsRrn9q3VqwI9g",
+    "distance_km": 0.072
+  },
+  {
+    "place_a": "ChIJ9fZczEkVrjsR_E8O1PogkTs",
+    "place_b": "ChIJHwc9qEQUrjsRmZ4YRQVDz9I",
+    "distance_km": 0.364
+  },
+  {
+    "place_a": "ChIJ9fZczEkVrjsR_E8O1PogkTs",
+    "place_b": "ChIJy9Ry9GcUrjsRlAT3TuW94lE",
+    "distance_km": 0.445
+  },
+  {
+    "place_a": "ChIJHwc9qEQUrjsRmZ4YRQVDz9I",
+    "place_b": "ChIJNeSxSkYVrjsRn1trfLNU6Ao",
+    "distance_km": 0.468
+  },
+  {
+    "place_a": "ChIJ8zjRK04UrjsRiZDCS2d2KEQ",
+    "place_b": "ChIJOxavssMVrjsRXrhREKFlC0I",
+    "distance_km": 0.069
+  },
+  {
+    "place_a": "ChIJOxavssMVrjsRXrhREKFlC0I",
+    "place_b": "ChIJyZ7MK04UrjsRMdiRfgNb3fk",
+    "distance_km": 0.069
+  },
+  {
+    "place_a": "ChIJOxavssMVrjsRXrhREKFlC0I",
+    "place_b": "ChIJbXU-r70VrjsRpcnDtFDq5w0",
+    "distance_km": 0.149
+  },
+  {
+    "place_a": "ChIJOxavssMVrjsRXrhREKFlC0I",
+    "place_b": "ChIJnVI3HZ4VrjsRsHf8Fg1jwtg",
+    "distance_km": 0.177
+  },
+  {
+    "place_a": "ChIJ80IECk8UrjsRqCffDjE09lw",
+    "place_b": "ChIJXwrEJx8RrjsRo5ttXWYSheM",
+    "distance_km": 0.462
+  },
+  {
+    "place_a": "ChIJb6vjaHwWrjsR3EQYgm4n-y4",
+    "place_b": "ChIJd3g0dCoXrjsR4fKZe_ND-cQ",
+    "distance_km": 0.134
+  },
+  {
+    "place_a": "ChIJIXozxn0WrjsRC6_KERKdlC8",
+    "place_b": "ChIJb6vjaHwWrjsR3EQYgm4n-y4",
+    "distance_km": 0.224
+  },
+  {
+    "place_a": "ChIJ290JVbcVrjsRK4IVxNG5ur8",
+    "place_b": "ChIJb6vjaHwWrjsR3EQYgm4n-y4",
+    "distance_km": 0.458
+  },
+  {
+    "place_a": "ChIJHR1AZocWrjsRoTaqyTLJvCw",
+    "place_b": "ChIJb6vjaHwWrjsR3EQYgm4n-y4",
+    "distance_km": 0.471
+  },
+  {
+    "place_a": "ChIJGd3jTJsWrjsR48xPeA8ZyO8",
+    "place_b": "ChIJLx0ZKUcXrjsRn3ic9Xnlowo",
+    "distance_km": 0.398
+  },
+  {
+    "place_a": "ChIJGd3jTJsWrjsR48xPeA8ZyO8",
+    "place_b": "ChIJfeJUaUMXrjsRpXdnZInUWfQ",
+    "distance_km": 0.422
+  },
+  {
+    "place_a": "ChIJIXozxn0WrjsRC6_KERKdlC8",
+    "place_b": "ChIJd3g0dCoXrjsR4fKZe_ND-cQ",
+    "distance_km": 0.092
+  },
+  {
+    "place_a": "ChIJHR1AZocWrjsRoTaqyTLJvCw",
+    "place_b": "ChIJIXozxn0WrjsRC6_KERKdlC8",
+    "distance_km": 0.253
+  },
+  {
+    "place_a": "ChIJ290JVbcVrjsRK4IVxNG5ur8",
+    "place_b": "ChIJIXozxn0WrjsRC6_KERKdlC8",
+    "distance_km": 0.269
+  },
+  {
+    "place_a": "ChIJ290JVbcVrjsRK4IVxNG5ur8",
+    "place_b": "ChIJVfZAnQwXrjsRuKZfPXAxiI4",
+    "distance_km": 0.217
+  },
+  {
+    "place_a": "ChIJ290JVbcVrjsRK4IVxNG5ur8",
+    "place_b": "ChIJHR1AZocWrjsRoTaqyTLJvCw",
+    "distance_km": 0.27
+  },
+  {
+    "place_a": "ChIJ290JVbcVrjsRK4IVxNG5ur8",
+    "place_b": "ChIJd3g0dCoXrjsR4fKZe_ND-cQ",
+    "distance_km": 0.348
+  },
+  {
+    "place_a": "ChIJHR1AZocWrjsRoTaqyTLJvCw",
+    "place_b": "ChIJd3g0dCoXrjsR4fKZe_ND-cQ",
+    "distance_km": 0.337
+  },
+  {
+    "place_a": "ChIJHR1AZocWrjsRoTaqyTLJvCw",
+    "place_b": "ChIJVfZAnQwXrjsRuKZfPXAxiI4",
+    "distance_km": 0.462
+  },
+  {
+    "place_a": "ChIJ3Tg2nYwXrjsR6IFy6nWA1KI",
+    "place_b": "ChIJCRk_sqQWrjsRrvD65IXyTu8",
+    "distance_km": 0.053
+  },
+  {
+    "place_a": "ChIJ3Tg2nYwXrjsR6IFy6nWA1KI",
+    "place_b": "ChIJU603NOcXrjsRFveo4o4Ts-4",
+    "distance_km": 0.091
+  },
+  {
+    "place_a": "ChIJ3Tg2nYwXrjsR6IFy6nWA1KI",
+    "place_b": "ChIJ4VinJNMVrjsRGsdRLScN-Po",
+    "distance_km": 0.102
+  },
+  {
+    "place_a": "ChIJ3Tg2nYwXrjsR6IFy6nWA1KI",
+    "place_b": "ChIJcUFZIqcXrjsRgmngcu1QQVk",
+    "distance_km": 0.128
+  },
+  {
+    "place_a": "ChIJnWK3VyUVrjsRiJbq_dP2Lpk",
+    "place_b": "ChIJvwsRmpgXrjsRk2q-kSf45qU",
+    "distance_km": 0.007
+  },
+  {
+    "place_a": "ChIJheRXNQMUrjsRL0w-oYW9yBg",
+    "place_b": "ChIJnWK3VyUVrjsRiJbq_dP2Lpk",
+    "distance_km": 0.036
+  },
+  {
+    "place_a": "ChIJNyq8wKUWrjsRRnrVyj_jLOQ",
+    "place_b": "ChIJnWK3VyUVrjsRiJbq_dP2Lpk",
+    "distance_km": 0.04
+  },
+  {
+    "place_a": "ChIJK6RbmpoXrjsRRdrvjtz4LCc",
+    "place_b": "ChIJnWK3VyUVrjsRiJbq_dP2Lpk",
+    "distance_km": 0.063
+  },
+  {
+    "place_a": "ChIJ_5kHPwMXrjsRgTN39KEhEAo",
+    "place_b": "ChIJxbH9KaoXrjsRxrnm21z2dMQ",
+    "distance_km": 0.065
+  },
+  {
+    "place_a": "ChIJ14DjjaQWrjsR11zEA7HFRrI",
+    "place_b": "ChIJxbH9KaoXrjsRxrnm21z2dMQ",
+    "distance_km": 0.079
+  },
+  {
+    "place_a": "ChIJtS18E3wXrjsRp6ams4onXL4",
+    "place_b": "ChIJxbH9KaoXrjsRxrnm21z2dMQ",
+    "distance_km": 0.105
+  },
+  {
+    "place_a": "ChIJC-E1Nk0UrjsROdE3o2AxVCo",
+    "place_b": "ChIJxbH9KaoXrjsRxrnm21z2dMQ",
+    "distance_km": 0.16
+  },
+  {
+    "place_a": "ChIJmY-gLagWrjsRRZcdJUK-5zw",
+    "place_b": "ChIJww_JxmYXrjsRZZYQJuGoUMo",
+    "distance_km": 0.005
+  },
+  {
+    "place_a": "ChIJpzjRXMsXrjsRW1gEouNvCSM",
+    "place_b": "ChIJww_JxmYXrjsRZZYQJuGoUMo",
+    "distance_km": 0.03
+  },
+  {
+    "place_a": "ChIJny1G2KkWrjsRj_INv9hxCTg",
+    "place_b": "ChIJww_JxmYXrjsRZZYQJuGoUMo",
+    "distance_km": 0.075
+  },
+  {
+    "place_a": "ChIJ8yiGMrcXrjsRLqpPmq4mB9c",
+    "place_b": "ChIJww_JxmYXrjsRZZYQJuGoUMo",
+    "distance_km": 0.085
+  },
+  {
+    "place_a": "ChIJE0KZuXIXrjsRUvgHPMkiRTM",
+    "place_b": "ChIJcUFZIqcXrjsRgmngcu1QQVk",
+    "distance_km": 0.049
+  },
+  {
+    "place_a": "ChIJE0KZuXIXrjsRUvgHPMkiRTM",
+    "place_b": "ChIJH-A7tKkXrjsRbHNXqczWCkw",
+    "distance_km": 0.06
+  },
+  {
+    "place_a": "ChIJE0KZuXIXrjsRUvgHPMkiRTM",
+    "place_b": "ChIJo2saZ_AXrjsREv1OAIsJeXw",
+    "distance_km": 0.062
+  },
+  {
+    "place_a": "ChIJE0KZuXIXrjsRUvgHPMkiRTM",
+    "place_b": "ChIJzSPScacWrjsRkobVP4vXwjg",
+    "distance_km": 0.082
+  },
+  {
+    "place_a": "ChIJ24V2BQIXrjsRBIay12Ef0EE",
+    "place_b": "ChIJLyuGuqAWrjsRUuzoP3abqxs",
+    "distance_km": 0.081
+  },
+  {
+    "place_a": "ChIJGWRpgwAXrjsRxxmnWov5nMU",
+    "place_b": "ChIJLyuGuqAWrjsRUuzoP3abqxs",
+    "distance_km": 0.099
+  },
+  {
+    "place_a": "ChIJLyuGuqAWrjsRUuzoP3abqxs",
+    "place_b": "ChIJmdq205oXrjsRrn9q3VqwI9g",
+    "distance_km": 0.116
+  },
+  {
+    "place_a": "ChIJLyuGuqAWrjsRUuzoP3abqxs",
+    "place_b": "ChIJV54y6swXrjsRhHo7UCh61mo",
+    "distance_km": 0.183
+  },
+  {
+    "place_a": "ChIJ37SqAqoWrjsR0104e_dU3fY",
+    "place_b": "ChIJr1xXjN8XrjsRZWB3rrZtEn4",
+    "distance_km": 0.013
+  },
+  {
+    "place_a": "ChIJ37SqAqoWrjsR0104e_dU3fY",
+    "place_b": "ChIJn0qCY3sXrjsRM4i3qUPGs6o",
+    "distance_km": 0.04
+  },
+  {
+    "place_a": "ChIJ37SqAqoWrjsR0104e_dU3fY",
+    "place_b": "ChIJxzpibzgXrjsR7vkz1wZ-5Mw",
+    "distance_km": 0.069
+  },
+  {
+    "place_a": "ChIJ37SqAqoWrjsR0104e_dU3fY",
+    "place_b": "ChIJNYfsr5sXrjsRVPc6oYNRIJ0",
+    "distance_km": 0.089
+  },
+  {
+    "place_a": "ChIJn0qCY3sXrjsRM4i3qUPGs6o",
+    "place_b": "ChIJo8r2pIsVrjsRqPYNnD0U8d4",
+    "distance_km": 0.333
+  },
+  {
+    "place_a": "ChIJo8r2pIsVrjsRqPYNnD0U8d4",
+    "place_b": "ChIJxzpibzgXrjsR7vkz1wZ-5Mw",
+    "distance_km": 0.35
+  },
+  {
+    "place_a": "ChIJo8r2pIsVrjsRqPYNnD0U8d4",
+    "place_b": "ChIJr1xXjN8XrjsRZWB3rrZtEn4",
+    "distance_km": 0.361
+  },
+  {
+    "place_a": "ChIJnThp-6kWrjsRC7l6znbm4kk",
+    "place_b": "ChIJo8r2pIsVrjsRqPYNnD0U8d4",
+    "distance_km": 0.368
+  },
+  {
+    "place_a": "ChIJD2yY_PcXrjsRd3Z7MoF4IFU",
+    "place_b": "ChIJU4T7IskXrjsRk-_bSCGL0ZU",
+    "distance_km": 0.088
+  },
+  {
+    "place_a": "ChIJAVx0xK8WrjsR9EyNzDWuBKk",
+    "place_b": "ChIJU4T7IskXrjsRk-_bSCGL0ZU",
+    "distance_km": 0.093
+  },
+  {
+    "place_a": "ChIJEdVNhKQWrjsRIJkyIYIKY9s",
+    "place_b": "ChIJU4T7IskXrjsRk-_bSCGL0ZU",
+    "distance_km": 0.136
+  },
+  {
+    "place_a": "ChIJ91xd9a4WrjsR825dSwuQm_Y",
+    "place_b": "ChIJU4T7IskXrjsRk-_bSCGL0ZU",
+    "distance_km": 0.19
+  },
+  {
+    "place_a": "ChIJr0fS_u0XrjsRrg3cXuIsJaU",
+    "place_b": "ChIJu3MeVd0XrjsRej9BlCg4hv4",
+    "distance_km": 0.034
+  },
+  {
+    "place_a": "ChIJW0Fg4QEUrjsRDNU3c1Xqt_8",
+    "place_b": "ChIJu3MeVd0XrjsRej9BlCg4hv4",
+    "distance_km": 0.034
+  },
+  {
+    "place_a": "ChIJCy73P3wVrjsR1ZYB9XTD10E",
+    "place_b": "ChIJu3MeVd0XrjsRej9BlCg4hv4",
+    "distance_km": 0.038
+  },
+  {
+    "place_a": "ChIJmaECDuIXrjsRBV-N3LEeVY8",
+    "place_b": "ChIJu3MeVd0XrjsRej9BlCg4hv4",
+    "distance_km": 0.061
+  },
+  {
+    "place_a": "ChIJk42RIQAXrjsR-MPn-d_HDE4",
+    "place_b": "ChIJrXT8wnMXrjsRmkywvo4rLlY",
+    "distance_km": 0.154
+  },
+  {
+    "place_a": "ChIJRbB018oVrjsRJ3FBX2SLwK0",
+    "place_b": "ChIJk42RIQAXrjsR-MPn-d_HDE4",
+    "distance_km": 0.169
+  },
+  {
+    "place_a": "ChIJ2VsqjBIXrjsRGpcBeCjQ2io",
+    "place_b": "ChIJk42RIQAXrjsR-MPn-d_HDE4",
+    "distance_km": 0.175
+  },
+  {
+    "place_a": "ChIJcWhjmW0XrjsRgVOhwwjEVwQ",
+    "place_b": "ChIJk42RIQAXrjsR-MPn-d_HDE4",
+    "distance_km": 0.262
+  },
+  {
+    "place_a": "ChIJ4VinJNMVrjsRGsdRLScN-Po",
+    "place_b": "ChIJU603NOcXrjsRFveo4o4Ts-4",
+    "distance_km": 0.012
+  },
+  {
+    "place_a": "ChIJ4VinJNMVrjsRGsdRLScN-Po",
+    "place_b": "ChIJCRk_sqQWrjsRrvD65IXyTu8",
+    "distance_km": 0.061
+  },
+  {
+    "place_a": "ChIJ4VinJNMVrjsRGsdRLScN-Po",
+    "place_b": "ChIJ9ZClOeAVrjsRetxD6EzZT9o",
+    "distance_km": 0.07
+  },
+  {
+    "place_a": "ChIJNW5T4KcVrjsRY7LYpyiKSSg",
+    "place_b": "ChIJaT7iTHoXrjsR398HlKs1S0g",
+    "distance_km": 0.023
+  },
+  {
+    "place_a": "ChIJNW5T4KcVrjsRY7LYpyiKSSg",
+    "place_b": "ChIJT54no0kXrjsRq2iE94ZHuis",
+    "distance_km": 0.029
+  },
+  {
+    "place_a": "ChIJNW5T4KcVrjsRY7LYpyiKSSg",
+    "place_b": "ChIJj6COu-EXrjsRAVgJzOtBMys",
+    "distance_km": 0.051
+  },
+  {
+    "place_a": "ChIJ85IJkKcWrjsRDcVh5mERk6s",
+    "place_b": "ChIJNW5T4KcVrjsRY7LYpyiKSSg",
+    "distance_km": 0.053
+  },
+  {
+    "place_a": "ChIJ23MwSgYXrjsRSD83SzhRHZQ",
+    "place_b": "ChIJE_BzHGIXrjsR9tTS_Y54QGs",
+    "distance_km": 0.013
+  },
+  {
+    "place_a": "ChIJ69xysHUXrjsRBVDrBIzfCL8",
+    "place_b": "ChIJE_BzHGIXrjsR9tTS_Y54QGs",
+    "distance_km": 0.027
+  },
+  {
+    "place_a": "ChIJEWFy_Q0VrjsR8JSnUBAOpIw",
+    "place_b": "ChIJJyjgxDIVrjsRnbh73SsXbwk",
+    "distance_km": 0.17
+  },
+  {
+    "place_a": "ChIJEWFy_Q0VrjsR8JSnUBAOpIw",
+    "place_b": "ChIJs6RssRwUrjsRWAxBB6vI-a4",
+    "distance_km": 0.199
+  },
+  {
+    "place_a": "ChIJB098AR4UrjsRdWR4bXWUqLg",
+    "place_b": "ChIJEWFy_Q0VrjsR8JSnUBAOpIw",
+    "distance_km": 0.209
+  },
+  {
+    "place_a": "ChIJEWFy_Q0VrjsR8JSnUBAOpIw",
+    "place_b": "ChIJYUH8kPIVrjsRMM5T_nx6Stc",
+    "distance_km": 0.24
+  },
+  {
+    "place_a": "ChIJCRk_sqQWrjsRrvD65IXyTu8",
+    "place_b": "ChIJU603NOcXrjsRFveo4o4Ts-4",
+    "distance_km": 0.049
+  },
+  {
+    "place_a": "ChIJ9ZClOeAVrjsRetxD6EzZT9o",
+    "place_b": "ChIJU603NOcXrjsRFveo4o4Ts-4",
+    "distance_km": 0.08
+  },
+  {
+    "place_a": "ChIJ14DjjaQWrjsR11zEA7HFRrI",
+    "place_b": "ChIJ_5kHPwMXrjsRgTN39KEhEAo",
+    "distance_km": 0.069
+  },
+  {
+    "place_a": "ChIJ_5kHPwMXrjsRgTN39KEhEAo",
+    "place_b": "ChIJtS18E3wXrjsRp6ams4onXL4",
+    "distance_km": 0.11
+  },
+  {
+    "place_a": "ChIJ_5kHPwMXrjsRgTN39KEhEAo",
+    "place_b": "ChIJkfzKneMXrjsR7Kk5Yepd8bc",
+    "distance_km": 0.199
+  },
+  {
+    "place_a": "ChIJRbB018oVrjsRJ3FBX2SLwK0",
+    "place_b": "ChIJrXT8wnMXrjsRmkywvo4rLlY",
+    "distance_km": 0.049
+  },
+  {
+    "place_a": "ChIJiQcR6qcWrjsRGfk60-LXyrI",
+    "place_b": "ChIJrXT8wnMXrjsRmkywvo4rLlY",
+    "distance_km": 0.17
+  },
+  {
+    "place_a": "ChIJcWhjmW0XrjsRgVOhwwjEVwQ",
+    "place_b": "ChIJrXT8wnMXrjsRmkywvo4rLlY",
+    "distance_km": 0.215
+  },
+  {
+    "place_a": "ChIJAVx0xK8WrjsR9EyNzDWuBKk",
+    "place_b": "ChIJEdVNhKQWrjsRIJkyIYIKY9s",
+    "distance_km": 0.096
+  },
+  {
+    "place_a": "ChIJEdVNhKQWrjsRIJkyIYIKY9s",
+    "place_b": "ChIJhRlmCKsXrjsRG3BtPTj8v_U",
+    "distance_km": 0.13
+  },
+  {
+    "place_a": "ChIJEdVNhKQWrjsRIJkyIYIKY9s",
+    "place_b": "ChIJz4XxU64WrjsR-SX874KhQ2Y",
+    "distance_km": 0.167
+  },
+  {
+    "place_a": "ChIJ23MwSgYXrjsRSD83SzhRHZQ",
+    "place_b": "ChIJmdq205oXrjsRrn9q3VqwI9g",
+    "distance_km": 0.106
+  },
+  {
+    "place_a": "ChIJ-3cMy7oWrjsRu8up6eYKXaI",
+    "place_b": "ChIJmdq205oXrjsRrn9q3VqwI9g",
+    "distance_km": 0.114
+  },
+  {
+    "place_a": "ChIJmaECDuIXrjsRBV-N3LEeVY8",
+    "place_b": "ChIJzSPScacWrjsRkobVP4vXwjg",
+    "distance_km": 0.019
+  },
+  {
+    "place_a": "ChIJmaECDuIXrjsRBV-N3LEeVY8",
+    "place_b": "ChIJo2saZ_AXrjsREv1OAIsJeXw",
+    "distance_km": 0.04
+  },
+  {
+    "place_a": "ChIJW0Fg4QEUrjsRDNU3c1Xqt_8",
+    "place_b": "ChIJmaECDuIXrjsRBV-N3LEeVY8",
+    "distance_km": 0.041
+  },
+  {
+    "place_a": "ChIJH-A7tKkXrjsRbHNXqczWCkw",
+    "place_b": "ChIJmaECDuIXrjsRBV-N3LEeVY8",
+    "distance_km": 0.053
+  },
+  {
+    "place_a": "ChIJY-p496cWrjsRQjH-PKHnK7E",
+    "place_b": "ChIJoSoNC-EXrjsRO1nlFXOe1eM",
+    "distance_km": 0.006
+  },
+  {
+    "place_a": "ChIJY-p496cWrjsRQjH-PKHnK7E",
+    "place_b": "ChIJl3N_96cWrjsRUhK0MrSzTTA",
+    "distance_km": 0.006
+  },
+  {
+    "place_a": "ChIJY-p496cWrjsRQjH-PKHnK7E",
+    "place_b": "ChIJZ2l596cWrjsRL4fIVCyDUdc",
+    "distance_km": 0.008
+  },
+  {
+    "place_a": "ChIJWTm5ImcUrjsRwFHxJ2VAp5Q",
+    "place_b": "ChIJY-p496cWrjsRQjH-PKHnK7E",
+    "distance_km": 0.064
+  },
+  {
+    "place_a": "ChIJhRlmCKsXrjsRG3BtPTj8v_U",
+    "place_b": "ChIJz4XxU64WrjsR-SX874KhQ2Y",
+    "distance_km": 0.043
+  },
+  {
+    "place_a": "ChIJ91xd9a4WrjsR825dSwuQm_Y",
+    "place_b": "ChIJz4XxU64WrjsR-SX874KhQ2Y",
+    "distance_km": 0.087
+  },
+  {
+    "place_a": "ChIJAVx0xK8WrjsR9EyNzDWuBKk",
+    "place_b": "ChIJz4XxU64WrjsR-SX874KhQ2Y",
+    "distance_km": 0.143
+  },
+  {
+    "place_a": "ChIJO0NIGLsWrjsRsPXPM1e9D0k",
+    "place_b": "ChIJdU1tOrsWrjsRa8hTEg4Fuug",
+    "distance_km": 0.135
+  },
+  {
+    "place_a": "ChIJdU1tOrsWrjsRa8hTEg4Fuug",
+    "place_b": "ChIJuTE9saQWrjsRm8sFbSrE79c",
+    "distance_km": 0.155
+  },
+  {
+    "place_a": "ChIJGWRpgwAXrjsRxxmnWov5nMU",
+    "place_b": "ChIJdU1tOrsWrjsRa8hTEg4Fuug",
+    "distance_km": 0.187
+  },
+  {
+    "place_a": "ChIJdU1tOrsWrjsRa8hTEg4Fuug",
+    "place_b": "ChIJkfzKneMXrjsR7Kk5Yepd8bc",
+    "distance_km": 0.23
+  },
+  {
+    "place_a": "ChIJ14DjjaQWrjsR11zEA7HFRrI",
+    "place_b": "ChIJtS18E3wXrjsRp6ams4onXL4",
+    "distance_km": 0.042
+  },
+  {
+    "place_a": "ChIJkfzKneMXrjsR7Kk5Yepd8bc",
+    "place_b": "ChIJtS18E3wXrjsRp6ams4onXL4",
+    "distance_km": 0.108
+  },
+  {
+    "place_a": "ChIJ4Y0h9hoVrjsRzjwTlHwsLKU",
+    "place_b": "ChIJqwAjOQAVrjsR0uSIXyQW80Y",
+    "distance_km": 0.004
+  },
+  {
+    "place_a": "ChIJ4Y0h9hoVrjsRzjwTlHwsLKU",
+    "place_b": "ChIJ7VssrhwUrjsRsUVHewyWzbM",
+    "distance_km": 0.064
+  },
+  {
+    "place_a": "ChIJ4Y0h9hoVrjsRzjwTlHwsLKU",
+    "place_b": "ChIJCWG07ZAVrjsRNs7N5uJIYuM",
+    "distance_km": 0.074
+  },
+  {
+    "place_a": "ChIJ4Y0h9hoVrjsRzjwTlHwsLKU",
+    "place_b": "ChIJSaulJR0UrjsR2T-ibTmBHfU",
+    "distance_km": 0.092
+  },
+  {
+    "place_a": "ChIJNYfsr5sXrjsRVPc6oYNRIJ0",
+    "place_b": "ChIJr1xXjN8XrjsRZWB3rrZtEn4",
+    "distance_km": 0.102
+  },
+  {
+    "place_a": "ChIJNYfsr5sXrjsRVPc6oYNRIJ0",
+    "place_b": "ChIJxzpibzgXrjsR7vkz1wZ-5Mw",
+    "distance_km": 0.106
+  },
+  {
+    "place_a": "ChIJNYfsr5sXrjsRVPc6oYNRIJ0",
+    "place_b": "ChIJn0qCY3sXrjsRM4i3qUPGs6o",
+    "distance_km": 0.124
+  },
+  {
+    "place_a": "ChIJkR_zvE0XrjsRp_hJbJz-45E",
+    "place_b": "ChIJnThp-6kWrjsRC7l6znbm4kk",
+    "distance_km": 0.004
+  },
+  {
+    "place_a": "ChIJnThp-6kWrjsRC7l6znbm4kk",
+    "place_b": "ChIJny1G2KkWrjsRj_INv9hxCTg",
+    "distance_km": 0.072
+  },
+  {
+    "place_a": "ChIJdygn46cWrjsRt9KE4Zr4idY",
+    "place_b": "ChIJnThp-6kWrjsRC7l6znbm4kk",
+    "distance_km": 0.078
+  },
+  {
+    "place_a": "ChIJnThp-6kWrjsRC7l6znbm4kk",
+    "place_b": "ChIJww_JxmYXrjsRZZYQJuGoUMo",
+    "distance_km": 0.118
+  },
+  {
+    "place_a": "ChIJGWRpgwAXrjsRxxmnWov5nMU",
+    "place_b": "ChIJO0NIGLsWrjsRsPXPM1e9D0k",
+    "distance_km": 0.101
+  },
+  {
+    "place_a": "ChIJ24V2BQIXrjsRBIay12Ef0EE",
+    "place_b": "ChIJGWRpgwAXrjsRxxmnWov5nMU",
+    "distance_km": 0.144
+  },
+  {
+    "place_a": "ChIJGWRpgwAXrjsRxxmnWov5nMU",
+    "place_b": "ChIJmdq205oXrjsRrn9q3VqwI9g",
+    "distance_km": 0.167
+  },
+  {
+    "place_a": "ChIJ9ZClOeAVrjsRetxD6EzZT9o",
+    "place_b": "ChIJCRk_sqQWrjsRrvD65IXyTu8",
+    "distance_km": 0.127
+  },
+  {
+    "place_a": "ChIJ3UlwzcsXrjsRp7JjjGOXYcM",
+    "place_b": "ChIJD_Lt36gWrjsRObF4QxsAqQE",
+    "distance_km": 0.173
+  },
+  {
+    "place_a": "ChIJD_Lt36gWrjsRObF4QxsAqQE",
+    "place_b": "ChIJRbB018oVrjsRJ3FBX2SLwK0",
+    "distance_km": 0.349
+  },
+  {
+    "place_a": "ChIJD_Lt36gWrjsRObF4QxsAqQE",
+    "place_b": "ChIJNYfsr5sXrjsRVPc6oYNRIJ0",
+    "distance_km": 0.354
+  },
+  {
+    "place_a": "ChIJD_Lt36gWrjsRObF4QxsAqQE",
+    "place_b": "ChIJny1G2KkWrjsRj_INv9hxCTg",
+    "distance_km": 0.386
+  },
+  {
+    "place_a": "ChIJF-ugihwUrjsRrxKf2eXicok",
+    "place_b": "ChIJc0JAFaUWrjsRRXSXJPX7YFo",
+    "distance_km": 0.074
+  },
+  {
+    "place_a": "ChIJ69xysHUXrjsRBVDrBIzfCL8",
+    "place_b": "ChIJc0JAFaUWrjsRRXSXJPX7YFo",
+    "distance_km": 0.103
+  },
+  {
+    "place_a": "ChIJE_BzHGIXrjsR9tTS_Y54QGs",
+    "place_b": "ChIJc0JAFaUWrjsRRXSXJPX7YFo",
+    "distance_km": 0.124
+  },
+  {
+    "place_a": "ChIJkfzKneMXrjsR7Kk5Yepd8bc",
+    "place_b": "ChIJuTE9saQWrjsRm8sFbSrE79c",
+    "distance_km": 0.077
+  },
+  {
+    "place_a": "ChIJ14DjjaQWrjsR11zEA7HFRrI",
+    "place_b": "ChIJkfzKneMXrjsR7Kk5Yepd8bc",
+    "distance_km": 0.136
+  },
+  {
+    "place_a": "ChIJC-E1Nk0UrjsROdE3o2AxVCo",
+    "place_b": "ChIJkfzKneMXrjsR7Kk5Yepd8bc",
+    "distance_km": 0.174
+  },
+  {
+    "place_a": "ChIJaT7iTHoXrjsR398HlKs1S0g",
+    "place_b": "ChIJj6COu-EXrjsRAVgJzOtBMys",
+    "distance_km": 0.029
+  },
+  {
+    "place_a": "ChIJiQcR6qcWrjsRGfk60-LXyrI",
+    "place_b": "ChIJj6COu-EXrjsRAVgJzOtBMys",
+    "distance_km": 0.055
+  },
+  {
+    "place_a": "ChIJT54no0kXrjsRq2iE94ZHuis",
+    "place_b": "ChIJj6COu-EXrjsRAVgJzOtBMys",
+    "distance_km": 0.06
+  },
+  {
+    "place_a": "ChIJ80IECk8UrjsRqCffDjE09lw",
+    "place_b": "ChIJ8zjRK04UrjsRiZDCS2d2KEQ",
+    "distance_km": 0.371
+  },
+  {
+    "place_a": "ChIJ80IECk8UrjsRqCffDjE09lw",
+    "place_b": "ChIJyZ7MK04UrjsRMdiRfgNb3fk",
+    "distance_km": 0.371
+  },
+  {
+    "place_a": "ChIJ80IECk8UrjsRqCffDjE09lw",
+    "place_b": "ChIJOxavssMVrjsRXrhREKFlC0I",
+    "distance_km": 0.44
+  },
+  {
+    "place_a": "ChIJWTm5ImcUrjsRwFHxJ2VAp5Q",
+    "place_b": "ChIJhWhVLr8VrjsR-LuJfKAPCZo",
+    "distance_km": 0.012
+  },
+  {
+    "place_a": "ChIJT54no0kXrjsRq2iE94ZHuis",
+    "place_b": "ChIJWTm5ImcUrjsRwFHxJ2VAp5Q",
+    "distance_km": 0.04
+  },
+  {
+    "place_a": "ChIJWTm5ImcUrjsRwFHxJ2VAp5Q",
+    "place_b": "ChIJl3N_96cWrjsRUhK0MrSzTTA",
+    "distance_km": 0.058
+  },
+  {
+    "place_a": "ChIJGfJ6BQAVrjsRvGsow-ng6vM",
+    "place_b": "ChIJWTm5ImcUrjsRwFHxJ2VAp5Q",
+    "distance_km": 0.061
+  },
+  {
+    "place_a": "ChIJ23MwSgYXrjsRSD83SzhRHZQ",
+    "place_b": "ChIJ69xysHUXrjsRBVDrBIzfCL8",
+    "distance_km": 0.039
+  },
+  {
+    "place_a": "ChIJ69xysHUXrjsRBVDrBIzfCL8",
+    "place_b": "ChIJF-ugihwUrjsRrxKf2eXicok",
+    "distance_km": 0.054
+  },
+  {
+    "place_a": "ChIJ-3cMy7oWrjsRu8up6eYKXaI",
+    "place_b": "ChIJ69xysHUXrjsRBVDrBIzfCL8",
+    "distance_km": 0.07
+  },
+  {
+    "place_a": "ChIJn0qCY3sXrjsRM4i3qUPGs6o",
+    "place_b": "ChIJr1xXjN8XrjsRZWB3rrZtEn4",
+    "distance_km": 0.028
+  },
+  {
+    "place_a": "ChIJr1xXjN8XrjsRZWB3rrZtEn4",
+    "place_b": "ChIJxzpibzgXrjsR7vkz1wZ-5Mw",
+    "distance_km": 0.067
+  },
+  {
+    "place_a": "ChIJ9ZClOeAVrjsRetxD6EzZT9o",
+    "place_b": "ChIJMTfyAwAVrjsRS4xE4XPanOQ",
+    "distance_km": 0.13
+  },
+  {
+    "place_a": "ChIJB098AR4UrjsRdWR4bXWUqLg",
+    "place_b": "ChIJq3LyZuQVrjsR3nFnEECHGFo",
+    "distance_km": 0.311
+  },
+  {
+    "place_a": "ChIJB098AR4UrjsRdWR4bXWUqLg",
+    "place_b": "ChIJoYlH0R0UrjsRgxYyxd3AGXE",
+    "distance_km": 0.33
+  },
+  {
+    "place_a": "ChIJB098AR4UrjsRdWR4bXWUqLg",
+    "place_b": "ChIJCWG07ZAVrjsRNs7N5uJIYuM",
+    "distance_km": 0.332
+  },
+  {
+    "place_a": "ChIJGfJ6BQAVrjsRvGsow-ng6vM",
+    "place_b": "ChIJKSfMkacWrjsRSoI2f6aETsA",
+    "distance_km": 0.02
+  },
+  {
+    "place_a": "ChIJKSfMkacWrjsRSoI2f6aETsA",
+    "place_b": "ChIJhWhVLr8VrjsR-LuJfKAPCZo",
+    "distance_km": 0.058
+  },
+  {
+    "place_a": "ChIJKSfMkacWrjsRSoI2f6aETsA",
+    "place_b": "ChIJWTm5ImcUrjsRwFHxJ2VAp5Q",
+    "distance_km": 0.068
+  },
+  {
+    "place_a": "ChIJKSfMkacWrjsRSoI2f6aETsA",
+    "place_b": "ChIJl3N_96cWrjsRUhK0MrSzTTA",
+    "distance_km": 0.081
+  },
+  {
+    "place_a": "ChIJW0Fg4QEUrjsRDNU3c1Xqt_8",
+    "place_b": "ChIJr0fS_u0XrjsRrg3cXuIsJaU",
+    "distance_km": 0.013
+  },
+  {
+    "place_a": "ChIJCy73P3wVrjsR1ZYB9XTD10E",
+    "place_b": "ChIJW0Fg4QEUrjsRDNU3c1Xqt_8",
+    "distance_km": 0.057
+  },
+  {
+    "place_a": "ChIJHSRVNlsUrjsRe-wZJirXY88",
+    "place_b": "ChIJy9Ry9GcUrjsRlAT3TuW94lE",
+    "distance_km": 0.235
+  },
+  {
+    "place_a": "ChIJNyq8wKUWrjsRRnrVyj_jLOQ",
+    "place_b": "ChIJheRXNQMUrjsRL0w-oYW9yBg",
+    "distance_km": 0.006
+  },
+  {
+    "place_a": "ChIJheRXNQMUrjsRL0w-oYW9yBg",
+    "place_b": "ChIJj4w7PuUXrjsRGwjDfUAZ8Qs",
+    "distance_km": 0.036
+  },
+  {
+    "place_a": "ChIJheRXNQMUrjsRL0w-oYW9yBg",
+    "place_b": "ChIJvwsRmpgXrjsRk2q-kSf45qU",
+    "distance_km": 0.041
+  },
+  {
+    "place_a": "ChIJ2VsqjBIXrjsRGpcBeCjQ2io",
+    "place_b": "ChIJcWhjmW0XrjsRgVOhwwjEVwQ",
+    "distance_km": 0.183
+  },
+  {
+    "place_a": "ChIJ2VsqjBIXrjsRGpcBeCjQ2io",
+    "place_b": "ChIJrXT8wnMXrjsRmkywvo4rLlY",
+    "distance_km": 0.251
+  },
+  {
+    "place_a": "ChIJ2VsqjBIXrjsRGpcBeCjQ2io",
+    "place_b": "ChIJiQcR6qcWrjsRGfk60-LXyrI",
+    "distance_km": 0.255
+  },
+  {
+    "place_a": "ChIJL4tWyRwUrjsRVsXqFMlzol4",
+    "place_b": "ChIJnbPrX9oXrjsRzzoVa_Wpa9o",
+    "distance_km": 0.029
+  },
+  {
+    "place_a": "ChIJJ9S7kqcWrjsRDJX6-BbhKDw",
+    "place_b": "ChIJL4tWyRwUrjsRVsXqFMlzol4",
+    "distance_km": 0.031
+  },
+  {
+    "place_a": "ChIJL4tWyRwUrjsRVsXqFMlzol4",
+    "place_b": "ChIJM7dVkh8XrjsR1sG57D5Vo-k",
+    "distance_km": 0.035
+  },
+  {
+    "place_a": "ChIJ85IJkKcWrjsRDcVh5mERk6s",
+    "place_b": "ChIJL4tWyRwUrjsRVsXqFMlzol4",
+    "distance_km": 0.045
+  },
+  {
+    "place_a": "ChIJcWhjmW0XrjsRgVOhwwjEVwQ",
+    "place_b": "ChIJiQcR6qcWrjsRGfk60-LXyrI",
+    "distance_km": 0.098
+  },
+  {
+    "place_a": "ChIJL4tWyRwUrjsRVsXqFMlzol4",
+    "place_b": "ChIJcWhjmW0XrjsRgVOhwwjEVwQ",
+    "distance_km": 0.11
+  },
+  {
+    "place_a": "ChIJcWhjmW0XrjsRgVOhwwjEVwQ",
+    "place_b": "ChIJj6COu-EXrjsRAVgJzOtBMys",
+    "distance_km": 0.112
+  },
+  {
+    "place_a": "ChIJcWhjmW0XrjsRgVOhwwjEVwQ",
+    "place_b": "ChIJnbPrX9oXrjsRzzoVa_Wpa9o",
+    "distance_km": 0.126
+  },
+  {
+    "place_a": "ChIJ91xd9a4WrjsR825dSwuQm_Y",
+    "place_b": "ChIJhRlmCKsXrjsRG3BtPTj8v_U",
+    "distance_km": 0.109
+  },
+  {
+    "place_a": "ChIJAVx0xK8WrjsR9EyNzDWuBKk",
+    "place_b": "ChIJhRlmCKsXrjsRG3BtPTj8v_U",
+    "distance_km": 0.129
+  },
+  {
+    "place_a": "ChIJT54no0kXrjsRq2iE94ZHuis",
+    "place_b": "ChIJaT7iTHoXrjsR398HlKs1S0g",
+    "distance_km": 0.035
+  },
+  {
+    "place_a": "ChIJ85IJkKcWrjsRDcVh5mERk6s",
+    "place_b": "ChIJaT7iTHoXrjsR398HlKs1S0g",
+    "distance_km": 0.062
+  },
+  {
+    "place_a": "ChIJ8yiGMrcXrjsRLqpPmq4mB9c",
+    "place_b": "ChIJy4yAs7EXrjsRzwJHvyrbO78",
+    "distance_km": 0.068
+  },
+  {
+    "place_a": "ChIJpzjRXMsXrjsRW1gEouNvCSM",
+    "place_b": "ChIJy4yAs7EXrjsRzwJHvyrbO78",
+    "distance_km": 0.129
+  },
+  {
+    "place_a": "ChIJmY-gLagWrjsRRZcdJUK-5zw",
+    "place_b": "ChIJy4yAs7EXrjsRzwJHvyrbO78",
+    "distance_km": 0.149
+  },
+  {
+    "place_a": "ChIJww_JxmYXrjsRZZYQJuGoUMo",
+    "place_b": "ChIJy4yAs7EXrjsRzwJHvyrbO78",
+    "distance_km": 0.152
+  },
+  {
+    "place_a": "ChIJ8yiGMrcXrjsRLqpPmq4mB9c",
+    "place_b": "ChIJpzjRXMsXrjsRW1gEouNvCSM",
+    "distance_km": 0.061
+  },
+  {
+    "place_a": "ChIJ8yiGMrcXrjsRLqpPmq4mB9c",
+    "place_b": "ChIJmY-gLagWrjsRRZcdJUK-5zw",
+    "distance_km": 0.082
+  },
+  {
+    "place_a": "ChIJNyq8wKUWrjsRRnrVyj_jLOQ",
+    "place_b": "ChIJj4w7PuUXrjsRGwjDfUAZ8Qs",
+    "distance_km": 0.035
+  },
+  {
+    "place_a": "ChIJj4w7PuUXrjsRGwjDfUAZ8Qs",
+    "place_b": "ChIJnWK3VyUVrjsRiJbq_dP2Lpk",
+    "distance_km": 0.067
+  },
+  {
+    "place_a": "ChIJj4w7PuUXrjsRGwjDfUAZ8Qs",
+    "place_b": "ChIJvwsRmpgXrjsRk2q-kSf45qU",
+    "distance_km": 0.073
+  },
+  {
+    "place_a": "ChIJRbB018oVrjsRJ3FBX2SLwK0",
+    "place_b": "ChIJiQcR6qcWrjsRGfk60-LXyrI",
+    "distance_km": 0.212
+  },
+  {
+    "place_a": "ChIJRbB018oVrjsRJ3FBX2SLwK0",
+    "place_b": "ChIJy4yAs7EXrjsRzwJHvyrbO78",
+    "distance_km": 0.241
+  },
+  {
+    "place_a": "ChIJcUFZIqcXrjsRgmngcu1QQVk",
+    "place_b": "ChIJo2saZ_AXrjsREv1OAIsJeXw",
+    "distance_km": 0.094
+  },
+  {
+    "place_a": "ChIJH-A7tKkXrjsRbHNXqczWCkw",
+    "place_b": "ChIJcUFZIqcXrjsRgmngcu1QQVk",
+    "distance_km": 0.105
+  },
+  {
+    "place_a": "ChIJcUFZIqcXrjsRgmngcu1QQVk",
+    "place_b": "ChIJzSPScacWrjsRkobVP4vXwjg",
+    "distance_km": 0.115
+  },
+  {
+    "place_a": "ChIJK6RbmpoXrjsRRdrvjtz4LCc",
+    "place_b": "ChIJNyq8wKUWrjsRRnrVyj_jLOQ",
+    "distance_km": 0.044
+  },
+  {
+    "place_a": "ChIJK6RbmpoXrjsRRdrvjtz4LCc",
+    "place_b": "ChIJheRXNQMUrjsRL0w-oYW9yBg",
+    "distance_km": 0.048
+  },
+  {
+    "place_a": "ChIJK6RbmpoXrjsRRdrvjtz4LCc",
+    "place_b": "ChIJvwsRmpgXrjsRk2q-kSf45qU",
+    "distance_km": 0.063
+  },
+  {
+    "place_a": "ChIJMTfyAwAVrjsRS4xE4XPanOQ",
+    "place_b": "ChIJoYlH0R0UrjsRgxYyxd3AGXE",
+    "distance_km": 0.094
+  },
+  {
+    "place_a": "ChIJMTfyAwAVrjsRS4xE4XPanOQ",
+    "place_b": "ChIJq3LyZuQVrjsR3nFnEECHGFo",
+    "distance_km": 0.103
+  },
+  {
+    "place_a": "ChIJ4VinJNMVrjsRGsdRLScN-Po",
+    "place_b": "ChIJMTfyAwAVrjsRS4xE4XPanOQ",
+    "distance_km": 0.198
+  },
+  {
+    "place_a": "ChIJn0qCY3sXrjsRM4i3qUPGs6o",
+    "place_b": "ChIJxzpibzgXrjsR7vkz1wZ-5Mw",
+    "distance_km": 0.061
+  },
+  {
+    "place_a": "ChIJdygn46cWrjsRt9KE4Zr4idY",
+    "place_b": "ChIJxzpibzgXrjsR7vkz1wZ-5Mw",
+    "distance_km": 0.067
+  },
+  {
+    "place_a": "ChIJ91xd9a4WrjsR825dSwuQm_Y",
+    "place_b": "ChIJAVx0xK8WrjsR9EyNzDWuBKk",
+    "distance_km": 0.106
+  },
+  {
+    "place_a": "ChIJ91xd9a4WrjsR825dSwuQm_Y",
+    "place_b": "ChIJEdVNhKQWrjsRIJkyIYIKY9s",
+    "distance_km": 0.178
+  },
+  {
+    "place_a": "ChIJ3UlwzcsXrjsRp7JjjGOXYcM",
+    "place_b": "ChIJNYfsr5sXrjsRVPc6oYNRIJ0",
+    "distance_km": 0.276
+  },
+  {
+    "place_a": "ChIJ37SqAqoWrjsR0104e_dU3fY",
+    "place_b": "ChIJ3UlwzcsXrjsRp7JjjGOXYcM",
+    "distance_km": 0.358
+  },
+  {
+    "place_a": "ChIJ3UlwzcsXrjsRp7JjjGOXYcM",
+    "place_b": "ChIJr1xXjN8XrjsRZWB3rrZtEn4",
+    "distance_km": 0.371
+  },
+  {
+    "place_a": "ChIJoYlH0R0UrjsRgxYyxd3AGXE",
+    "place_b": "ChIJq3LyZuQVrjsR3nFnEECHGFo",
+    "distance_km": 0.039
+  },
+  {
+    "place_a": "ChIJ9ZClOeAVrjsRetxD6EzZT9o",
+    "place_b": "ChIJq3LyZuQVrjsR3nFnEECHGFo",
+    "distance_km": 0.232
+  },
+  {
+    "place_a": "ChIJ4VinJNMVrjsRGsdRLScN-Po",
+    "place_b": "ChIJq3LyZuQVrjsR3nFnEECHGFo",
+    "distance_km": 0.301
+  },
+  {
+    "place_a": "ChIJ9ZClOeAVrjsRetxD6EzZT9o",
+    "place_b": "ChIJoYlH0R0UrjsRgxYyxd3AGXE",
+    "distance_km": 0.215
+  },
+  {
+    "place_a": "ChIJ4VinJNMVrjsRGsdRLScN-Po",
+    "place_b": "ChIJoYlH0R0UrjsRgxYyxd3AGXE",
+    "distance_km": 0.285
+  },
+  {
+    "place_a": "ChIJtS18E3wXrjsRp6ams4onXL4",
+    "place_b": "ChIJuTE9saQWrjsRm8sFbSrE79c",
+    "distance_km": 0.173
+  },
+  {
+    "place_a": "ChIJ14DjjaQWrjsR11zEA7HFRrI",
+    "place_b": "ChIJuTE9saQWrjsRm8sFbSrE79c",
+    "distance_km": 0.188
+  },
+  {
+    "place_a": "ChIJmY-gLagWrjsRRZcdJUK-5zw",
+    "place_b": "ChIJpzjRXMsXrjsRW1gEouNvCSM",
+    "distance_km": 0.025
+  },
+  {
+    "place_a": "ChIJmY-gLagWrjsRRZcdJUK-5zw",
+    "place_b": "ChIJny1G2KkWrjsRj_INv9hxCTg",
+    "distance_km": 0.075
+  },
+  {
+    "place_a": "ChIJj4w7PuUXrjsRGwjDfUAZ8Qs",
+    "place_b": "ChIJp3wKBqUWrjsR41St0QjwjQk",
+    "distance_km": 0.09
+  },
+  {
+    "place_a": "ChIJNyq8wKUWrjsRRnrVyj_jLOQ",
+    "place_b": "ChIJp3wKBqUWrjsR41St0QjwjQk",
+    "distance_km": 0.125
+  },
+  {
+    "place_a": "ChIJheRXNQMUrjsRL0w-oYW9yBg",
+    "place_b": "ChIJp3wKBqUWrjsR41St0QjwjQk",
+    "distance_km": 0.125
+  },
+  {
+    "place_a": "ChIJny1G2KkWrjsRj_INv9hxCTg",
+    "place_b": "ChIJpzjRXMsXrjsRW1gEouNvCSM",
+    "distance_km": 0.088
+  },
+  {
+    "place_a": "ChIJ1-7fUaEWrjsR8BwKnxB7Yks",
+    "place_b": "ChIJtXS6FHwXrjsRurygQVSfB7k",
+    "distance_km": 0.224
+  },
+  {
+    "place_a": "ChIJ3Tg2nYwXrjsR6IFy6nWA1KI",
+    "place_b": "ChIJtXS6FHwXrjsRurygQVSfB7k",
+    "distance_km": 0.241
+  },
+  {
+    "place_a": "ChIJCRk_sqQWrjsRrvD65IXyTu8",
+    "place_b": "ChIJtXS6FHwXrjsRurygQVSfB7k",
+    "distance_km": 0.265
+  },
+  {
+    "place_a": "ChIJcUFZIqcXrjsRgmngcu1QQVk",
+    "place_b": "ChIJtXS6FHwXrjsRurygQVSfB7k",
+    "distance_km": 0.286
+  },
+  {
+    "place_a": "ChIJ1-7fUaEWrjsR8BwKnxB7Yks",
+    "place_b": "ChIJxbH9KaoXrjsRxrnm21z2dMQ",
+    "distance_km": 0.425
+  },
+  {
+    "place_a": "ChIJ1-7fUaEWrjsR8BwKnxB7Yks",
+    "place_b": "ChIJ2VsqjBIXrjsRGpcBeCjQ2io",
+    "distance_km": 0.442
+  },
+  {
+    "place_a": "ChIJ1-7fUaEWrjsR8BwKnxB7Yks",
+    "place_b": "ChIJ3Tg2nYwXrjsR6IFy6nWA1KI",
+    "distance_km": 0.459
+  },
+  {
+    "place_a": "ChIJC-E1Nk0UrjsROdE3o2AxVCo",
+    "place_b": "ChIJtS18E3wXrjsRp6ams4onXL4",
+    "distance_km": 0.117
+  },
+  {
+    "place_a": "ChIJ14DjjaQWrjsR11zEA7HFRrI",
+    "place_b": "ChIJC-E1Nk0UrjsROdE3o2AxVCo",
+    "distance_km": 0.15
+  },
+  {
+    "place_a": "ChIJLyuGuqAWrjsRUuzoP3abqxs",
+    "place_b": "ChIJO0NIGLsWrjsRsPXPM1e9D0k",
+    "distance_km": 0.198
+  },
+  {
+    "place_a": "ChIJ24V2BQIXrjsRBIay12Ef0EE",
+    "place_b": "ChIJO0NIGLsWrjsRsPXPM1e9D0k",
+    "distance_km": 0.227
+  },
+  {
+    "place_a": "ChIJJ9S7kqcWrjsRDJX6-BbhKDw",
+    "place_b": "ChIJM7dVkh8XrjsR1sG57D5Vo-k",
+    "distance_km": 0.008
+  },
+  {
+    "place_a": "ChIJJ9S7kqcWrjsRDJX6-BbhKDw",
+    "place_b": "ChIJnbPrX9oXrjsRzzoVa_Wpa9o",
+    "distance_km": 0.014
+  },
+  {
+    "place_a": "ChIJ85IJkKcWrjsRDcVh5mERk6s",
+    "place_b": "ChIJJ9S7kqcWrjsRDJX6-BbhKDw",
+    "distance_km": 0.028
+  },
+  {
+    "place_a": "ChIJSaulJR0UrjsR2T-ibTmBHfU",
+    "place_b": "ChIJiYNImeMVrjsRYpFnzgV1ORk",
+    "distance_km": 0.02
+  },
+  {
+    "place_a": "ChIJ7VssrhwUrjsRsUVHewyWzbM",
+    "place_b": "ChIJiYNImeMVrjsRYpFnzgV1ORk",
+    "distance_km": 0.054
+  },
+  {
+    "place_a": "ChIJ4Y0h9hoVrjsRzjwTlHwsLKU",
+    "place_b": "ChIJiYNImeMVrjsRYpFnzgV1ORk",
+    "distance_km": 0.099
+  },
+  {
+    "place_a": "ChIJiYNImeMVrjsRYpFnzgV1ORk",
+    "place_b": "ChIJqwAjOQAVrjsR0uSIXyQW80Y",
+    "distance_km": 0.101
+  },
+  {
+    "place_a": "ChIJCy73P3wVrjsR1ZYB9XTD10E",
+    "place_b": "ChIJr0fS_u0XrjsRrg3cXuIsJaU",
+    "distance_km": 0.047
+  },
+  {
+    "place_a": "ChIJmaECDuIXrjsRBV-N3LEeVY8",
+    "place_b": "ChIJr0fS_u0XrjsRrg3cXuIsJaU",
+    "distance_km": 0.055
+  },
+  {
+    "place_a": "ChIJ85IJkKcWrjsRDcVh5mERk6s",
+    "place_b": "ChIJnbPrX9oXrjsRzzoVa_Wpa9o",
+    "distance_km": 0.017
+  },
+  {
+    "place_a": "ChIJM7dVkh8XrjsR1sG57D5Vo-k",
+    "place_b": "ChIJnbPrX9oXrjsRzzoVa_Wpa9o",
+    "distance_km": 0.023
+  },
+  {
+    "place_a": "ChIJCWG07ZAVrjsRNs7N5uJIYuM",
+    "place_b": "ChIJqwAjOQAVrjsR0uSIXyQW80Y",
+    "distance_km": 0.077
+  },
+  {
+    "place_a": "ChIJCWG07ZAVrjsRNs7N5uJIYuM",
+    "place_b": "ChIJYUH8kPIVrjsRMM5T_nx6Stc",
+    "distance_km": 0.085
+  },
+  {
+    "place_a": "ChIJ7VssrhwUrjsRsUVHewyWzbM",
+    "place_b": "ChIJCWG07ZAVrjsRNs7N5uJIYuM",
+    "distance_km": 0.133
+  },
+  {
+    "place_a": "ChIJE_BzHGIXrjsR9tTS_Y54QGs",
+    "place_b": "ChIJF-ugihwUrjsRrxKf2eXicok",
+    "distance_km": 0.061
+  },
+  {
+    "place_a": "ChIJ23MwSgYXrjsRSD83SzhRHZQ",
+    "place_b": "ChIJF-ugihwUrjsRrxKf2eXicok",
+    "distance_km": 0.073
+  },
+  {
+    "place_a": "ChIJ7VssrhwUrjsRsUVHewyWzbM",
+    "place_b": "ChIJSaulJR0UrjsR2T-ibTmBHfU",
+    "distance_km": 0.06
+  },
+  {
+    "place_a": "ChIJSaulJR0UrjsR2T-ibTmBHfU",
+    "place_b": "ChIJqwAjOQAVrjsR0uSIXyQW80Y",
+    "distance_km": 0.095
+  },
+  {
+    "place_a": "ChIJkR_zvE0XrjsRp_hJbJz-45E",
+    "place_b": "ChIJny1G2KkWrjsRj_INv9hxCTg",
+    "distance_km": 0.069
+  },
+  {
+    "place_a": "ChIJdygn46cWrjsRt9KE4Zr4idY",
+    "place_b": "ChIJkR_zvE0XrjsRp_hJbJz-45E",
+    "distance_km": 0.078
+  },
+  {
+    "place_a": "ChIJkR_zvE0XrjsRp_hJbJz-45E",
+    "place_b": "ChIJww_JxmYXrjsRZZYQJuGoUMo",
+    "distance_km": 0.117
+  },
+  {
+    "place_a": "ChIJZ2l596cWrjsRL4fIVCyDUdc",
+    "place_b": "ChIJoSoNC-EXrjsRO1nlFXOe1eM",
+    "distance_km": 0.006
+  },
+  {
+    "place_a": "ChIJl3N_96cWrjsRUhK0MrSzTTA",
+    "place_b": "ChIJoSoNC-EXrjsRO1nlFXOe1eM",
+    "distance_km": 0.011
+  },
+  {
+    "place_a": "ChIJT54no0kXrjsRq2iE94ZHuis",
+    "place_b": "ChIJoSoNC-EXrjsRO1nlFXOe1eM",
+    "distance_km": 0.069
+  },
+  {
+    "place_a": "ChIJYUH8kPIVrjsRMM5T_nx6Stc",
+    "place_b": "ChIJs6RssRwUrjsRWAxBB6vI-a4",
+    "distance_km": 0.06
+  },
+  {
+    "place_a": "ChIJCWG07ZAVrjsRNs7N5uJIYuM",
+    "place_b": "ChIJs6RssRwUrjsRWAxBB6vI-a4",
+    "distance_km": 0.138
+  },
+  {
+    "place_a": "ChIJqwAjOQAVrjsR0uSIXyQW80Y",
+    "place_b": "ChIJs6RssRwUrjsRWAxBB6vI-a4",
+    "distance_km": 0.185
+  },
+  {
+    "place_a": "ChIJ4Y0h9hoVrjsRzjwTlHwsLKU",
+    "place_b": "ChIJs6RssRwUrjsRWAxBB6vI-a4",
+    "distance_km": 0.185
+  },
+  {
+    "place_a": "ChIJ24V2BQIXrjsRBIay12Ef0EE",
+    "place_b": "ChIJmdq205oXrjsRrn9q3VqwI9g",
+    "distance_km": 0.191
+  },
+  {
+    "place_a": "ChIJZ2l596cWrjsRL4fIVCyDUdc",
+    "place_b": "ChIJl3N_96cWrjsRUhK0MrSzTTA",
+    "distance_km": 0.014
+  },
+  {
+    "place_a": "ChIJo2saZ_AXrjsREv1OAIsJeXw",
+    "place_b": "ChIJzSPScacWrjsRkobVP4vXwjg",
+    "distance_km": 0.021
+  },
+  {
+    "place_a": "ChIJH-A7tKkXrjsRbHNXqczWCkw",
+    "place_b": "ChIJzSPScacWrjsRkobVP4vXwjg",
+    "distance_km": 0.042
+  },
+  {
+    "place_a": "ChIJW0Fg4QEUrjsRDNU3c1Xqt_8",
+    "place_b": "ChIJzSPScacWrjsRkobVP4vXwjg",
+    "distance_km": 0.061
+  },
+  {
+    "place_a": "ChIJCy73P3wVrjsR1ZYB9XTD10E",
+    "place_b": "ChIJM7dVkh8XrjsR1sG57D5Vo-k",
+    "distance_km": 0.044
+  },
+  {
+    "place_a": "ChIJCy73P3wVrjsR1ZYB9XTD10E",
+    "place_b": "ChIJL4tWyRwUrjsRVsXqFMlzol4",
+    "distance_km": 0.047
+  },
+  {
+    "place_a": "ChIJT54no0kXrjsRq2iE94ZHuis",
+    "place_b": "ChIJhWhVLr8VrjsR-LuJfKAPCZo",
+    "distance_km": 0.052
+  },
+  {
+    "place_a": "ChIJGfJ6BQAVrjsRvGsow-ng6vM",
+    "place_b": "ChIJhWhVLr8VrjsR-LuJfKAPCZo",
+    "distance_km": 0.054
+  },
+  {
+    "place_a": "ChIJAVx0xK8WrjsR9EyNzDWuBKk",
+    "place_b": "ChIJD2yY_PcXrjsRd3Z7MoF4IFU",
+    "distance_km": 0.179
+  },
+  {
+    "place_a": "ChIJD2yY_PcXrjsRd3Z7MoF4IFU",
+    "place_b": "ChIJc0JAFaUWrjsRRXSXJPX7YFo",
+    "distance_km": 0.19
+  },
+  {
+    "place_a": "ChIJD2yY_PcXrjsRd3Z7MoF4IFU",
+    "place_b": "ChIJYyvzFKUWrjsRQxHn48rD5T8",
+    "distance_km": 0.191
+  },
+  {
+    "place_a": "ChIJvwsRmpgXrjsRk2q-kSf45qU",
+    "place_b": "ChIJy77XBwgXrjsR7NZcaIlHZQI",
+    "distance_km": 0.064
+  },
+  {
+    "place_a": "ChIJnWK3VyUVrjsRiJbq_dP2Lpk",
+    "place_b": "ChIJy77XBwgXrjsR7NZcaIlHZQI",
+    "distance_km": 0.07
+  },
+  {
+    "place_a": "ChIJK6RbmpoXrjsRRdrvjtz4LCc",
+    "place_b": "ChIJy77XBwgXrjsR7NZcaIlHZQI",
+    "distance_km": 0.071
+  },
+  {
+    "place_a": "ChIJheRXNQMUrjsRL0w-oYW9yBg",
+    "place_b": "ChIJy77XBwgXrjsR7NZcaIlHZQI",
+    "distance_km": 0.09
+  },
+  {
+    "place_a": "ChIJGfJ6BQAVrjsRvGsow-ng6vM",
+    "place_b": "ChIJl3N_96cWrjsRUhK0MrSzTTA",
+    "distance_km": 0.063
+  },
+  {
+    "place_a": "ChIJ7VssrhwUrjsRsUVHewyWzbM",
+    "place_b": "ChIJqwAjOQAVrjsR0uSIXyQW80Y",
+    "distance_km": 0.064
+  },
+  {
+    "place_a": "ChIJaT7iTHoXrjsR398HlKs1S0g",
+    "place_b": "ChIJiQcR6qcWrjsRGfk60-LXyrI",
+    "distance_km": 0.083
+  },
+  {
+    "place_a": "ChIJNW5T4KcVrjsRY7LYpyiKSSg",
+    "place_b": "ChIJiQcR6qcWrjsRGfk60-LXyrI",
+    "distance_km": 0.106
+  },
+  {
+    "place_a": "ChIJYUH8kPIVrjsRMM5T_nx6Stc",
+    "place_b": "ChIJqwAjOQAVrjsR0uSIXyQW80Y",
+    "distance_km": 0.125
+  },
+  {
+    "place_a": "ChIJ4Y0h9hoVrjsRzjwTlHwsLKU",
+    "place_b": "ChIJYUH8kPIVrjsRMM5T_nx6Stc",
+    "distance_km": 0.125
+  },
+  {
+    "place_a": "ChIJdygn46cWrjsRt9KE4Zr4idY",
+    "place_b": "ChIJny1G2KkWrjsRj_INv9hxCTg",
+    "distance_km": 0.123
+  },
+  {
+    "place_a": "ChIJGfJ6BQAVrjsRvGsow-ng6vM",
+    "place_b": "ChIJZ2l596cWrjsRL4fIVCyDUdc",
+    "distance_km": 0.068
+  },
+  {
+    "place_a": "ChIJLx0ZKUcXrjsRn3ic9Xnlowo",
+    "place_b": "ChIJfeJUaUMXrjsRpXdnZInUWfQ",
+    "distance_km": 0.218
+  },
+  {
+    "place_a": "ChIJH-A7tKkXrjsRbHNXqczWCkw",
+    "place_b": "ChIJo2saZ_AXrjsREv1OAIsJeXw",
+    "distance_km": 0.036
+  },
+  {
+    "place_a": "ChIJ85IJkKcWrjsRDcVh5mERk6s",
+    "place_b": "ChIJM7dVkh8XrjsR1sG57D5Vo-k",
+    "distance_km": 0.035
+  },
+  {
+    "place_a": "ChIJ8zjRK04UrjsRiZDCS2d2KEQ",
+    "place_b": "ChIJyZ7MK04UrjsRMdiRfgNb3fk",
+    "distance_km": 0.0
+  },
+  {
+    "place_a": "ChIJ8zjRK04UrjsRiZDCS2d2KEQ",
+    "place_b": "ChIJbXU-r70VrjsRpcnDtFDq5w0",
+    "distance_km": 0.208
+  },
+  {
+    "place_a": "ChIJ8zjRK04UrjsRiZDCS2d2KEQ",
+    "place_b": "ChIJnVI3HZ4VrjsRsHf8Fg1jwtg",
+    "distance_km": 0.236
+  },
+  {
+    "place_a": "ChIJbXU-r70VrjsRpcnDtFDq5w0",
+    "place_b": "ChIJyZ7MK04UrjsRMdiRfgNb3fk",
+    "distance_km": 0.208
+  },
+  {
+    "place_a": "ChIJnVI3HZ4VrjsRsHf8Fg1jwtg",
+    "place_b": "ChIJyZ7MK04UrjsRMdiRfgNb3fk",
+    "distance_km": 0.236
+  },
+  {
+    "place_a": "ChIJJyjgxDIVrjsRnbh73SsXbwk",
+    "place_b": "ChIJs6RssRwUrjsRWAxBB6vI-a4",
+    "distance_km": 0.263
+  },
+  {
+    "place_a": "ChIJJyjgxDIVrjsRnbh73SsXbwk",
+    "place_b": "ChIJYUH8kPIVrjsRMM5T_nx6Stc",
+    "distance_km": 0.322
+  },
+  {
+    "place_a": "ChIJB098AR4UrjsRdWR4bXWUqLg",
+    "place_b": "ChIJJyjgxDIVrjsRnbh73SsXbwk",
+    "distance_km": 0.368
+  },
+  {
+    "place_a": "ChIJ91xd9a4WrjsR825dSwuQm_Y",
+    "place_b": "ChIJi7PGiZ4XrjsRFmD36PjUidI",
+    "distance_km": 0.182
+  },
+  {
+    "place_a": "ChIJi7PGiZ4XrjsRFmD36PjUidI",
+    "place_b": "ChIJz4XxU64WrjsR-SX874KhQ2Y",
+    "distance_km": 0.184
+  },
+  {
+    "place_a": "ChIJhRlmCKsXrjsRG3BtPTj8v_U",
+    "place_b": "ChIJi7PGiZ4XrjsRFmD36PjUidI",
+    "distance_km": 0.227
+  },
+  {
+    "place_a": "ChIJAVx0xK8WrjsR9EyNzDWuBKk",
+    "place_b": "ChIJi7PGiZ4XrjsRFmD36PjUidI",
+    "distance_km": 0.288
+  },
+  {
+    "place_a": "ChIJNyq8wKUWrjsRRnrVyj_jLOQ",
+    "place_b": "ChIJvwsRmpgXrjsRk2q-kSf45qU",
+    "distance_km": 0.045
+  },
+  {
+    "place_a": "ChIJbXU-r70VrjsRpcnDtFDq5w0",
+    "place_b": "ChIJnVI3HZ4VrjsRsHf8Fg1jwtg",
+    "distance_km": 0.028
+  },
+  {
+    "place_a": "ChIJV9YdrIEWrjsRyCAygrncHJA",
+    "place_b": "ChIJVfZAnQwXrjsRuKZfPXAxiI4",
+    "distance_km": 0.403
+  },
+  {
+    "place_a": "ChIJIXozxn0WrjsRC6_KERKdlC8",
+    "place_b": "ChIJVfZAnQwXrjsRuKZfPXAxiI4",
+    "distance_km": 0.479
+  },
+  {
+    "place_a": "ChIJ0TA3WpIXrjsR_0PuO90sGRw",
+    "place_b": "ChIJzdaEnS8XrjsR7PY3TKsc19Y",
+    "distance_km": 0.095
+  }
+]

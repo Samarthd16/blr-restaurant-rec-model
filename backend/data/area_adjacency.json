@@ -1,0 +1,122 @@
+[
+  {
+    "from_area": "Banashankari",
+    "to_area": "Jayanagar",
+    "distance_km": 2.11
+  },
+  {
+    "from_area": "Banashankari",
+    "to_area": "MG Road Bengaluru",
+    "distance_km": 4.76
+  },
+  {
+    "from_area": "Banashankari",
+    "to_area": "Vijayanagar",
+    "distance_km": 5.16
+  },
+  {
+    "from_area": "Indiranagar",
+    "to_area": "Koramangala",
+    "distance_km": 4.24
+  },
+  {
+    "from_area": "Indiranagar",
+    "to_area": "MG Road Bengaluru",
+    "distance_km": 3.45
+  },
+  {
+    "from_area": "Indiranagar",
+    "to_area": "Whitefield",
+    "distance_km": 11.07
+  },
+  {
+    "from_area": "Jayanagar",
+    "to_area": "Banashankari",
+    "distance_km": 2.11
+  },
+  {
+    "from_area": "Jayanagar",
+    "to_area": "Koramangala",
+    "distance_km": 4.36
+  },
+  {
+    "from_area": "Koramangala",
+    "to_area": "Indiranagar",
+    "distance_km": 4.24
+  },
+  {
+    "from_area": "Koramangala",
+    "to_area": "Jayanagar",
+    "distance_km": 4.36
+  },
+  {
+    "from_area": "Koramangala",
+    "to_area": "Whitefield",
+    "distance_km": 13.22
+  },
+  {
+    "from_area": "MG Road Bengaluru",
+    "to_area": "Banashankari",
+    "distance_km": 4.76
+  },
+  {
+    "from_area": "MG Road Bengaluru",
+    "to_area": "Indiranagar",
+    "distance_km": 3.45
+  },
+  {
+    "from_area": "MG Road Bengaluru",
+    "to_area": "Rajajinagar",
+    "distance_km": 7.37
+  },
+  {
+    "from_area": "MG Road Bengaluru",
+    "to_area": "Yelahanka",
+    "distance_km": 13.38
+  },
+  {
+    "from_area": "Rajajinagar",
+    "to_area": "MG Road Bengaluru",
+    "distance_km": 7.37
+  },
+  {
+    "from_area": "Rajajinagar",
+    "to_area": "Vijayanagar",
+    "distance_km": 4.29
+  },
+  {
+    "from_area": "Rajajinagar",
+    "to_area": "Yelahanka",
+    "distance_km": 10.66
+  },
+  {
+    "from_area": "Vijayanagar",
+    "to_area": "Banashankari",
+    "distance_km": 5.16
+  },
+  {
+    "from_area": "Vijayanagar",
+    "to_area": "Rajajinagar",
+    "distance_km": 4.29
+  },
+  {
+    "from_area": "Whitefield",
+    "to_area": "Indiranagar",
+    "distance_km": 11.07
+  },
+  {
+    "from_area": "Whitefield",
+    "to_area": "Koramangala",
+    "distance_km": 13.22
+  },
+  {
+    "from_area": "Yelahanka",
+    "to_area": "MG Road Bengaluru",
+    "distance_km": 13.38
+  },
+  {
+    "from_area": "Yelahanka",
+    "to_area": "Rajajinagar",
+    "distance_km": 10.66
+  }
+]

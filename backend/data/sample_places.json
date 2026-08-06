@@ -1,0 +1,1146 @@
+[
+  {
+    "id": "ChIJ3Tg2nYwXrjsR6IFy6nWA1KI",
+    "types": [
+      "french_restaurant",
+      "cafe",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "formattedAddress": "1st Floor, 3275, 12th Main Rd, HAL 2nd Stage, Appareddipalya, Indiranagar, Bengaluru, Karnataka 560008, India",
+    "location": {
+      "latitude": 12.970007599999999,
+      "longitude": 77.6362704
+    },
+    "rating": 4,
+    "regularOpeningHours": {
+      "openNow": false,
+      "periods": [
+        {
+          "open": {
+            "day": 0,
+            "hour": 8,
+            "minute": 30
+          },
+          "close": {
+            "day": 0,
+            "hour": 23,
+            "minute": 45
+          }
+        },
+        {
+          "open": {
+            "day": 1,
+            "hour": 8,
+            "minute": 30
+          },
+          "close": {
+            "day": 1,
+            "hour": 23,
+            "minute": 45
+          }
+        },
+        {
+          "open": {
+            "day": 2,
+            "hour": 8,
+            "minute": 30
+          },
+          "close": {
+            "day": 2,
+            "hour": 23,
+            "minute": 45
+          }
+        },
+        {
+          "open": {
+            "day": 3,
+            "hour": 8,
+            "minute": 30
+          },
+          "close": {
+            "day": 3,
+            "hour": 23,
+            "minute": 45
+          }
+        },
+        {
+          "open": {
+            "day": 4,
+            "hour": 8,
+            "minute": 30
+          },
+          "close": {
+            "day": 4,
+            "hour": 23,
+            "minute": 45
+          }
+        },
+        {
+          "open": {
+            "day": 5,
+            "hour": 8,
+            "minute": 30
+          },
+          "close": {
+            "day": 5,
+            "hour": 23,
+            "minute": 45
+          }
+        },
+        {
+          "open": {
+            "day": 6,
+            "hour": 8,
+            "minute": 30
+          },
+          "close": {
+            "day": 6,
+            "hour": 23,
+            "minute": 45
+          }
+        }
+      ],
+      "weekdayDescriptions": [
+        "Monday: 8:30 AM – 11:45 PM",
+        "Tuesday: 8:30 AM – 11:45 PM",
+        "Wednesday: 8:30 AM – 11:45 PM",
+        "Thursday: 8:30 AM – 11:45 PM",
+        "Friday: 8:30 AM – 11:45 PM",
+        "Saturday: 8:30 AM – 11:45 PM",
+        "Sunday: 8:30 AM – 11:45 PM"
+      ],
+      "nextOpenTime": "2026-08-02T03:00:00Z"
+    },
+    "priceLevel": "PRICE_LEVEL_MODERATE",
+    "userRatingCount": 1660,
+    "displayName": {
+      "text": "Cafe Noir Indiranagar",
+      "languageCode": "en"
+    },
+    "reviews": [
+      {
+        "name": "places/ChIJ3Tg2nYwXrjsR6IFy6nWA1KI/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xGcGF6SXdWMmRaTkRKeVZ6aFFjVUY2TkdKVFRGRRAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 4,
+        "text": {
+          "text": "Cafe Noir is perfectly located right next to Pizza 4P’s, tucked into the lively vibe of Indiranagar. We visited on a Saturday for dinner—while the indoor seating was quite full, the outdoor area was pleasantly calm (minus a few insects 🙃). The ambience overall is really inviting.\n\nWe tried their mocha frappe, which was pure bliss! Alongside that, the OG smash burger was absolutely delicious, and the prawn ravioli—wow! Easily one of the best I’ve had so far.\n\nThey also have a good selection of wine for those who enjoy it. Overall, it’s a great spot to check out if you’re in Indiranagar.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Cafe Noir is perfectly located right next to Pizza 4P’s, tucked into the lively vibe of Indiranagar. We visited on a Saturday for dinner—while the indoor seating was quite full, the outdoor area was pleasantly calm (minus a few insects 🙃). The ambience overall is really inviting.\n\nWe tried their mocha frappe, which was pure bliss! Alongside that, the OG smash burger was absolutely delicious, and the prawn ravioli—wow! Easily one of the best I’ve had so far.\n\nThey also have a good selection of wine for those who enjoy it. Overall, it’s a great spot to check out if you’re in Indiranagar.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Shashwatee Shwetapadma",
+          "uri": "https://www.google.com/maps/contrib/109595755242478914302/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVP5U9HwIuop4RNhIVnqFIcGC8FscWaZ3cFe32cR3JTuV510lKAVQ=s128-c0x00000000-cc-rp-mo-ba4"
+        },
+        "publishTime": "2026-04-24T11:03:43.296567724Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xGcGF6SXdWMmRaTkRKeVZ6aFFjVUY2TkdKVFRGRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xGcGF6SXdWMmRaTkRKeVZ6aFFjVUY2TkdKVFRGRRAB!2m1!1s0x3bae178c9d3638dd:0xa2d48075ea7281e8"
+      },
+      {
+        "name": "places/ChIJ3Tg2nYwXrjsR6IFy6nWA1KI/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xnNVMydGhUa0ZGUjFGUGNrSjVaakl6WmxCUGMyYxAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 5,
+        "text": {
+          "text": "Went to Cafe Noir for lunch and it honestly exceeded expectations. Their pizzas are next level — perfectly thin crust with super fresh ingredients that you can actually taste in every bite.\n\nWe tried the burrata sun-dried tomato verde, and the cheese was chef’s kiss — so creamy and spreadable across the whole slice.\n\nAlso had the lamb ragu meatballs and prawn ravioli — both a solid 10/10.\n\nFor drinks, the crunchy Biscoff shake was so good, and ended with a blueberry croissant which is an absolute must-try ✨",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Went to Cafe Noir for lunch and it honestly exceeded expectations. Their pizzas are next level — perfectly thin crust with super fresh ingredients that you can actually taste in every bite.\n\nWe tried the burrata sun-dried tomato verde, and the cheese was chef’s kiss — so creamy and spreadable across the whole slice.\n\nAlso had the lamb ragu meatballs and prawn ravioli — both a solid 10/10.\n\nFor drinks, the crunchy Biscoff shake was so good, and ended with a blueberry croissant which is an absolute must-try ✨",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Shruti Thakur",
+          "uri": "https://www.google.com/maps/contrib/117496287152394011436/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjU7tBee-9uHv0dj1MbDdFCPv1LT9d8QRFd3pQS1fY4sAUanhcvhkQ=s128-c0x00000000-cc-rp-mo-ba4"
+        },
+        "publishTime": "2026-04-04T06:19:58.022658497Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xnNVMydGhUa0ZGUjFGUGNrSjVaakl6WmxCUGMyYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xnNVMydGhUa0ZGUjFGUGNrSjVaakl6WmxCUGMyYxAB!2m1!1s0x3bae178c9d3638dd:0xa2d48075ea7281e8"
+      },
+      {
+        "name": "places/ChIJ3Tg2nYwXrjsR6IFy6nWA1KI/reviews/Ci9DQUlRQUNvZENodHljRjlvT2pCeVJFRkpUSEI1ZWxSMlVXeHRSMmRzWTNkT01YYxAB",
+        "relativePublishTimeDescription": "6 months ago",
+        "rating": 3,
+        "text": {
+          "text": "This place is well known for its food, and food-wise everything was good. The taste and quality definitely stand out.\n\nHowever, the ambience could use some improvement. Since it’s a café, adding a bit more aesthetic appeal would enhance the overall experience. The washroom also wasn’t very clean and needs better maintenance.\n\nService was okay, staff were doing their job, though not particularly warm or exceptional.\n\nOverall, it’s a very good place if you’re going primarily for the food.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "This place is well known for its food, and food-wise everything was good. The taste and quality definitely stand out.\n\nHowever, the ambience could use some improvement. Since it’s a café, adding a bit more aesthetic appeal would enhance the overall experience. The washroom also wasn’t very clean and needs better maintenance.\n\nService was okay, staff were doing their job, though not particularly warm or exceptional.\n\nOverall, it’s a very good place if you’re going primarily for the food.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Sai",
+          "uri": "https://www.google.com/maps/contrib/101205314888512015716/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUoRAj9x6YCGlj2pX2MPaexl48K4G89KXy8fiI2_arrA05AOCk=s128-c0x00000000-cc-rp-mo-ba5"
+        },
+        "publishTime": "2026-01-31T10:44:15.791453491Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2pCeVJFRkpUSEI1ZWxSMlVXeHRSMmRzWTNkT01YYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pCeVJFRkpUSEI1ZWxSMlVXeHRSMmRzWTNkT01YYxAB!2m1!1s0x3bae178c9d3638dd:0xa2d48075ea7281e8"
+      },
+      {
+        "name": "places/ChIJ3Tg2nYwXrjsR6IFy6nWA1KI/reviews/Ci9DQUlRQUNvZENodHljRjlvT21wclR6UkNVazFNTkdkU1NGUTJNbFpLVms1alNrRRAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 4,
+        "text": {
+          "text": "Café Noir in Indiranagar is a super chill spot. I loved the cozy interiors and laid-back vibe. Great place to catch up with friends or even sit with your laptop for a bit. I tried their croissant and hot chocolate — both were really good! The menu has a nice mix of French and continental dishes, and most of it looks tempting.\n\nThe service when I went was a bit slow, and we had to remind them about our order. Also, a couple of items felt a little overpriced for the portion. But overall, the experience was really lovely. Would definitely come back!",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Café Noir in Indiranagar is a super chill spot. I loved the cozy interiors and laid-back vibe. Great place to catch up with friends or even sit with your laptop for a bit. I tried their croissant and hot chocolate — both were really good! The menu has a nice mix of French and continental dishes, and most of it looks tempting.\n\nThe service when I went was a bit slow, and we had to remind them about our order. Also, a couple of items felt a little overpriced for the portion. But overall, the experience was really lovely. Would definitely come back!",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Gayathri Sasidharan",
+          "uri": "https://www.google.com/maps/contrib/108531430868392145541/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjV0ElDpewGVbgYG_HdjHr9Pq9k0AZ6hotQDvudP689aYJrZ_Xq6=s128-c0x00000000-cc-rp-mo-ba6"
+        },
+        "publishTime": "2026-04-18T02:51:07.314906705Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21wclR6UkNVazFNTkdkU1NGUTJNbFpLVms1alNrRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21wclR6UkNVazFNTkdkU1NGUTJNbFpLVms1alNrRRAB!2m1!1s0x3bae178c9d3638dd:0xa2d48075ea7281e8"
+      },
+      {
+        "name": "places/ChIJ3Tg2nYwXrjsR6IFy6nWA1KI/reviews/Ci9DQUlRQUNvZENodHljRjlvT2tadFYzQklRMFJLU1hjMU9XVTVRa3B5ZUhZMmEzYxAB",
+        "relativePublishTimeDescription": "8 months ago",
+        "rating": 5,
+        "text": {
+          "text": "food and Coffee was great! Loved visiting. JOSHUA was super helpful and sweet. Food is definitely on the higher side but it's justified taste wise. Would love to visit again.\n\nOnly con is their outside seating which is beautiful but as soon as the sun sets there's dozens of mosquitoes. Literally enveloping you, which is very scary and dangerous. They should really do some type about that.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "food and Coffee was great! Loved visiting. JOSHUA was super helpful and sweet. Food is definitely on the higher side but it's justified taste wise. Would love to visit again.\n\nOnly con is their outside seating which is beautiful but as soon as the sun sets there's dozens of mosquitoes. Literally enveloping you, which is very scary and dangerous. They should really do some type about that.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Aishee Baul",
+          "uri": "https://www.google.com/maps/contrib/110974417793108762339/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVPBCIwTEXWdriwpzDCUv1iUSHvAF-2MSJ8rlsCXiU9Y01IGUQn=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2025-11-16T06:11:19.108312333Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2tadFYzQklRMFJLU1hjMU9XVTVRa3B5ZUhZMmEzYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tadFYzQklRMFJLU1hjMU9XVTVRa3B5ZUhZMmEzYxAB!2m1!1s0x3bae178c9d3638dd:0xa2d48075ea7281e8"
+      }
+    ]
+  },
+  {
+    "id": "ChIJnWK3VyUVrjsRiJbq_dP2Lpk",
+    "types": [
+      "cafe",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "formattedAddress": "656, 100 Feet Rd, near Indiranagar, Stage 1, Indiranagar, Bengaluru, Karnataka 560038, India",
+    "location": {
+      "latitude": 12.9770164,
+      "longitude": 77.6406552
+    },
+    "rating": 4.4,
+    "regularOpeningHours": {
+      "openNow": false,
+      "periods": [
+        {
+          "open": {
+            "day": 0,
+            "hour": 9,
+            "minute": 0
+          },
+          "close": {
+            "day": 0,
+            "hour": 23,
+            "minute": 30
+          }
+        },
+        {
+          "open": {
+            "day": 1,
+            "hour": 9,
+            "minute": 0
+          },
+          "close": {
+            "day": 1,
+            "hour": 23,
+            "minute": 30
+          }
+        },
+        {
+          "open": {
+            "day": 2,
+            "hour": 9,
+            "minute": 0
+          },
+          "close": {
+            "day": 2,
+            "hour": 23,
+            "minute": 30
+          }
+        },
+        {
+          "open": {
+            "day": 3,
+            "hour": 9,
+            "minute": 0
+          },
+          "close": {
+            "day": 3,
+            "hour": 23,
+            "minute": 30
+          }
+        },
+        {
+          "open": {
+            "day": 4,
+            "hour": 9,
+            "minute": 0
+          },
+          "close": {
+            "day": 4,
+            "hour": 23,
+            "minute": 30
+          }
+        },
+        {
+          "open": {
+            "day": 5,
+            "hour": 9,
+            "minute": 0
+          },
+          "close": {
+            "day": 5,
+            "hour": 23,
+            "minute": 30
+          }
+        },
+        {
+          "open": {
+            "day": 6,
+            "hour": 9,
+            "minute": 0
+          },
+          "close": {
+            "day": 6,
+            "hour": 23,
+            "minute": 30
+          }
+        }
+      ],
+      "weekdayDescriptions": [
+        "Monday: 9:00 AM – 11:30 PM",
+        "Tuesday: 9:00 AM – 11:30 PM",
+        "Wednesday: 9:00 AM – 11:30 PM",
+        "Thursday: 9:00 AM – 11:30 PM",
+        "Friday: 9:00 AM – 11:30 PM",
+        "Saturday: 9:00 AM – 11:30 PM",
+        "Sunday: 9:00 AM – 11:30 PM"
+      ],
+      "nextOpenTime": "2026-08-02T03:30:00Z"
+    },
+    "priceLevel": "PRICE_LEVEL_MODERATE",
+    "userRatingCount": 718,
+    "displayName": {
+      "text": "Anaia Cafe",
+      "languageCode": "en"
+    },
+    "reviews": [
+      {
+        "name": "places/ChIJnWK3VyUVrjsRiJbq_dP2Lpk/reviews/Ci9DQUlRQUNvZENodHljRjlvT2w5V05rRlZlakJvTFV4Q1dVazJaM2xxT0U0dGEwRRAB",
+        "relativePublishTimeDescription": "5 months ago",
+        "rating": 4,
+        "text": {
+          "text": "Tried the Strawberry Vanilla Iced Tea and Aglio Olio. The iced tea was really good, quite different and yum. The rating is for that drink.\nThe pasta was decent. The place can get crowded on weekends, so don’t expect to sit there for long as the staff will ask you to leave as soon as you are done.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Tried the Strawberry Vanilla Iced Tea and Aglio Olio. The iced tea was really good, quite different and yum. The rating is for that drink.\nThe pasta was decent. The place can get crowded on weekends, so don’t expect to sit there for long as the staff will ask you to leave as soon as you are done.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Ankita Prakash",
+          "uri": "https://www.google.com/maps/contrib/105695182687277835103/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWbi4ajVW1y1v_otinOQIJ4eLjSHXUJA-gyA943Gub-q-LNg9jp=s128-c0x00000000-cc-rp-mo-ba4"
+        },
+        "publishTime": "2026-02-23T17:09:55.457985054Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2w5V05rRlZlakJvTFV4Q1dVazJaM2xxT0U0dGEwRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2w5V05rRlZlakJvTFV4Q1dVazJaM2xxT0U0dGEwRRAB!2m1!1s0x3bae152557b7629d:0x992ef6d3fdea9688"
+      },
+      {
+        "name": "places/ChIJnWK3VyUVrjsRiJbq_dP2Lpk/reviews/Ci9DQUlRQUNvZENodHljRjlvT25FM1lXRmlXRVIxZEU4d2VqbGFTblJ3U2sxRlgxRRAB",
+        "relativePublishTimeDescription": "6 months ago",
+        "rating": 3,
+        "text": {
+          "text": "We ordered two cold coffees, loaded fries, and chicken.\nThe cold coffee tasted average—more like a Bonvita-based drink with less sugar.\nThe loaded fries were satisfying, with a generous portion size.\nThe chicken avengers was okay overall, but had a strong curry leaf flavor. Despite being described as spicy, it wasn’t spicy at all.\nThe ambience was pleasant and ideal for a long, relaxed conversation.\nThe staff were warm, attentive, and very courteous.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "We ordered two cold coffees, loaded fries, and chicken.\nThe cold coffee tasted average—more like a Bonvita-based drink with less sugar.\nThe loaded fries were satisfying, with a generous portion size.\nThe chicken avengers was okay overall, but had a strong curry leaf flavor. Despite being described as spicy, it wasn’t spicy at all.\nThe ambience was pleasant and ideal for a long, relaxed conversation.\nThe staff were warm, attentive, and very courteous.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Aaron Varghese",
+          "uri": "https://www.google.com/maps/contrib/108421529348688861028/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUOr90-fqInmoI2rP9CLf2E8-5kaDcwb1d4CnleGN1EhlijDz1Nig=s128-c0x00000000-cc-rp-mo-ba5"
+        },
+        "publishTime": "2026-01-31T12:04:27.201496543Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25FM1lXRmlXRVIxZEU4d2VqbGFTblJ3U2sxRlgxRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25FM1lXRmlXRVIxZEU4d2VqbGFTblJ3U2sxRlgxRRAB!2m1!1s0x3bae152557b7629d:0x992ef6d3fdea9688"
+      },
+      {
+        "name": "places/ChIJnWK3VyUVrjsRiJbq_dP2Lpk/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xseFRtcHNYMkpVYzJOTWJtNXdaMXBMVjFWcFIzYxAB",
+        "relativePublishTimeDescription": "6 months ago",
+        "rating": 4,
+        "text": {
+          "text": "I don’t drink coffee, so this review is a mix of her coffee experience and my ambience-first perspective.\n\nStarting with the coffee (purely based on my friend’s take):\nShe genuinely liked it. The coffee had a strong, distinct flavour and didn’t feel like the usual “generic café coffee.” You can tell they’ve actually worked on the brew, not just served something standard.\n\nComing to ambience and vibe—it’s good. Not crazy, not mind-blowing, but solid Indiranagar café energy. Clean, comfortable, well-located, and easy to chill at. If you’ve been around Indiranagar cafés a lot, this won’t shock you—but it also won’t disappoint.\n\nFood & pricing:\nEverything is on the pricier side, but honestly, that’s expected for an Indiranagar café. Nothing felt bad, just not something that makes you want to come back again and again.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "I don’t drink coffee, so this review is a mix of her coffee experience and my ambience-first perspective.\n\nStarting with the coffee (purely based on my friend’s take):\nShe genuinely liked it. The coffee had a strong, distinct flavour and didn’t feel like the usual “generic café coffee.” You can tell they’ve actually worked on the brew, not just served something standard.\n\nComing to ambience and vibe—it’s good. Not crazy, not mind-blowing, but solid Indiranagar café energy. Clean, comfortable, well-located, and easy to chill at. If you’ve been around Indiranagar cafés a lot, this won’t shock you—but it also won’t disappoint.\n\nFood & pricing:\nEverything is on the pricier side, but honestly, that’s expected for an Indiranagar café. Nothing felt bad, just not something that makes you want to come back again and again.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Nihal Reddy",
+          "uri": "https://www.google.com/maps/contrib/114254561097695415146/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWLBtiTO8y6JzNuSIKzFPvGi8WNPZMaAvHSGB7maAYaXMLnHGpg=s128-c0x00000000-cc-rp-mo-ba5"
+        },
+        "publishTime": "2026-01-18T17:05:41.730402165Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xseFRtcHNYMkpVYzJOTWJtNXdaMXBMVjFWcFIzYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xseFRtcHNYMkpVYzJOTWJtNXdaMXBMVjFWcFIzYxAB!2m1!1s0x3bae152557b7629d:0x992ef6d3fdea9688"
+      },
+      {
+        "name": "places/ChIJnWK3VyUVrjsRiJbq_dP2Lpk/reviews/Ci9DQUlRQUNvZENodHljRjlvT2sxamVHSmpTV3hLWjBsS1pqRnROVTV1UWtsVVRVRRAB",
+        "relativePublishTimeDescription": "a month ago",
+        "rating": 5,
+        "text": {
+          "text": "Good ambience & lighting & mild music.\nCourterous n helful staff.\nHas hanwash.\nLoved the taste.. Tried newest item on thirr menu & it was amazing.\n(joked to my friend gobi manchurian that went abroad)",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Good ambience & lighting & mild music.\nCourterous n helful staff.\nHas hanwash.\nLoved the taste.. Tried newest item on thirr menu & it was amazing.\n(joked to my friend gobi manchurian that went abroad)",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Amit M",
+          "uri": "https://www.google.com/maps/contrib/101507270800139076706/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXw-i2ce21hXjTmK91IUoObWgK7TCf7f3uU3ASZ-TLyyu47tUSwCg=s128-c0x00000000-cc-rp-mo-ba4"
+        },
+        "publishTime": "2026-06-20T20:36:16.982396703Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2sxamVHSmpTV3hLWjBsS1pqRnROVTV1UWtsVVRVRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2sxamVHSmpTV3hLWjBsS1pqRnROVTV1UWtsVVRVRRAB!2m1!1s0x3bae152557b7629d:0x992ef6d3fdea9688"
+      },
+      {
+        "name": "places/ChIJnWK3VyUVrjsRiJbq_dP2Lpk/reviews/Ci9DQUlRQUNvZENodHljRjlvT2w5ck1WSllOWFpHT1dWb05URkxhRloyWWpodldVRRAB",
+        "relativePublishTimeDescription": "8 months ago",
+        "rating": 4,
+        "text": {
+          "text": "Had a mixed experience at Anaia Cafe.\n\nThe pesto pasta and alfredo pasta were amazing - rich, flavourful, and perfectly cooked. The fries and garlic bread were also good.\n\nThe ambience was really nice, and service was good as well, which made the overall experience pleasant.\n\nThe only disappointment was the hot chocolate. It tasted more like Bournvita than actual hot chocolate.\n\nThe highlight of our visit was the cheesy butter garlic broccoli - so good that we ended up ordering it three times! Definitely a must-try.\n\nPrice-wise, it’s not exactly expensive, but the portions are quite small, which makes it feel a bit pricey for the quantity.\n\nOverall, great taste and atmosphere - just wish the portion sizes were better.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Had a mixed experience at Anaia Cafe.\n\nThe pesto pasta and alfredo pasta were amazing - rich, flavourful, and perfectly cooked. The fries and garlic bread were also good.\n\nThe ambience was really nice, and service was good as well, which made the overall experience pleasant.\n\nThe only disappointment was the hot chocolate. It tasted more like Bournvita than actual hot chocolate.\n\nThe highlight of our visit was the cheesy butter garlic broccoli - so good that we ended up ordering it three times! Definitely a must-try.\n\nPrice-wise, it’s not exactly expensive, but the portions are quite small, which makes it feel a bit pricey for the quantity.\n\nOverall, great taste and atmosphere - just wish the portion sizes were better.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Chandana Ramesh",
+          "uri": "https://www.google.com/maps/contrib/109432650557823476708/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjU0-EaCAPkBDPP-oSac7wJDe9_xEDloKSR1weip6IXw8fHqT5EgNg=s128-c0x00000000-cc-rp-mo-ba5"
+        },
+        "publishTime": "2025-11-17T12:54:22.630955852Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2w5ck1WSllOWFpHT1dWb05URkxhRloyWWpodldVRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2w5ck1WSllOWFpHT1dWb05URkxhRloyWWpodldVRRAB!2m1!1s0x3bae152557b7629d:0x992ef6d3fdea9688"
+      }
+    ]
+  },
+  {
+    "id": "ChIJww_JxmYXrjsRZZYQJuGoUMo",
+    "types": [
+      "restaurant",
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "formattedAddress": "2985, 12th Main Rd, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka 560008, India",
+    "location": {
+      "latitude": 12.9701071,
+      "longitude": 77.6447307
+    },
+    "rating": 4.4,
+    "regularOpeningHours": {
+      "openNow": true,
+      "periods": [
+        {
+          "open": {
+            "day": 0,
+            "hour": 8,
+            "minute": 0
+          },
+          "close": {
+            "day": 1,
+            "hour": 1,
+            "minute": 0
+          }
+        },
+        {
+          "open": {
+            "day": 1,
+            "hour": 8,
+            "minute": 0
+          },
+          "close": {
+            "day": 2,
+            "hour": 1,
+            "minute": 0
+          }
+        },
+        {
+          "open": {
+            "day": 2,
+            "hour": 8,
+            "minute": 0
+          },
+          "close": {
+            "day": 3,
+            "hour": 1,
+            "minute": 0
+          }
+        },
+        {
+          "open": {
+            "day": 3,
+            "hour": 8,
+            "minute": 0
+          },
+          "close": {
+            "day": 4,
+            "hour": 1,
+            "minute": 0
+          }
+        },
+        {
+          "open": {
+            "day": 4,
+            "hour": 8,
+            "minute": 0
+          },
+          "close": {
+            "day": 5,
+            "hour": 1,
+            "minute": 0
+          }
+        },
+        {
+          "open": {
+            "day": 5,
+            "hour": 8,
+            "minute": 0
+          },
+          "close": {
+            "day": 6,
+            "hour": 1,
+            "minute": 0
+          }
+        },
+        {
+          "open": {
+            "day": 6,
+            "hour": 8,
+            "minute": 0
+          },
+          "close": {
+            "day": 0,
+            "hour": 1,
+            "minute": 0
+          }
+        }
+      ],
+      "weekdayDescriptions": [
+        "Monday: 8:00 AM – 1:00 AM",
+        "Tuesday: 8:00 AM – 1:00 AM",
+        "Wednesday: 8:00 AM – 1:00 AM",
+        "Thursday: 8:00 AM – 1:00 AM",
+        "Friday: 8:00 AM – 1:00 AM",
+        "Saturday: 8:00 AM – 1:00 AM",
+        "Sunday: 8:00 AM – 1:00 AM"
+      ],
+      "nextCloseTime": "2026-08-01T19:30:00Z"
+    },
+    "priceLevel": "PRICE_LEVEL_MODERATE",
+    "userRatingCount": 1293,
+    "displayName": {
+      "text": "The Kind Roastery and Brew Room Indiranagar",
+      "languageCode": "en"
+    },
+    "reviews": [
+      {
+        "name": "places/ChIJww_JxmYXrjsRZZYQJuGoUMo/reviews/Ci9DQUlRQUNvZENodHljRjlvT2tKemMxcEhUVUYzUkVJeE1VcGhUV3BFUjBsRlRsRRAB",
+        "relativePublishTimeDescription": "3 weeks ago",
+        "rating": 3,
+        "text": {
+          "text": "Visited Kind for a late-night coffee after dinner, so we couldn't try anything from their food menu. We ordered a Flat White and an Affogato. The ambience was neat, cozy, and perfect for a relaxed coffee break. One thing that stood out was the service - it was super fast and the staff were attentive. As for the coffee - both Flat White and Affogato were decent but neither was particularly memorable. Considering the price, I felt they were a bit overrated and didn't quite justify the cost. Overall - it's a nice spot for date, but I expected better coffee for the price.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Visited Kind for a late-night coffee after dinner, so we couldn't try anything from their food menu. We ordered a Flat White and an Affogato. The ambience was neat, cozy, and perfect for a relaxed coffee break. One thing that stood out was the service - it was super fast and the staff were attentive. As for the coffee - both Flat White and Affogato were decent but neither was particularly memorable. Considering the price, I felt they were a bit overrated and didn't quite justify the cost. Overall - it's a nice spot for date, but I expected better coffee for the price.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Mohammed Javed",
+          "uri": "https://www.google.com/maps/contrib/104186431451260314486/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUgJNpAVPy__U3byOdTqQrCBYFl52A0P0EoJe4wp0XEBNl3POoo=s128-c0x00000000-cc-rp-mo-ba6"
+        },
+        "publishTime": "2026-07-11T07:07:28.816667402Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2tKemMxcEhUVUYzUkVJeE1VcGhUV3BFUjBsRlRsRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tKemMxcEhUVUYzUkVJeE1VcGhUV3BFUjBsRlRsRRAB!2m1!1s0x3bae1766c6c90fc3:0xca50a8e126109665"
+      },
+      {
+        "name": "places/ChIJww_JxmYXrjsRZZYQJuGoUMo/reviews/Ci9DQUlRQUNvZENodHljRjlvT201V2JtWnJhbTUyVW14WU5IRlVPRFpTV1VvNVJYYxAB",
+        "relativePublishTimeDescription": "2 months ago",
+        "rating": 4,
+        "text": {
+          "text": "The place is spacious and looks inviting right from the outside. Once you walk in, you can choose between the upstairs and downstairs seating. We picked the upstairs section, which felt quite peaceful overall, although conversations from nearby tables were still very audible. Given the upscale pricing, I expected the tables to be spaced out a bit more.\n\nThe menu itself is quite interesting, with a lot of unique options. They also feature seasonal specials, including mango-based coffees, desserts, and baked items, and even jackfruit-inspired offerings.\n\nHere’s what we ordered and what we thought:\n\nJackfruit Latte\nIt genuinely tastes like jackfruit because you can clearly tell they use real jackfruit purée. Unfortunately, the one we got leaned quite bitter and wasn’t particularly enjoyable for us. Maybe it would work better with added sugar, but we personally prefer our drinks without it.\n\nCold Coffee\nThis was really good. Nicely balanced and not overly sweet.\n\nKorean Bun\nEasily the highlight of our order. The bun tasted fresh, and the cream cheese filling was rich and enjoyable.\n\nPiri Piri Fries\nPretty average overall. It didn’t really have the distinct piri piri flavour we expected.\n\nOverall, the place has great vibes, an interesting menu, and enjoyable food.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "The place is spacious and looks inviting right from the outside. Once you walk in, you can choose between the upstairs and downstairs seating. We picked the upstairs section, which felt quite peaceful overall, although conversations from nearby tables were still very audible. Given the upscale pricing, I expected the tables to be spaced out a bit more.\n\nThe menu itself is quite interesting, with a lot of unique options. They also feature seasonal specials, including mango-based coffees, desserts, and baked items, and even jackfruit-inspired offerings.\n\nHere’s what we ordered and what we thought:\n\nJackfruit Latte\nIt genuinely tastes like jackfruit because you can clearly tell they use real jackfruit purée. Unfortunately, the one we got leaned quite bitter and wasn’t particularly enjoyable for us. Maybe it would work better with added sugar, but we personally prefer our drinks without it.\n\nCold Coffee\nThis was really good. Nicely balanced and not overly sweet.\n\nKorean Bun\nEasily the highlight of our order. The bun tasted fresh, and the cream cheese filling was rich and enjoyable.\n\nPiri Piri Fries\nPretty average overall. It didn’t really have the distinct piri piri flavour we expected.\n\nOverall, the place has great vibes, an interesting menu, and enjoyable food.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Abhishek Anantharaju",
+          "uri": "https://www.google.com/maps/contrib/110562801506207857857/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWiEtJ7U_IuVFY3xEuplQLOzPTMJLADCiwXEK0zIJxbTPEq-tAr=s128-c0x00000000-cc-rp-mo-ba5"
+        },
+        "publishTime": "2026-05-12T07:30:29.636818836Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT201V2JtWnJhbTUyVW14WU5IRlVPRFpTV1VvNVJYYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT201V2JtWnJhbTUyVW14WU5IRlVPRFpTV1VvNVJYYxAB!2m1!1s0x3bae1766c6c90fc3:0xca50a8e126109665"
+      },
+      {
+        "name": "places/ChIJww_JxmYXrjsRZZYQJuGoUMo/reviews/Ci9DQUlRQUNvZENodHljRjlvT2paVVdUQjNhVTkxY1hsalRubGlUM1ZMVVhaUllYYxAB",
+        "relativePublishTimeDescription": "a month ago",
+        "rating": 2,
+        "text": {
+          "text": "We went to Kind on a Friday Night, it was a good place with calm vibe, we got an excellent secluded seating. The atmosphere was really great. Coming to the food, it was pretty much average. We ordered the two dimsums available in their menu, the truffle oil cream cheese dimsums was okayish, not upto the mark for me. I have had far far better ones, in Yuki, Daily Sushi and all. The other dimsum was based on thai flavours and was good, nothing awesome. Then we had ordered a Gnocchi creamy Pesto, which took them around 30 minutes to serve, don't know why. And the taste was also not upto the mark. Overall a very average experience food wise. We also ordered there walnut cake which was the best item of the day. It was really yum!!\n\nSo it's a pretty average place to be in with great vibes though. Can visit for a quick catchup with friends maybe, but definitely not for food. I have heard their coffee is good though maybe will try later someday if I like.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "We went to Kind on a Friday Night, it was a good place with calm vibe, we got an excellent secluded seating. The atmosphere was really great. Coming to the food, it was pretty much average. We ordered the two dimsums available in their menu, the truffle oil cream cheese dimsums was okayish, not upto the mark for me. I have had far far better ones, in Yuki, Daily Sushi and all. The other dimsum was based on thai flavours and was good, nothing awesome. Then we had ordered a Gnocchi creamy Pesto, which took them around 30 minutes to serve, don't know why. And the taste was also not upto the mark. Overall a very average experience food wise. We also ordered there walnut cake which was the best item of the day. It was really yum!!\n\nSo it's a pretty average place to be in with great vibes though. Can visit for a quick catchup with friends maybe, but definitely not for food. I have heard their coffee is good though maybe will try later someday if I like.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Soumya Banerjee",
+          "uri": "https://www.google.com/maps/contrib/114208795486174822811/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUosj4pFIV7RgfR7Yu7frvazyPeN5iqHtLidL-5qz-N3xUwydgjfA=s128-c0x00000000-cc-rp-mo-ba5"
+        },
+        "publishTime": "2026-06-15T11:51:24.258089191Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2paVVdUQjNhVTkxY1hsalRubGlUM1ZMVVhaUllYYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2paVVdUQjNhVTkxY1hsalRubGlUM1ZMVVhaUllYYxAB!2m1!1s0x3bae1766c6c90fc3:0xca50a8e126109665"
+      },
+      {
+        "name": "places/ChIJww_JxmYXrjsRZZYQJuGoUMo/reviews/Ci9DQUlRQUNvZENodHljRjlvT21aVk16WTVla2x3U1RsM1dXWXlVRE5YWVZGR2QwRRAB",
+        "relativePublishTimeDescription": "4 weeks ago",
+        "rating": 5,
+        "text": {
+          "text": "Sitting right in the hustle and bustle of Indiranagar, The Kind is a one-of-a-kind comfort place for me.\nThe ambience wraps you up in a comforting hug with lighting that is neither scanty nor too bright. It's a place to sit with a friend, sip matcha, and catch up on things from a year ago. The waiters are the kindest, tending to your needs and wants with the best dishes.\nAlthough I love one of the \"boring\" dishes: the Belgian chocolate smoothie bowl with extra almond toppings.\nIt's a place to sit, read, catch up, and get to know your date. Whatever may be the purpose, The Kind is the kind of answer you are looking for. It has become my regular now.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Sitting right in the hustle and bustle of Indiranagar, The Kind is a one-of-a-kind comfort place for me.\nThe ambience wraps you up in a comforting hug with lighting that is neither scanty nor too bright. It's a place to sit with a friend, sip matcha, and catch up on things from a year ago. The waiters are the kindest, tending to your needs and wants with the best dishes.\nAlthough I love one of the \"boring\" dishes: the Belgian chocolate smoothie bowl with extra almond toppings.\nIt's a place to sit, read, catch up, and get to know your date. Whatever may be the purpose, The Kind is the kind of answer you are looking for. It has become my regular now.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Narmatha Veerasamy",
+          "uri": "https://www.google.com/maps/contrib/108647728459635381661/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVFix3NUoVWffyBkCxl4NDISl4AiUQpMMYsaiwL9oXihT2WCKic=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2026-07-04T12:24:08.221685638Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21aVk16WTVla2x3U1RsM1dXWXlVRE5YWVZGR2QwRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21aVk16WTVla2x3U1RsM1dXWXlVRE5YWVZGR2QwRRAB!2m1!1s0x3bae1766c6c90fc3:0xca50a8e126109665"
+      },
+      {
+        "name": "places/ChIJww_JxmYXrjsRZZYQJuGoUMo/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xkdGQxWlJialo1UkZWb1drMUpYM2xIVFRsQlFWRRAB",
+        "relativePublishTimeDescription": "2 months ago",
+        "rating": 5,
+        "text": {
+          "text": "This place turned out to be one of my favourite café experiences in Bengaluru. The ambience is cozy, modern, and perfect for spending a slow evening. The Korean garlic bun and Korean jalapeño bun were incredibly soft and flavourful, the Sicilian pizza was fresh and delicious, and the classic mac n cheese was pure comfort food. The truffled New York cream cheese dimsums with chilli oil were something very different and absolutely worth trying. Also, the iced Vietnamese brew was simply outstanding and was one the best i have ever had.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "This place turned out to be one of my favourite café experiences in Bengaluru. The ambience is cozy, modern, and perfect for spending a slow evening. The Korean garlic bun and Korean jalapeño bun were incredibly soft and flavourful, the Sicilian pizza was fresh and delicious, and the classic mac n cheese was pure comfort food. The truffled New York cream cheese dimsums with chilli oil were something very different and absolutely worth trying. Also, the iced Vietnamese brew was simply outstanding and was one the best i have ever had.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Honey chittora",
+          "uri": "https://www.google.com/maps/contrib/116402393827529711513/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUsnfxki3R3-WRvmB53hIOx_fjNj8SJhkAKBelACMn-vM2ZyxM0cQ=s128-c0x00000000-cc-rp-mo-ba5"
+        },
+        "publishTime": "2026-05-28T18:28:59.470394714Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xkdGQxWlJialo1UkZWb1drMUpYM2xIVFRsQlFWRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xkdGQxWlJialo1UkZWb1drMUpYM2xIVFRsQlFWRRAB!2m1!1s0x3bae1766c6c90fc3:0xca50a8e126109665"
+      }
+    ]
+  },
+  {
+    "id": "ChIJxbH9KaoXrjsRxrnm21z2dMQ",
+    "types": [
+      "cafe",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "formattedAddress": "549A, 9th A Main Rd, Hoysala Nagar, Indiranagar, Bengaluru, Karnataka 560038, India",
+    "location": {
+      "latitude": 12.9777487,
+      "longitude": 77.6372497
+    },
+    "rating": 4.4,
+    "regularOpeningHours": {
+      "openNow": false,
+      "periods": [
+        {
+          "open": {
+            "day": 0,
+            "hour": 9,
+            "minute": 30
+          },
+          "close": {
+            "day": 0,
+            "hour": 20,
+            "minute": 30
+          }
+        },
+        {
+          "open": {
+            "day": 1,
+            "hour": 12,
+            "minute": 0
+          },
+          "close": {
+            "day": 1,
+            "hour": 20,
+            "minute": 0
+          }
+        },
+        {
+          "open": {
+            "day": 2,
+            "hour": 9,
+            "minute": 30
+          },
+          "close": {
+            "day": 2,
+            "hour": 20,
+            "minute": 0
+          }
+        },
+        {
+          "open": {
+            "day": 3,
+            "hour": 9,
+            "minute": 30
+          },
+          "close": {
+            "day": 3,
+            "hour": 20,
+            "minute": 0
+          }
+        },
+        {
+          "open": {
+            "day": 4,
+            "hour": 9,
+            "minute": 30
+          },
+          "close": {
+            "day": 4,
+            "hour": 20,
+            "minute": 0
+          }
+        },
+        {
+          "open": {
+            "day": 5,
+            "hour": 9,
+            "minute": 30
+          },
+          "close": {
+            "day": 5,
+            "hour": 20,
+            "minute": 30
+          }
+        },
+        {
+          "open": {
+            "day": 6,
+            "hour": 9,
+            "minute": 30
+          },
+          "close": {
+            "day": 6,
+            "hour": 20,
+            "minute": 30
+          }
+        }
+      ],
+      "weekdayDescriptions": [
+        "Monday: 12:00 – 8:00 PM",
+        "Tuesday: 9:30 AM – 8:00 PM",
+        "Wednesday: 9:30 AM – 8:00 PM",
+        "Thursday: 9:30 AM – 8:00 PM",
+        "Friday: 9:30 AM – 8:30 PM",
+        "Saturday: 9:30 AM – 8:30 PM",
+        "Sunday: 9:30 AM – 8:30 PM"
+      ],
+      "nextOpenTime": "2026-08-02T04:00:00Z"
+    },
+    "priceLevel": "PRICE_LEVEL_MODERATE",
+    "userRatingCount": 846,
+    "displayName": {
+      "text": "Copper + Cloves Indiranagar",
+      "languageCode": "en"
+    },
+    "reviews": [
+      {
+        "name": "places/ChIJxbH9KaoXrjsRxrnm21z2dMQ/reviews/Ci9DQUlRQUNvZENodHljRjlvT2swMlQySlBkMGRsWlhCRGEwbEJZMVZLUjBkeGFrRRAB",
+        "relativePublishTimeDescription": "4 weeks ago",
+        "rating": 3,
+        "text": {
+          "text": "Copper + Cloves is a beautiful, plant-based oasis in Bangalore that is perfect for escaping the city's chaotic traffic. The vibe is incredibly serene, filled with lush greenery and a fantastic collection of books if you want to spend a quiet day out with clean food.\n\nThe Hits: The coconut matcha and seasonal matcha were absolutely great. The breakfast plate was amazing, and the toasties were another big hit at our table.\n\nThe Miss: The vegan khabuska was just not for us. Three of us couldn't even finish half of it, but unfortunately, we still had to pay full price for it.\n\nOverall, it is a lovely spot for wholesome food and a peaceful atmosphere, just be mindful of what you order!",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Copper + Cloves is a beautiful, plant-based oasis in Bangalore that is perfect for escaping the city's chaotic traffic. The vibe is incredibly serene, filled with lush greenery and a fantastic collection of books if you want to spend a quiet day out with clean food.\n\nThe Hits: The coconut matcha and seasonal matcha were absolutely great. The breakfast plate was amazing, and the toasties were another big hit at our table.\n\nThe Miss: The vegan khabuska was just not for us. Three of us couldn't even finish half of it, but unfortunately, we still had to pay full price for it.\n\nOverall, it is a lovely spot for wholesome food and a peaceful atmosphere, just be mindful of what you order!",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Tejeswini Srinivas",
+          "uri": "https://www.google.com/maps/contrib/116416203729939691402/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXnyVp-ZHEdhMaVD-1Fne1XgOfRP5hMwHlSahiQMEqJ5O-i1kw=s128-c0x00000000-cc-rp-mo-ba4"
+        },
+        "publishTime": "2026-07-03T17:02:29.031741509Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2swMlQySlBkMGRsWlhCRGEwbEJZMVZLUjBkeGFrRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2swMlQySlBkMGRsWlhCRGEwbEJZMVZLUjBkeGFrRRAB!2m1!1s0x3bae17aa29fdb1c5:0xc474f65cdbe6b9c6"
+      },
+      {
+        "name": "places/ChIJxbH9KaoXrjsRxrnm21z2dMQ/reviews/Ci9DQUlRQUNvZENodHljRjlvT2tzdFlWbGZOMVp2TW0xQ0xWQTVXVWR3UjFWa2RFRRAB",
+        "relativePublishTimeDescription": "4 weeks ago",
+        "rating": 5,
+        "text": {
+          "text": "Copper + Cloves is my absolute favorite place to eat and chill! The food is so delicious and satisfying. The entire menu is completely healthy & plant-based, and the dishes that I have tasted have been so flavourful, filling and beautifully presented! The plating is impeccable, and you can tell that so much thought goes into every meal The Cafe also has such a warm and cozy atmosphere. The aesthetics look so effortless and lovely. Even the team is so approachable, kind and welcoming. Very efficient. My visits to Copper + Cloves have been wonderful, and I always leave feeling very well looked after!  A huge bonus is that Copper + Cloves is pet-friendly!!!!! (I think my pets get more excited than I do, whenever we're headed there haha!) I would 100% recommend Copper + Cloves to everyone actually💯♥️",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Copper + Cloves is my absolute favorite place to eat and chill! The food is so delicious and satisfying. The entire menu is completely healthy & plant-based, and the dishes that I have tasted have been so flavourful, filling and beautifully presented! The plating is impeccable, and you can tell that so much thought goes into every meal The Cafe also has such a warm and cozy atmosphere. The aesthetics look so effortless and lovely. Even the team is so approachable, kind and welcoming. Very efficient. My visits to Copper + Cloves have been wonderful, and I always leave feeling very well looked after!  A huge bonus is that Copper + Cloves is pet-friendly!!!!! (I think my pets get more excited than I do, whenever we're headed there haha!) I would 100% recommend Copper + Cloves to everyone actually💯♥️",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Aninditha Ashok",
+          "uri": "https://www.google.com/maps/contrib/111523920274884944322/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJfe-OcRbYNpH3uDzSeovf5E0NpSK5rKtL2lMVJyDFvZo_YdQ=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2026-07-03T07:53:48.636793878Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2tzdFlWbGZOMVp2TW0xQ0xWQTVXVWR3UjFWa2RFRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tzdFlWbGZOMVp2TW0xQ0xWQTVXVWR3UjFWa2RFRRAB!2m1!1s0x3bae17aa29fdb1c5:0xc474f65cdbe6b9c6"
+      },
+      {
+        "name": "places/ChIJxbH9KaoXrjsRxrnm21z2dMQ/reviews/Ci9DQUlRQUNvZENodHljRjlvT21sS1RXZGtUVEJUYVVkNVEwTlhWV2xTYUhoSVZsRRAB",
+        "relativePublishTimeDescription": "3 weeks ago",
+        "rating": 5,
+        "text": {
+          "text": "Had a fantastic brunch today! The place was incredibly busy, so we waited around 20–25 minutes for a table, but it was absolutely worth it. The food took a little longer than expected, but the outstanding hospitality from the staff more than made up for it. Everyone was warm, attentive, and genuinely welcoming, making us feel right at home. Great food, excellent service, and a wonderful overall experience. Highly recommend!",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Had a fantastic brunch today! The place was incredibly busy, so we waited around 20–25 minutes for a table, but it was absolutely worth it. The food took a little longer than expected, but the outstanding hospitality from the staff more than made up for it. Everyone was warm, attentive, and genuinely welcoming, making us feel right at home. Great food, excellent service, and a wonderful overall experience. Highly recommend!",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "darshan p",
+          "uri": "https://www.google.com/maps/contrib/102346526063642799452/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjW7Pw-BWlxepibvJUPvihcK4Ybl4ydCP7ryw7XtDXxV6x0AzL0=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2026-07-05T18:19:36.323462894Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21sS1RXZGtUVEJUYVVkNVEwTlhWV2xTYUhoSVZsRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21sS1RXZGtUVEJUYVVkNVEwTlhWV2xTYUhoSVZsRRAB!2m1!1s0x3bae17aa29fdb1c5:0xc474f65cdbe6b9c6"
+      },
+      {
+        "name": "places/ChIJxbH9KaoXrjsRxrnm21z2dMQ/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xGMWFVTTRkMVZKUmtKdmNYZFlVV1EzVm00NE0wRRAB",
+        "relativePublishTimeDescription": "a month ago",
+        "rating": 5,
+        "text": {
+          "text": "Loved the vibe here, honestly such a great place to unwind after a workout or for a cozy morning date. The ambiance is so nice with books all around you.\nThe food was easily the highlight of the day. Had a smoothie with granola, seasonal fruit, coconut milk, and protein that was incredible, plus the matcha coconut water smoothie was super refreshing. We also tried the Sri Lankan thali and the tangy brinjal in it was delicious. Don't skip the sourdough and hummus either, so good. Definitely worth checking out!",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Loved the vibe here, honestly such a great place to unwind after a workout or for a cozy morning date. The ambiance is so nice with books all around you.\nThe food was easily the highlight of the day. Had a smoothie with granola, seasonal fruit, coconut milk, and protein that was incredible, plus the matcha coconut water smoothie was super refreshing. We also tried the Sri Lankan thali and the tangy brinjal in it was delicious. Don't skip the sourdough and hummus either, so good. Definitely worth checking out!",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Pranav c",
+          "uri": "https://www.google.com/maps/contrib/115643774985308521534/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVkHqwh9WYhPDmN4Am8R0B-j5ZPl-CDTZm96rs5BVTjZUlCpe_9=s128-c0x00000000-cc-rp-mo-ba4"
+        },
+        "publishTime": "2026-06-20T10:51:04.789118462Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xGMWFVTTRkMVZKUmtKdmNYZFlVV1EzVm00NE0wRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xGMWFVTTRkMVZKUmtKdmNYZFlVV1EzVm00NE0wRRAB!2m1!1s0x3bae17aa29fdb1c5:0xc474f65cdbe6b9c6"
+      },
+      {
+        "name": "places/ChIJxbH9KaoXrjsRxrnm21z2dMQ/reviews/Ci9DQUlRQUNvZENodHljRjlvT25aU2RUaFpPSE13UVdOZldWZFNOek10TlZBM1JXYxAB",
+        "relativePublishTimeDescription": "5 months ago",
+        "rating": 5,
+        "text": {
+          "text": "Copper Cloves Cafe goes straight into my Top 5 worldwide. No hesitation. No debate. Just straight up there.\nTheir motto says “Slow Down” and somehow the whole place actually listens. The atmosphere, inside and outside, is crafted with style and soul. Books everywhere. Flowers softening every corner. Shelves that invite you to browse. A cozy kids’ space. It feels curated, not decorated.\nAnd the food… my oh my. An unbeatable all vegan menu, sourdough that deserves its own fan club, and flavors that are thoughtful, balanced and seriously delicious. Every dish tastes like someone cared deeply before it reached your table.\nThe staff? 100% service minded and genuinely kind. Professional, warm, smiling. The kind of team that makes you feel welcome without hovering.\nAnd then the magic spreads. Right there you have Love Me Twice for thrift treasures, Champaca for books you suddenly cannot live without, and No Nasties + for conscious reuse finds. The café is nestled into this whole universe like the warm heart of it all.\nPeople stay. They read. They work. They talk. Time stretches gently. It has that Hotel California feeling, you can check out but you never really leave.\nAdorable. Inspiring. Delicious. I will absolutely be back.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Copper Cloves Cafe goes straight into my Top 5 worldwide. No hesitation. No debate. Just straight up there.\nTheir motto says “Slow Down” and somehow the whole place actually listens. The atmosphere, inside and outside, is crafted with style and soul. Books everywhere. Flowers softening every corner. Shelves that invite you to browse. A cozy kids’ space. It feels curated, not decorated.\nAnd the food… my oh my. An unbeatable all vegan menu, sourdough that deserves its own fan club, and flavors that are thoughtful, balanced and seriously delicious. Every dish tastes like someone cared deeply before it reached your table.\nThe staff? 100% service minded and genuinely kind. Professional, warm, smiling. The kind of team that makes you feel welcome without hovering.\nAnd then the magic spreads. Right there you have Love Me Twice for thrift treasures, Champaca for books you suddenly cannot live without, and No Nasties + for conscious reuse finds. The café is nestled into this whole universe like the warm heart of it all.\nPeople stay. They read. They work. They talk. Time stretches gently. It has that Hotel California feeling, you can check out but you never really leave.\nAdorable. Inspiring. Delicious. I will absolutely be back.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Pal Coffee lover!",
+          "uri": "https://www.google.com/maps/contrib/101000411835037208135/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXwZo16J-0LOfD73ZRwTxR3Fv3H-f0MFG5k1yKSYKJt3p2vInHSrQ=s128-c0x00000000-cc-rp-mo-ba7"
+        },
+        "publishTime": "2026-02-13T05:21:51.994164010Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25aU2RUaFpPSE13UVdOZldWZFNOek10TlZBM1JXYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25aU2RUaFpPSE13UVdOZldWZFNOek10TlZBM1JXYxAB!2m1!1s0x3bae17aa29fdb1c5:0xc474f65cdbe6b9c6"
+      }
+    ]
+  },
+  {
+    "id": "ChIJV54y6swXrjsRhHo7UCh61mo",
+    "types": [
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "food",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "formattedAddress": "Metro Pillar Number 55, 842/A, 100 Feet Rd, Indira Nagar 1st Stage, H Colony, Indiranagar, Bengaluru, Karnataka 560038, India",
+    "location": {
+      "latitude": 12.9810313,
+      "longitude": 77.6409712
+    },
+    "rating": 4.2,
+    "regularOpeningHours": {
+      "openNow": false,
+      "periods": [
+        {
+          "open": {
+            "day": 0,
+            "hour": 8,
+            "minute": 0
+          },
+          "close": {
+            "day": 0,
+            "hour": 23,
+            "minute": 0
+          }
+        },
+        {
+          "open": {
+            "day": 1,
+            "hour": 8,
+            "minute": 0
+          },
+          "close": {
+            "day": 1,
+            "hour": 23,
+            "minute": 0
+          }
+        },
+        {
+          "open": {
+            "day": 2,
+            "hour": 8,
+            "minute": 0
+          },
+          "close": {
+            "day": 2,
+            "hour": 23,
+            "minute": 0
+          }
+        },
+        {
+          "open": {
+            "day": 3,
+            "hour": 8,
+            "minute": 0
+          },
+          "close": {
+            "day": 3,
+            "hour": 23,
+            "minute": 0
+          }
+        },
+        {
+          "open": {
+            "day": 4,
+            "hour": 8,
+            "minute": 0
+          },
+          "close": {
+            "day": 4,
+            "hour": 23,
+            "minute": 0
+          }
+        },
+        {
+          "open": {
+            "day": 5,
+            "hour": 8,
+            "minute": 0
+          },
+          "close": {
+            "day": 5,
+            "hour": 23,
+            "minute": 0
+          }
+        },
+        {
+          "open": {
+            "day": 6,
+            "hour": 8,
+            "minute": 0
+          },
+          "close": {
+            "day": 6,
+            "hour": 23,
+            "minute": 0
+          }
+        }
+      ],
+      "weekdayDescriptions": [
+        "Monday: 8:00 AM – 11:00 PM",
+        "Tuesday: 8:00 AM – 11:00 PM",
+        "Wednesday: 8:00 AM – 11:00 PM",
+        "Thursday: 8:00 AM – 11:00 PM",
+        "Friday: 8:00 AM – 11:00 PM",
+        "Saturday: 8:00 AM – 11:00 PM",
+        "Sunday: 8:00 AM – 11:00 PM"
+      ],
+      "nextOpenTime": "2026-08-02T02:30:00Z"
+    },
+    "priceLevel": "PRICE_LEVEL_EXPENSIVE",
+    "userRatingCount": 2006,
+    "displayName": {
+      "text": "Paper & Pie",
+      "languageCode": "en"
+    },
+    "reviews": [
+      {
+        "name": "places/ChIJV54y6swXrjsRhHo7UCh61mo/reviews/Ci9DQUlRQUNvZENodHljRjlvT2tOSE5tWkZWV1pqUzFwak4zTXRNMWcwZW5sUmFVRRAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 5,
+        "text": {
+          "text": "If you are looking for the ultimate Sunday breakfast spot, this is it. I visited with a group of friends, and it was the highlight of our weekend.\n\nThe food is absolutely fantastic. We ordered a variety of dishes to share, including a classic English breakfast and some incredible pancakes and French toast that were the perfect level of sweet. The standout for me, however, was the avocado and confit beetroot toast—the flavors were unique, fresh, and beautifully presented.\n\nBeyond the plate, the ambience was wonderful—vibrant yet relaxed enough for a long catch-up. The service was also top-notch; the staff was attentive and friendly without being intrusive.\nHighly recommended for anyone wanting a high-quality meal in a great atmosphere!",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "If you are looking for the ultimate Sunday breakfast spot, this is it. I visited with a group of friends, and it was the highlight of our weekend.\n\nThe food is absolutely fantastic. We ordered a variety of dishes to share, including a classic English breakfast and some incredible pancakes and French toast that were the perfect level of sweet. The standout for me, however, was the avocado and confit beetroot toast—the flavors were unique, fresh, and beautifully presented.\n\nBeyond the plate, the ambience was wonderful—vibrant yet relaxed enough for a long catch-up. The service was also top-notch; the staff was attentive and friendly without being intrusive.\nHighly recommended for anyone wanting a high-quality meal in a great atmosphere!",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "john mathew",
+          "uri": "https://www.google.com/maps/contrib/106886308489724581627/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVAadjqHSovMecqKFYbtPmcySZ3t9jLoJSa2Rf6agb728tZ3dBLAg=s128-c0x00000000-cc-rp-mo-ba4"
+        },
+        "publishTime": "2026-04-16T17:46:29.702427645Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2tOSE5tWkZWV1pqUzFwak4zTXRNMWcwZW5sUmFVRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tOSE5tWkZWV1pqUzFwak4zTXRNMWcwZW5sUmFVRRAB!2m1!1s0x3bae17ccea329e57:0x6ad67a28503b7a84"
+      },
+      {
+        "name": "places/ChIJV54y6swXrjsRhHo7UCh61mo/reviews/Ci9DQUlRQUNvZENodHljRjlvT2w5TVNVaG1jRGROZURaMU9WWXdjRXBuUlU4MVFtYxAB",
+        "relativePublishTimeDescription": "5 months ago",
+        "rating": 5,
+        "text": {
+          "text": "Paper & Pie in Indiranagar is such a charming place — cozy, welcoming, and perfect for a relaxed catch-up or a quiet coffee break. The desserts are the real stars here: fresh, beautifully presented, and absolutely delicious. The pies and cakes taste homemade, not overly sweet, and clearly made with quality ingredients.\n\nTheir coffee pairs really well with the desserts, and the overall vibe of the café makes you want to linger a little longer. The staff is friendly and attentive, which adds to the pleasant experience.\n\nDefinitely a go-to spot in Indiranagar if you’re craving good desserts, coffee, and a calm café atmosphere. Will be coming back for sure!",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Paper & Pie in Indiranagar is such a charming place — cozy, welcoming, and perfect for a relaxed catch-up or a quiet coffee break. The desserts are the real stars here: fresh, beautifully presented, and absolutely delicious. The pies and cakes taste homemade, not overly sweet, and clearly made with quality ingredients.\n\nTheir coffee pairs really well with the desserts, and the overall vibe of the café makes you want to linger a little longer. The staff is friendly and attentive, which adds to the pleasant experience.\n\nDefinitely a go-to spot in Indiranagar if you’re craving good desserts, coffee, and a calm café atmosphere. Will be coming back for sure!",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "syed Ishaq Pasha",
+          "uri": "https://www.google.com/maps/contrib/105934909839847098662/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXrvuEkQXuUAy_No47r17MojAJcqoP0aB9Y2BNWLH2cNXsgrSGA0g=s128-c0x00000000-cc-rp-mo-ba6"
+        },
+        "publishTime": "2026-02-03T14:25:37.850964258Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2w5TVNVaG1jRGROZURaMU9WWXdjRXBuUlU4MVFtYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2w5TVNVaG1jRGROZURaMU9WWXdjRXBuUlU4MVFtYxAB!2m1!1s0x3bae17ccea329e57:0x6ad67a28503b7a84"
+      },
+      {
+        "name": "places/ChIJV54y6swXrjsRhHo7UCh61mo/reviews/Ci9DQUlRQUNvZENodHljRjlvT2tKZlR5MHhOMnRvUlVkak1GSmFVMWt0V1ZaTWQwRRAB",
+        "relativePublishTimeDescription": "4 months ago",
+        "rating": 4,
+        "text": {
+          "text": "Tried out Paper & Pie and here’s the honest take—\n\nThe vibe is clean and nice—one of those places that makes you feel slightly more productive just by sitting there.\n\nCoffee? Solid. Egg options? Actually pretty great. Sandwiches? Let’s just say they won’t be solving world hunger anytime soon. 😄\nCold coffee was a win though, and the pudding felt like it was trying to be healthy… and mostly succeeding.\n\nIs this some mind-blowing, life-changing café? Nah. But that’s kind of the charm.\n\nIt’s a really good spot to sit down, get some work done, have a proper conversation with a friend, or even sneak in a meeting without it feeling like a corporate box.\n\nOverall—good food, good coffee, clean vibe, zero drama. Not extraordinary, but reliably nice… and honestly, that’s sometimes exactly what you need.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Tried out Paper & Pie and here’s the honest take—\n\nThe vibe is clean and nice—one of those places that makes you feel slightly more productive just by sitting there.\n\nCoffee? Solid. Egg options? Actually pretty great. Sandwiches? Let’s just say they won’t be solving world hunger anytime soon. 😄\nCold coffee was a win though, and the pudding felt like it was trying to be healthy… and mostly succeeding.\n\nIs this some mind-blowing, life-changing café? Nah. But that’s kind of the charm.\n\nIt’s a really good spot to sit down, get some work done, have a proper conversation with a friend, or even sneak in a meeting without it feeling like a corporate box.\n\nOverall—good food, good coffee, clean vibe, zero drama. Not extraordinary, but reliably nice… and honestly, that’s sometimes exactly what you need.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Arjun Ravisanker",
+          "uri": "https://www.google.com/maps/contrib/116338166127451889335/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjX-PdQ3IHAJG7Kf3SeFEOSxAbW7qv4_9pgrxLspLrVdiEL7357P4A=s128-c0x00000000-cc-rp-mo-ba2"
+        },
+        "publishTime": "2026-03-22T10:36:57.454141296Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2tKZlR5MHhOMnRvUlVkak1GSmFVMWt0V1ZaTWQwRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tKZlR5MHhOMnRvUlVkak1GSmFVMWt0V1ZaTWQwRRAB!2m1!1s0x3bae17ccea329e57:0x6ad67a28503b7a84"
+      },
+      {
+        "name": "places/ChIJV54y6swXrjsRhHo7UCh61mo/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xONlpTMXpaRWt0UkZCMVlWVjNURUZ5VUhReVRIYxAB",
+        "relativePublishTimeDescription": "4 months ago",
+        "rating": 2,
+        "text": {
+          "text": "I had salmon egg benedict and custard apple chia seed pudding. The egg benedict tasted good. The quantity as very less though and the cost was really high. The chia seed pudding had only chia seeds I felt. It was healthy for sure but taste was very average even with all fruits and nuts. Overall I felt the taste and quality of foods to be average but for this cost I definitely wouldn’t recommend this place. The ambience was really good with really spacious seating. The service was also good. Overall for this price I wouldn’t recommend this place unless you’re planning to work from cafe!",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "I had salmon egg benedict and custard apple chia seed pudding. The egg benedict tasted good. The quantity as very less though and the cost was really high. The chia seed pudding had only chia seeds I felt. It was healthy for sure but taste was very average even with all fruits and nuts. Overall I felt the taste and quality of foods to be average but for this cost I definitely wouldn’t recommend this place. The ambience was really good with really spacious seating. The service was also good. Overall for this price I wouldn’t recommend this place unless you’re planning to work from cafe!",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Akash P",
+          "uri": "https://www.google.com/maps/contrib/102686203706633240340/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocIQ-ycwrd17EsPbASXwXVIz8t-aIZutzh0KfvmMRn93oSIjmkY=s128-c0x00000000-cc-rp-mo-ba6"
+        },
+        "publishTime": "2026-03-20T21:47:52.274994358Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xONlpTMXpaRWt0UkZCMVlWVjNURUZ5VUhReVRIYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xONlpTMXpaRWt0UkZCMVlWVjNURUZ5VUhReVRIYxAB!2m1!1s0x3bae17ccea329e57:0x6ad67a28503b7a84"
+      },
+      {
+        "name": "places/ChIJV54y6swXrjsRhHo7UCh61mo/reviews/Ci9DQUlRQUNvZENodHljRjlvT25rNExUZE1iVFI0V25OR2RVeDVjME5HUmtoTk9YYxAB",
+        "relativePublishTimeDescription": "6 months ago",
+        "rating": 4,
+        "text": {
+          "text": "Visited Paper & Pie and had a really pleasant experience. We tried a mix of hot and cold beverages, along with their croissant and a couple of pastas\n\nThe croissant was the highlight for me perfectly flaky, buttery, and freshly baked. I also loved the hot chocolate which was rich and comforting. The beverages overall were well done.\n\nThe pastas were okay decent in taste, but not something I’d go back specifically for.\n\nThe ambience is cozy and relaxed, making it a nice place to sit and unwind. Overall, a great cafe for drinks and baked goods, with a calm vibe.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Visited Paper & Pie and had a really pleasant experience. We tried a mix of hot and cold beverages, along with their croissant and a couple of pastas\n\nThe croissant was the highlight for me perfectly flaky, buttery, and freshly baked. I also loved the hot chocolate which was rich and comforting. The beverages overall were well done.\n\nThe pastas were okay decent in taste, but not something I’d go back specifically for.\n\nThe ambience is cozy and relaxed, making it a nice place to sit and unwind. Overall, a great cafe for drinks and baked goods, with a calm vibe.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Ananya Patnaik",
+          "uri": "https://www.google.com/maps/contrib/110696296656780893863/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXcKCkd2IxRejwAbKJ1gDkySPZouM6i9jDsLXJqxk2CQyALLS8kyA=s128-c0x00000000-cc-rp-mo-ba5"
+        },
+        "publishTime": "2026-01-27T11:27:16.108895524Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25rNExUZE1iVFI0V25OR2RVeDVjME5HUmtoTk9YYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25rNExUZE1iVFI0V25OR2RVeDVjME5HUmtoTk9YYxAB!2m1!1s0x3bae17ccea329e57:0x6ad67a28503b7a84"
+      }
+    ]
+  }
+]
