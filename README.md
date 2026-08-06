@@ -12,9 +12,60 @@ Neo4j (proximity, category, area adjacency) instead of a keyword filter.
 <!-- ![Chat UI](docs/screenshot-chat.png) -->
 <!-- ![Neo4j graph view](docs/screenshot-graph.png) -->
 
+## Sample queries
+
+Run these directly in Neo4j Browser / Aura's Query tab. Most mirror a natural-language question the
+chat pipeline actually handles — this is the real Cypher `intent_to_cypher()` would generate for that
+question, not a hand-picked demo query — scoped small (one area/category at a time) so the graph view
+stays readable. The one exception is #1: a capped whole-graph view, since an *uncapped*
+`MATCH (n) RETURN n` on the full dataset is a mess (Indiranagar alone has 150+ places) — `LIMIT 150`
+keeps it renderable while still showing every node/edge type at once. Full list in
+[`backend/sample_queries_to_test/cypher_queries.md`](backend/sample_queries_to_test/cypher_queries.md).
+
+**1. Full graph snapshot** — every node/edge type at once, capped so it stays renderable
+```cypher
+MATCH (n)-[r]-(m)
+RETURN n, r, m
+```
+![Full graph 1](docs/full_graph.png)
+
+**2. "What bars in Indiranagar are near each other?"**
+```cypher
+MATCH (p1:Place)-[:LOCATED_IN]->(:Area {name: "Indiranagar"}),
+      (p1)-[:IN_CATEGORY]->(:Category {name: "bars"}),
+      (p1)-[r:ADJACENT_TO]-(p2:Place)-[:IN_CATEGORY]->(:Category {name: "bars"})
+RETURN p1, r, p2
+```
+![Bars near each other](docs/screenshot-bars-graph.png)
+
+**3. "What's a good dessert spot near Toit?"** — fuzzy name resolution + proximity traversal
+```cypher
+CALL db.index.fulltext.queryNodes('place_name_fulltext', 'toit~1') YIELD node AS ref, score
+WITH ref, score ORDER BY score DESC LIMIT 1
+MATCH (ref)-[r:ADJACENT_TO]-(p:Place)-[:IN_CATEGORY]->(:Category {name: "dessert shops"})
+RETURN ref, r, p
+```
+![Near Toit](docs/screenshot-near-toit.png)
+
+**4. "Which areas are near Koramangala?"** — pure area-to-area, naturally small and clean
+```cypher
+MATCH (a:Area {name: "Koramangala"})-[r:NEAR]-(other:Area)
+RETURN a, r, other
+```
+![Areas near Koramangala](docs/screenshot-areas-near.png)
+
+**5. "Show me breweries"** — one category, decluttered by design
+```cypher
+MATCH (c:Category {name: "breweries"})<-[r:IN_CATEGORY]-(p:Place)
+RETURN c, r, p
+```
+<!-- ![Breweries category view](docs/screenshot-breweries.png) -->
+
 ## Example
 
 > "What restaurant do you suggest to visit for dessert after drinking at toit in Indiranagar?"
+
+![Breweries category view](docs/text-chat.png)
 
 The question resolves a typo'd place name ("toit" → "Toit") via fuzzy full-text search, traverses
 real walking-distance proximity edges from there, filters to dessert spots, and returns a ranked
