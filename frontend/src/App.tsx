@@ -12,6 +12,16 @@ type Message = {
 // to call itself.
 const API_URL = `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'}/chat`
 
+// Mirrors the sample queries in the README -- picked because they're
+// confirmed to exercise the pipeline well (fuzzy name resolution, area
+// adjacency, category filtering), not just generic-sounding examples.
+const SAMPLE_PROMPTS = [
+  'What bars in Indiranagar are near each other?',
+  "What's a good dessert spot near Toit?",
+  'Which areas are near Koramangala?',
+  'Show me breweries in Indiranagar',
+]
+
 function App() {
   const [messages, setMessages] = useState<Message[]>([
     { role: 'assistant', content: 'Ask me about cafes, bars, or dessert spots around Bengaluru.' },
@@ -24,8 +34,8 @@ function App() {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages])
 
-  async function sendMessage() {
-    const question = input.trim()
+  async function sendMessage(overrideText?: string) {
+    const question = (overrideText ?? input).trim()
     if (!question || loading) return
 
     setMessages((prev) => [...prev, { role: 'user', content: question }])
@@ -58,6 +68,11 @@ function App() {
     if (e.key === 'Enter') sendMessage()
   }
 
+  // Only shown before any real exchange has happened -- once the user's
+  // sent something, the suggestions would just clutter an active
+  // conversation.
+  const showSuggestions = messages.length === 1
+
   return (
     <div className="app">
       <header className="app-header">
@@ -71,6 +86,22 @@ function App() {
             {m.content}
           </div>
         ))}
+
+        {showSuggestions && (
+          <div className="suggestions">
+            {SAMPLE_PROMPTS.map((prompt) => (
+              <button
+                key={prompt}
+                className="suggestion-chip"
+                onClick={() => sendMessage(prompt)}
+                disabled={loading}
+              >
+                {prompt}
+              </button>
+            ))}
+          </div>
+        )}
+
         {loading && <div className="bubble assistant loading">Thinking…</div>}
         <div ref={bottomRef} />
       </main>
@@ -83,7 +114,7 @@ function App() {
           placeholder="Ask about cafes, bars, dessert spots…"
           disabled={loading}
         />
-        <button onClick={sendMessage} disabled={loading || !input.trim()}>
+        <button onClick={() => sendMessage()} disabled={loading || !input.trim()}>
           Send
         </button>
       </footer>

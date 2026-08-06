@@ -61,6 +61,38 @@
   font-style: italic;
 }
 
+/* Deliberately NOT bubble-shaped (dashed outline, no fill, wraps as a chip
+   group) -- these are clickable presets, not part of the conversation, and
+   should read that way at a glance. */
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.25rem 0;
+}
+
+.suggestion-chip {
+  padding: 0.5rem 0.9rem;
+  border-radius: 1.5rem;
+  border: 1px dashed light-dark(#2563eb, #6d9bff);
+  background: transparent;
+  color: light-dark(#2563eb, #6d9bff);
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s, color 0.15s;
+}
+
+.suggestion-chip:hover:not(:disabled) {
+  background: #2563eb;
+  color: white;
+}
+
+.suggestion-chip:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .composer {
   display: flex;
   gap: 0.5rem;
