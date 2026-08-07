@@ -35,10 +35,11 @@ async def lifespan(app: FastAPI):
 app = FastAPI(title="Cafe Hopper Guide API", lifespan=lifespan)
 
 # Localhost (any port -- Vite shifts 5173/5174/... if the default is busy)
-# always allowed for dev. The deployed Vercel frontend origin comes from an
-# env var -- set FRONTEND_ORIGIN on Railway once the Vercel URL is known,
-# comma-separated if there's more than one (e.g. a custom domain + the
-# default *.vercel.app one).
+# always allowed for dev. Any *.vercel.app subdomain always allowed too --
+# Vercel mints a NEW preview URL per branch/deployment (e.g.
+# blr-restaurant-rec-git-<hash>-<team>.vercel.app), so pinning to one exact
+# origin via FRONTEND_ORIGIN breaks on every push. FRONTEND_ORIGIN still
+# exists for a future custom domain that won't match the regex.
 _production_origins = [
     origin.strip()
     for origin in os.environ.get("FRONTEND_ORIGIN", "").split(",")
@@ -47,7 +48,7 @@ _production_origins = [
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origin_regex=r"http://localhost:\d+",
+    allow_origin_regex=r"http://localhost:\d+|https://[\w-]+\.vercel\.app",
     allow_origins=_production_origins,
     allow_methods=["*"],
     allow_headers=["*"],
