@@ -349,6 +349,16 @@ def generate_suggestions(
                     f"What's the top-rated place in {intent.area}?",
                 )
 
+    # Unconditional last resort: no area/category/specialty/tier filter at
+    # all, just "top-rated overall" -- can only ever come back empty if the
+    # graph has zero Place nodes. Suggestions don't have to relate to the
+    # current answer; a context-specific candidate can fail for reasons that
+    # have nothing to do with a bug (an isolated place with no recorded
+    # neighbors, an area with no NEAR edges, etc.), and when every other
+    # candidate above dries up, this guarantees the user is never left with
+    # zero suggestions to click.
+    add(QueryIntent(relationship="none", sort_by="rating"), "What are the top-rated places overall?")
+
     suggestions: list[str] = []
     for candidate_intent, text in candidates:
         if text in asked_questions:
