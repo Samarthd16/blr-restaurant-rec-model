@@ -30,7 +30,15 @@ _system_prompt: str | None = None
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     global _system_prompt
-    _system_prompt = build_intent_system_prompt()
+    try:
+        _system_prompt = build_intent_system_prompt()
+    except ServiceUnavailable:
+        # Don't let a paused/unreachable Neo4j instance crash the entire
+        # server at boot -- leave _system_prompt as None and let /chat
+        # retry building it lazily on each request until Neo4j is back up,
+        # rather than requiring a manual restart once it's resumed.
+        print("Neo4j unreachable at startup -- will retry lazily on the next chat request.")
+        send_neo4j_down_alert()
     yield
 
 
@@ -65,8 +73,23 @@ class ChatResponse(BaseModel):
     answer: str
 
 
+NEO4J_DOWN_MESSAGE = "The knowledge graph instance is down. Please try again later."
+
+
 @app.post("/chat", response_model=ChatResponse)
 def chat(req: ChatRequest) -> ChatResponse:
+    global _system_prompt
+
+    if _system_prompt is None:
+        # Startup's schema introspection failed (or hasn't run yet) --
+        # retry here so the app self-heals once Neo4j comes back, instead
+        # of staying broken until someone manually restarts the server.
+        try:
+            _system_prompt = build_intent_system_prompt()
+        except ServiceUnavailable:
+            send_neo4j_down_alert()
+            return ChatResponse(answer=NEO4J_DOWN_MESSAGE)
+
     intent = parse_intent(openai_client, req.question, system_prompt=_system_prompt)
     cypher, params = intent_to_cypher(intent)
 
@@ -78,9 +101,7 @@ def chat(req: ChatRequest) -> ChatResponse:
         # give the user a clear, honest message instead of a generic
         # "something went wrong."
         send_neo4j_down_alert()
-        return ChatResponse(
-            answer="The knowledge graph instance is down. Please try again later."
-        )
+        return ChatResponse(answer=NEO4J_DOWN_MESSAGE)
 
     return ChatResponse(answer=format_answer(results))
 

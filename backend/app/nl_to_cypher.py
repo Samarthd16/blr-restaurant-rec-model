@@ -41,11 +41,14 @@ def run_cypher(query: str, params: dict) -> list[dict]:
     if WRITE_KEYWORDS.search(query):
         raise ValueError(f"Refusing to run non-read-only query: {query}")
 
-    # Short connection_timeout so a paused Aura instance (free tier auto-pauses
-    # after inactivity) fails fast -- default driver timeout is ~30s, which
-    # would make a chat request hang that long before the caller even finds
-    # out something's wrong. Raises neo4j.exceptions.ServiceUnavailable.
-    with GraphDatabase.driver(NEO4J_URI, auth=NEO4J_AUTH, connection_timeout=10) as driver:
+    # connection_timeout caps the initial connection attempt; max_transaction_retry_time
+    # caps the driver's own transient-error retry loop (default 30s, with
+    # exponential backoff) -- without both, a paused Aura instance (free tier
+    # auto-pauses after inactivity) can take 30+ seconds to finally raise
+    # ServiceUnavailable, instead of failing fast.
+    with GraphDatabase.driver(
+        NEO4J_URI, auth=NEO4J_AUTH, connection_timeout=10, max_transaction_retry_time=5
+    ) as driver:
         with driver.session() as session:
             # execute_read (not session.run) -- Neo4j itself rejects a write
             # attempted inside a read transaction, a second enforcement

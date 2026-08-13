@@ -56,7 +56,7 @@ function App() {
         ...prev,
         {
           role: 'assistant',
-          content: `Couldn't reach the backend at ${API_URL}. Is the FastAPI server running?`,
+          content: "Something went wrong reaching the server. Please try again in a moment.",
         },
       ])
     } finally {

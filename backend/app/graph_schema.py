@@ -26,7 +26,13 @@ TIER_LABELS = {"S", "A", "B"}
 
 
 def get_schema_context() -> str:
-    with GraphDatabase.driver(NEO4J_URI, auth=NEO4J_AUTH) as driver:
+    # connection_timeout caps the initial connection attempt; max_transaction_retry_time
+    # caps the driver's own transient-error retry loop (default 30s, with
+    # exponential backoff) -- without both, a paused/unreachable Aura instance
+    # can take 30+ seconds to finally raise ServiceUnavailable.
+    with GraphDatabase.driver(
+        NEO4J_URI, auth=NEO4J_AUTH, connection_timeout=10, max_transaction_retry_time=5
+    ) as driver:
         with driver.session() as session:
             labels = session.execute_read(
                 lambda tx: [r["label"] for r in tx.run("CALL db.labels() YIELD label RETURN label")]
