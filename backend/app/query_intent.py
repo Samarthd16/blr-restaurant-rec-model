@@ -117,7 +117,8 @@ def intent_to_cypher(intent: QueryIntent) -> tuple[str, dict]:
             f"MATCH (ref)-[r:ADJACENT_TO]-(p:Place{tier_label}) "
             f"{category_clause}{specialty_clause}"
             "RETURN ref.name AS reference, score AS reference_match_confidence, "
-            "p.name AS suggestion, p.things_to_try AS things_to_try, r.distance_km AS distance_km "
+            "p.name AS suggestion, p.rating AS rating, p.user_rating_count AS user_rating_count, "
+            "p.things_to_try AS things_to_try, r.distance_km AS distance_km "
             + order_clause
             + "LIMIT $limit"
         )

@@ -1,10 +1,79 @@
 import { useEffect, useRef, useState } from 'react'
 import './App.css'
 
+type PlaceResult = {
+  name: string
+  distance_km?: number | null
+  rating?: number | null
+  user_rating_count?: number | null
+  things_to_try?: string[]
+}
+
+type PlacePairResult = {
+  place_a: string
+  place_b: string
+  distance_km: number
+}
+
 type Message = {
   role: 'user' | 'assistant'
   content: string
   suggestions?: string[]
+  places?: PlaceResult[]
+  placePairs?: PlacePairResult[]
+}
+
+// Solid glyph (not outline) -- takes `color` directly via CSS, no SVG needed
+// and renders consistently across platforms.
+function StarIcon() {
+  return <span className="star">★</span>
+}
+
+function PlaceCard({ place }: { place: PlaceResult }) {
+  // Backend sends JSON `null` for fields a given query shape doesn't fetch
+  // (e.g. near_reference_place results have no rating in some paths) --
+  // `!= null` (loose) deliberately catches both null and undefined, unlike
+  // `!== undefined`, which let a null rating through and rendered a bare
+  // "★" with nothing after it.
+  return (
+    <div className="place-card">
+      <div className="place-card-header">
+        <span className="place-name">{place.name}</span>
+        {place.distance_km != null && (
+          <span className="place-distance">{Math.round(place.distance_km * 1000)}m away</span>
+        )}
+        {place.rating != null && (
+          <span className="place-rating">
+            <StarIcon /> {place.rating}
+            {place.user_rating_count != null && (
+              <span className="place-rating-count"> ({place.user_rating_count})</span>
+            )}
+          </span>
+        )}
+      </div>
+      {place.things_to_try && place.things_to_try.length > 0 && (
+        <div className="place-try">
+          <span className="place-try-label">Try</span>
+          {place.things_to_try.slice(0, 3).map((item) => (
+            <span className="try-pill" key={item}>
+              {item}
+            </span>
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
+
+function PlacePairCard({ pair }: { pair: PlacePairResult }) {
+  return (
+    <div className="place-card place-pair-card">
+      <span className="place-name">{pair.place_a}</span>
+      <span className="place-pair-sep">↔</span>
+      <span className="place-name">{pair.place_b}</span>
+      <span className="place-distance">{Math.round(pair.distance_km * 1000)}m apart</span>
+    </div>
+  )
 }
 
 // VITE_API_BASE_URL is set per-environment (.env.local for dev, a Vercel
@@ -100,7 +169,16 @@ function App() {
       if (!res.ok) throw new Error(`Backend returned ${res.status}`)
       const data = await res.json()
       for (const name of data.place_names ?? []) seenPlacesRef.current.add(name)
-      setMessages((prev) => [...prev, { role: 'assistant', content: data.answer, suggestions: data.suggestions }])
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: 'assistant',
+          content: data.answer,
+          suggestions: data.suggestions,
+          places: data.places,
+          placePairs: data.place_pairs,
+        },
+      ])
     } catch {
       setMessages((prev) => [
         ...prev,
@@ -139,7 +217,23 @@ function App() {
       <main className="chat">
         {messages.map((m, i) => (
           <div key={i} className={`message-row ${m.role}`}>
-            <div className={`bubble ${m.role}`}>{m.content}</div>
+            <div className={`bubble ${m.role}`}>
+              {m.places && m.places.length > 0 ? (
+                <div className="place-list">
+                  {m.places.map((p) => (
+                    <PlaceCard place={p} key={p.name} />
+                  ))}
+                </div>
+              ) : m.placePairs && m.placePairs.length > 0 ? (
+                <div className="place-list">
+                  {m.placePairs.map((pair) => (
+                    <PlacePairCard pair={pair} key={`${pair.place_a}-${pair.place_b}`} />
+                  ))}
+                </div>
+              ) : (
+                m.content
+              )}
+            </div>
             {m.role === 'assistant' && <CopyButton text={m.content} />}
           </div>
         ))}

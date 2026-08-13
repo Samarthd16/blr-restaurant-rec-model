@@ -76,12 +76,35 @@ class ChatRequest(BaseModel):
     asked_questions: list[str] = []
 
 
+class PlaceResult(BaseModel):
+    name: str
+    distance_km: float | None = None
+    rating: float | None = None
+    user_rating_count: int | None = None
+    things_to_try: list[str] = []
+
+
+class PlacePairResult(BaseModel):
+    place_a: str
+    place_b: str
+    distance_km: float
+
+
 class ChatResponse(BaseModel):
     answer: str
     suggestions: list[str] = []
     # Distinct place names surfaced in this answer -- the frontend folds
     # these into seen_places for the next request.
     place_names: list[str] = []
+    # Structured version of the same data in `answer` -- lets the frontend
+    # render a proper card (gold star for rating, pill-styled things_to_try)
+    # instead of parsing the plain-text string. `answer` is kept as the
+    # primary text (used by the copy-to-clipboard button) for shapes without
+    # a clean card representation (area lists, error messages).
+    places: list[PlaceResult] = []
+    # Separate shape for near_each_other results -- two places per row, no
+    # rating/things_to_try, so it doesn't fit PlaceResult.
+    place_pairs: list[PlacePairResult] = []
 
 
 NEO4J_DOWN_MESSAGE = "The knowledge graph instance is down. Please try again later."
@@ -132,7 +155,57 @@ def chat(req: ChatRequest) -> ChatResponse:
         answer=format_answer(results),
         suggestions=generate_suggestions(intent, results, seen_places, asked_questions),
         place_names=extract_place_names(results),
+        places=extract_places(results),
+        place_pairs=extract_place_pairs(results),
     )
+
+
+def extract_places(results: list[dict]) -> list[PlaceResult]:
+    """Structured per-place data for card rendering -- parallels
+    format_answer()'s text version but keeps fields separate instead of
+    baking them into one string, so the UI can style rating/things_to_try
+    distinctly rather than parsing plain text. Only produced for the two
+    shapes that actually carry rating/things_to_try (near_reference_place's
+    "suggestion" rows, and the plain-filter "name" rows) -- area lists and
+    place-pairs fall back to the plain-text answer on the frontend."""
+    if not results:
+        return []
+
+    first = results[0]
+    if "suggestion" in first:
+        return [
+            PlaceResult(
+                name=r["suggestion"],
+                distance_km=r.get("distance_km"),
+                rating=r.get("rating"),
+                user_rating_count=r.get("user_rating_count"),
+                things_to_try=r.get("things_to_try") or [],
+            )
+            for r in results
+        ]
+    if "name" in first:
+        return [
+            PlaceResult(
+                name=r["name"],
+                rating=r.get("rating"),
+                user_rating_count=r.get("user_rating_count"),
+                things_to_try=r.get("things_to_try") or [],
+            )
+            for r in results
+        ]
+    return []
+
+
+def extract_place_pairs(results: list[dict]) -> list[PlacePairResult]:
+    """Structured version of the near_each_other shape -- same reasoning as
+    extract_places(), just a different row shape (two places, no rating/
+    things_to_try, since a pair isn't "about" either place individually)."""
+    if not results or "place_a" not in results[0]:
+        return []
+    return [
+        PlacePairResult(place_a=r["place_a"], place_b=r["place_b"], distance_km=r["distance_km"])
+        for r in results
+    ]
 
 
 def extract_place_names(results: list[dict]) -> list[str]:
@@ -171,7 +244,8 @@ def retry_near_reference_place(intent: QueryIntent, params: dict) -> tuple[list[
         "WITH ref, score ORDER BY score DESC LIMIT 1 "
         "MATCH (ref)-[r:ADJACENT_TO]-(p:Place) "
         "RETURN ref.name AS reference, score AS reference_match_confidence, "
-        "p.name AS suggestion, p.things_to_try AS things_to_try, r.distance_km AS distance_km "
+        "p.name AS suggestion, p.rating AS rating, p.user_rating_count AS user_rating_count, "
+        "p.things_to_try AS things_to_try, r.distance_km AS distance_km "
         "ORDER BY r.distance_km LIMIT $limit"
     )
     relaxed_params = {"ref_query": params["ref_query"], "limit": params.get("limit", 10)}
@@ -200,9 +274,11 @@ def format_answer(results: list[dict]) -> str:
         lines = [f"Near {ref}, you could try:"]
         for r in results:
             dist_m = round(r["distance_km"] * 1000)
+            rating = r.get("rating")
+            rating_suffix = f" — {rating}★" if rating else ""
             things = r.get("things_to_try") or []
-            suffix = f" — try: {', '.join(things[:3])}" if things else ""
-            lines.append(f"- {r['suggestion']} ({dist_m}m away){suffix}")
+            try_suffix = f" — try: {', '.join(things[:3])}" if things else ""
+            lines.append(f"- {r['suggestion']} ({dist_m}m away){rating_suffix}{try_suffix}")
         return "\n".join(lines)
 
     if "place_a" in first:
