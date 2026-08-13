@@ -75,9 +75,22 @@ def get_schema_context() -> str:
             areas = session.execute_read(
                 lambda tx: [r["name"] for r in tx.run("MATCH (a:Area) RETURN a.name AS name ORDER BY name")]
             )
+            specialties = session.execute_read(
+                lambda tx: [r["name"] for r in tx.run("MATCH (s:Specialty) RETURN s.name AS name ORDER BY name")]
+            )
 
             lines.append(f"\nKnown Category values (use EXACTLY these strings): {categories}")
             lines.append(f"Known Area values (use EXACTLY these strings): {areas}")
+            lines.append(
+                f"Known Specialty values -- what a place is FAMOUS FOR, e.g. 'good filter coffee near X' "
+                f"or 'places famous for croissants' (use EXACTLY these strings): {specialties}"
+            )
+            lines.append(
+                "\nEvery Place also carries a things_to_try property -- a list of specific, exact menu items "
+                "pulled directly from reviews (e.g. 'nutella creme caramel coffee'). Free text, not a closed "
+                "vocabulary like Specialty -- never filter/query on it, only surface it once a place is already "
+                "identified by other means."
+            )
 
     return "\n".join(lines)
 

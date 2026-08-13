@@ -35,6 +35,9 @@ def ensure_constraints(session):
     session.run(
         "CREATE CONSTRAINT category_name IF NOT EXISTS FOR (c:Category) REQUIRE c.name IS UNIQUE"
     )
+    session.run(
+        "CREATE CONSTRAINT specialty_name IF NOT EXISTS FOR (s:Specialty) REQUIRE s.name IS UNIQUE"
+    )
     # Lucene-backed full-text index -- tolerates typos/word-order via fuzzy
     # (~) queries, unlike a plain CONTAINS/equality match. Used to resolve
     # a user-named reference place ("Toitt" -> "Toit") in query_intent.py.
@@ -58,7 +61,8 @@ def load_places(session, places: list[dict]):
             p.tier = place.tier,
             p.price_level = place.price_level,
             p.lat = place.lat,
-            p.lng = place.lng
+            p.lng = place.lng,
+            p.things_to_try = place.things_to_try
         """,
         places=places,
     )
@@ -122,6 +126,28 @@ def load_in_category(session, edges: list[dict]):
         MATCH (p:Place {id: edge.place_id})
         MATCH (c:Category {name: edge.category})
         MERGE (p)-[:IN_CATEGORY]->(c)
+        """,
+        edges=edges,
+    )
+
+
+def load_specialties(session, specialties: list[dict]):
+    session.run(
+        """
+        UNWIND $specialties AS specialty
+        MERGE (s:Specialty {name: specialty.name})
+        """,
+        specialties=specialties,
+    )
+
+
+def load_famous_for(session, edges: list[dict]):
+    session.run(
+        """
+        UNWIND $edges AS edge
+        MATCH (p:Place {id: edge.place_id})
+        MATCH (s:Specialty {name: edge.specialty})
+        MERGE (p)-[:FAMOUS_FOR]->(s)
         """,
         edges=edges,
     )
@@ -209,6 +235,12 @@ def main():
 
             print(f"Loading {len(data['edges']['IN_CATEGORY'])} IN_CATEGORY edges...")
             load_in_category(session, data["edges"]["IN_CATEGORY"])
+
+            print(f"Loading {len(data['nodes']['Specialty'])} Specialty nodes...")
+            load_specialties(session, data["nodes"]["Specialty"])
+
+            print(f"Loading {len(data['edges']['FAMOUS_FOR'])} FAMOUS_FOR edges...")
+            load_famous_for(session, data["edges"]["FAMOUS_FOR"])
 
             if ADJACENCY_PATH.exists():
                 adjacency_edges = json.loads(ADJACENCY_PATH.read_text(encoding="utf-8"))

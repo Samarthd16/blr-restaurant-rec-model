@@ -50,6 +50,12 @@ FIELD_MASK = ",".join(
         "places.displayName",
         "places.formattedAddress",
         "places.types",
+        # rating/userRatingCount bump this request from the Essentials SKU to
+        # the Pro SKU (still far cheaper than a per-place Details+reviews
+        # call) -- lets us rank/filter all candidates BEFORE paying for the
+        # expensive reviews fetch on only the ones worth it.
+        "places.rating",
+        "places.userRatingCount",
         "nextPageToken",
     ]
 )
@@ -140,6 +146,8 @@ def main():
                 entry["displayName"] = place.get("displayName")
                 entry["formattedAddress"] = place.get("formattedAddress")
                 entry["types"] = place.get("types")
+                entry["rating"] = place.get("rating")
+                entry["userRatingCount"] = place.get("userRatingCount")
                 match = {"area": area, "category": category}
                 if match not in entry["matched"]:
                     entry["matched"].append(match)

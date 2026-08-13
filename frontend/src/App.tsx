@@ -4,6 +4,7 @@ import './App.css'
 type Message = {
   role: 'user' | 'assistant'
   content: string
+  suggestions?: string[]
 }
 
 // VITE_API_BASE_URL is set per-environment (.env.local for dev, a Vercel
@@ -21,6 +22,41 @@ const SAMPLE_PROMPTS = [
   'Which areas are near Koramangala?',
   'Show me breweries in Indiranagar',
 ]
+
+function CopyButton({ text }: { text: string }) {
+  const [copied, setCopied] = useState(false)
+
+  async function handleCopy() {
+    try {
+      await navigator.clipboard.writeText(text)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1500)
+    } catch {
+      // Clipboard API can be unavailable (e.g. non-HTTPS context) -- fail
+      // silently rather than showing an error for a non-critical action.
+    }
+  }
+
+  return (
+    <button
+      className="copy-button"
+      onClick={handleCopy}
+      aria-label="Copy message"
+      title={copied ? 'Copied!' : 'Copy to clipboard'}
+    >
+      {copied ? (
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="20 6 9 17 4 12" />
+        </svg>
+      ) : (
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" />
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+        </svg>
+      )}
+    </button>
+  )
+}
 
 function App() {
   const [messages, setMessages] = useState<Message[]>([
@@ -50,7 +86,7 @@ function App() {
       })
       if (!res.ok) throw new Error(`Backend returned ${res.status}`)
       const data = await res.json()
-      setMessages((prev) => [...prev, { role: 'assistant', content: data.answer }])
+      setMessages((prev) => [...prev, { role: 'assistant', content: data.answer, suggestions: data.suggestions }])
     } catch {
       setMessages((prev) => [
         ...prev,
@@ -73,6 +109,12 @@ function App() {
   // conversation.
   const showSuggestions = messages.length === 1
 
+  // Follow-ups from the most recent answer only -- once the conversation
+  // moves on, older suggestions no longer make sense to keep showing.
+  const lastMessage = messages[messages.length - 1]
+  const followUps =
+    !loading && lastMessage?.role === 'assistant' ? lastMessage.suggestions ?? [] : []
+
   return (
     <div className="app">
       <header className="app-header">
@@ -82,14 +124,30 @@ function App() {
 
       <main className="chat">
         {messages.map((m, i) => (
-          <div key={i} className={`bubble ${m.role}`}>
-            {m.content}
+          <div key={i} className={`message-row ${m.role}`}>
+            <div className={`bubble ${m.role}`}>{m.content}</div>
+            {m.role === 'assistant' && <CopyButton text={m.content} />}
           </div>
         ))}
 
         {showSuggestions && (
           <div className="suggestions">
             {SAMPLE_PROMPTS.map((prompt) => (
+              <button
+                key={prompt}
+                className="suggestion-chip"
+                onClick={() => sendMessage(prompt)}
+                disabled={loading}
+              >
+                {prompt}
+              </button>
+            ))}
+          </div>
+        )}
+
+        {followUps.length > 0 && (
+          <div className="suggestions">
+            {followUps.map((prompt) => (
               <button
                 key={prompt}
                 className="suggestion-chip"

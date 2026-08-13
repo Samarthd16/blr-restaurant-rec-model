@@ -9,8 +9,11 @@ Inputs:
                                          fields _sample_area/_sample_region)
   backend/data/indiranagar_places.json (dict keyed by place_id, fields
                                          _area/_categories)
+  backend/data/expanded_places.json    (dict keyed by place_id, fields
+                                         _area/_categories -- top-N places by
+                                         rating count from fetch_top_candidates.py)
 Output: backend/data/normalized_places.json (one flat dict per place, deduped
-        by id -- a place can appear in both sources)
+        by id -- a place can appear in multiple sources)
 """
 
 import json
@@ -25,6 +28,7 @@ DATA_DIR = Path(__file__).parent.parent / "data"
 SOURCES = [
     ("cafes_sample_50.json", "list"),
     ("indiranagar_places.json", "dict"),
+    ("expanded_places.json", "dict"),
 ]
 OUT_PATH = DATA_DIR / "normalized_places.json"
 

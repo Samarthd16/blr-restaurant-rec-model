@@ -1,0 +1,23 @@
+{
+  "_comment": "Locked famous_for vocabulary, discovered bottom-up by reading all 360 places' reviews (see review_digest.txt). Closed list -- extraction (place_specialties.jsonl) only ever assigns values from here.",
+  "specialties": [
+    "Filter Coffee",
+    "South Indian Breakfast",
+    "Specialty Coffee",
+    "Craft Beer",
+    "Ice Cream",
+    "Croissants",
+    "Cheesecake",
+    "Biryani",
+    "Kebabs",
+    "Mango Specials",
+    "North Indian Thali",
+    "Sweets & Chaat",
+    "Hot Chocolate",
+    "Momos & Dumplings",
+    "Sushi",
+    "Craft Cocktails",
+    "Brownies",
+    "Wood-fired Pizza"
+  ]
+}

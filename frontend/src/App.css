@@ -33,8 +33,24 @@
   gap: 0.6rem;
 }
 
+.message-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.3rem;
+  max-width: 85%;
+}
+
+.message-row.user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.message-row.assistant {
+  align-self: flex-start;
+}
+
 .bubble {
-  max-width: 75%;
+  max-width: 100%;
   padding: 0.6rem 0.9rem;
   border-radius: 1rem;
   line-height: 1.4;
@@ -43,14 +59,12 @@
 }
 
 .bubble.user {
-  align-self: flex-end;
   background: #2563eb;
   color: white;
   border-bottom-right-radius: 0.25rem;
 }
 
 .bubble.assistant {
-  align-self: flex-start;
   background: light-dark(#f1f1f1, #26262b);
   color: light-dark(#1a1a1a, #e5e5e5);
   border-bottom-left-radius: 0.25rem;
@@ -59,6 +73,32 @@
 .bubble.loading {
   opacity: 0.6;
   font-style: italic;
+  align-self: flex-start;
+}
+
+.copy-button {
+  flex-shrink: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  color: light-dark(#a3a3a3, #7a7a7e);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, color 0.15s;
+}
+
+.copy-button svg {
+  display: block;
+}
+
+.copy-button:hover {
+  background: light-dark(#e5e5e5, #2a2a2e);
+  color: light-dark(#2563eb, #6d9bff);
 }
 
 /* Deliberately NOT bubble-shaped (dashed outline, no fill, wraps as a chip

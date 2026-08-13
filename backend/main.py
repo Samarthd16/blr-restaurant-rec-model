@@ -20,7 +20,7 @@ from pydantic import BaseModel
 
 from alerts import send_neo4j_down_alert
 from nl_to_cypher import openai_client, run_cypher
-from query_intent import build_intent_system_prompt, intent_to_cypher, parse_intent
+from query_intent import QueryIntent, build_intent_system_prompt, intent_to_cypher, parse_intent
 
 # Introspected once at startup (schema rarely changes mid-run), not on every
 # request -- same reasoning as the CLI loop in nl_to_cypher.py.
@@ -71,6 +71,7 @@ class ChatRequest(BaseModel):
 
 class ChatResponse(BaseModel):
     answer: str
+    suggestions: list[str] = []
 
 
 NEO4J_DOWN_MESSAGE = "The knowledge graph instance is down. Please try again later."
@@ -93,6 +94,11 @@ def chat(req: ChatRequest) -> ChatResponse:
     intent = parse_intent(openai_client, req.question, system_prompt=_system_prompt)
     cypher, params = intent_to_cypher(intent)
 
+    print(f"\n[chat] Q: {req.question}")
+    print(f"[chat] intent: {intent.model_dump()}")
+    print(f"[chat] cypher: {cypher}")
+    print(f"[chat] params: {params}")
+
     try:
         results = run_cypher(cypher, params)
     except ServiceUnavailable:
@@ -103,7 +109,52 @@ def chat(req: ChatRequest) -> ChatResponse:
         send_neo4j_down_alert()
         return ChatResponse(answer=NEO4J_DOWN_MESSAGE)
 
-    return ChatResponse(answer=format_answer(results))
+    print(f"[chat] {len(results)} result(s)")
+
+    if not results and intent.relationship == "near_reference_place" and intent.reference_place_name:
+        results, answer_override = retry_near_reference_place(intent, params)
+        if answer_override:
+            return ChatResponse(answer=answer_override, suggestions=[])
+
+    return ChatResponse(answer=format_answer(results), suggestions=generate_suggestions(intent, results))
+
+
+def retry_near_reference_place(intent: QueryIntent, params: dict) -> tuple[list[dict], str | None]:
+    """The first near_reference_place query came back empty. Rather than just
+    reporting failure, figure out WHY before giving up -- most often it's the
+    tier/category/specialty filter excluding every neighbor, not that the
+    reference place itself is unresolved (ADJACENT_TO is capped at 500m and
+    top-4 neighbors, so a real "no close neighbors recorded" case does
+    happen). Not another LLM call -- same deterministic-Cypher philosophy as
+    intent_to_cypher(), just retried once with filters dropped."""
+    resolved = run_cypher(
+        "CALL db.index.fulltext.queryNodes('place_name_fulltext', $ref_query) "
+        "YIELD node, score RETURN node.name AS name ORDER BY score DESC LIMIT 1",
+        {"ref_query": params["ref_query"]},
+    )
+    if not resolved:
+        print(f"[chat] retry: no place matched '{intent.reference_place_name}'")
+        return [], None  # let format_answer's generic empty-result message stand
+
+    relaxed_cypher = (
+        "CALL db.index.fulltext.queryNodes('place_name_fulltext', $ref_query) "
+        "YIELD node AS ref, score "
+        "WITH ref, score ORDER BY score DESC LIMIT 1 "
+        "MATCH (ref)-[r:ADJACENT_TO]-(p:Place) "
+        "RETURN ref.name AS reference, score AS reference_match_confidence, "
+        "p.name AS suggestion, p.things_to_try AS things_to_try, r.distance_km AS distance_km "
+        "ORDER BY r.distance_km LIMIT $limit"
+    )
+    relaxed_params = {"ref_query": params["ref_query"], "limit": params.get("limit", 10)}
+    results = run_cypher(relaxed_cypher, relaxed_params)
+
+    name = resolved[0]["name"]
+    if results:
+        print(f"[chat] retry: dropped tier/category/specialty filters, found {len(results)} neighbor(s) of {name}")
+        return results, None
+
+    print(f"[chat] retry: {name} resolved but has no ADJACENT_TO neighbors in the data")
+    return [], f"I found {name}, but it doesn't have any nearby places recorded in the current dataset."
 
 
 def format_answer(results: list[dict]) -> str:
@@ -120,7 +171,9 @@ def format_answer(results: list[dict]) -> str:
         lines = [f"Near {ref}, you could try:"]
         for r in results:
             dist_m = round(r["distance_km"] * 1000)
-            lines.append(f"- {r['suggestion']} ({dist_m}m away)")
+            things = r.get("things_to_try") or []
+            suffix = f" — try: {', '.join(things[:3])}" if things else ""
+            lines.append(f"- {r['suggestion']} ({dist_m}m away){suffix}")
         return "\n".join(lines)
 
     if "place_a" in first:
@@ -142,7 +195,48 @@ def format_answer(results: list[dict]) -> str:
             rating = r.get("rating")
             count = r.get("user_rating_count")
             suffix = f" — {rating}★ ({count} ratings)" if rating else ""
+            things = r.get("things_to_try") or []
+            if things:
+                suffix += f" — try: {', '.join(things[:3])}"
             lines.append(f"- {r['name']}{suffix}")
         return "\n".join(lines)
 
     return str(results)
+
+
+def generate_suggestions(intent: QueryIntent, results: list[dict]) -> list[str]:
+    """Deterministic follow-up questions, not another LLM call -- built only
+    from values already known (the parsed intent, the top result), same
+    reasoning as format_answer(). Branches on result shape like format_answer
+    does, since that's already a reliable signal of what kind of question
+    this was."""
+    if not results:
+        return []
+
+    first = results[0]
+    suggestions: list[str] = []
+
+    if "suggestion" in first:
+        ref = first.get("reference") or intent.reference_place_name
+        suggestions.append(f"What's near {first['suggestion']}?")
+        if intent.sort_by != "rating":
+            suggestions.append(f"What's the top-rated place near {ref}?")
+
+    elif "place_a" in first:
+        suggestions.append(f"What's near {first['place_a']}?")
+        if intent.area:
+            suggestions.append(f"What areas are near {intent.area}?")
+
+    elif "area" in first and "distance_km" in first:
+        suggestions.append(f"What's the top-rated place in {first['area']}?")
+
+    elif "name" in first:
+        suggestions.append(f"What's near {first['name']}?")
+        if intent.area:
+            suggestions.append(f"What areas are near {intent.area}?")
+        if intent.category and intent.sort_by != "rating":
+            suggestions.append(f"What are the top-rated {intent.category}?")
+        if intent.specialty and intent.sort_by != "rating":
+            suggestions.append(f"What are the top-rated places famous for {intent.specialty}?")
+
+    return suggestions[:3]

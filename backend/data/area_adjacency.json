@@ -1,122 +1,452 @@
 [
   {
+    "from_area": "BTM Layout",
+    "to_area": "JP Nagar",
+    "distance_km": 2.81
+  },
+  {
+    "from_area": "BTM Layout",
+    "to_area": "Jayanagar",
+    "distance_km": 2.85
+  },
+  {
+    "from_area": "BTM Layout",
+    "to_area": "Koramangala",
+    "distance_km": 2.9
+  },
+  {
+    "from_area": "Banashankari",
+    "to_area": "Basavanagudi",
+    "distance_km": 1.75
+  },
+  {
     "from_area": "Banashankari",
     "to_area": "Jayanagar",
+    "distance_km": 2.04
+  },
+  {
+    "from_area": "Banashankari",
+    "to_area": "Rajarajeshwari Nagar",
+    "distance_km": 5.86
+  },
+  {
+    "from_area": "Banaswadi",
+    "to_area": "CV Raman Nagar",
+    "distance_km": 3.65
+  },
+  {
+    "from_area": "Banaswadi",
+    "to_area": "Cox Town",
+    "distance_km": 0.81
+  },
+  {
+    "from_area": "Banaswadi",
+    "to_area": "Kammanahalli",
+    "distance_km": 1.34
+  },
+  {
+    "from_area": "Basavanagudi",
+    "to_area": "Banashankari",
+    "distance_km": 1.75
+  },
+  {
+    "from_area": "Basavanagudi",
+    "to_area": "Jayanagar",
+    "distance_km": 2.26
+  },
+  {
+    "from_area": "Basavanagudi",
+    "to_area": "Vijayanagar",
+    "distance_km": 4.7
+  },
+  {
+    "from_area": "Bellandur",
+    "to_area": "Marathahalli",
+    "distance_km": 3.3
+  },
+  {
+    "from_area": "Bellandur",
+    "to_area": "Sarjapur Road",
+    "distance_km": 1.64
+  },
+  {
+    "from_area": "CV Raman Nagar",
+    "to_area": "Banaswadi",
+    "distance_km": 3.65
+  },
+  {
+    "from_area": "CV Raman Nagar",
+    "to_area": "Indiranagar",
+    "distance_km": 3.63
+  },
+  {
+    "from_area": "CV Raman Nagar",
+    "to_area": "Whitefield",
+    "distance_km": 6.97
+  },
+  {
+    "from_area": "Church Street Bengaluru",
+    "to_area": "MG Road Bengaluru",
+    "distance_km": 0.45
+  },
+  {
+    "from_area": "Church Street Bengaluru",
+    "to_area": "Richmond Town",
+    "distance_km": 0.39
+  },
+  {
+    "from_area": "Church Street Bengaluru",
+    "to_area": "Ulsoor",
+    "distance_km": 0.48
+  },
+  {
+    "from_area": "Cox Town",
+    "to_area": "Banaswadi",
+    "distance_km": 0.81
+  },
+  {
+    "from_area": "Cox Town",
+    "to_area": "HRBR Layout",
+    "distance_km": 0.71
+  },
+  {
+    "from_area": "Cox Town",
+    "to_area": "Kammanahalli",
+    "distance_km": 0.53
+  },
+  {
+    "from_area": "Electronic City",
+    "to_area": "HSR Layout",
+    "distance_km": 8.02
+  },
+  {
+    "from_area": "Electronic City",
+    "to_area": "Sarjapur Road",
+    "distance_km": 8.24
+  },
+  {
+    "from_area": "Frazer Town",
+    "to_area": "Shivaji Nagar Bengaluru",
+    "distance_km": 2.02
+  },
+  {
+    "from_area": "Frazer Town",
+    "to_area": "Ulsoor",
+    "distance_km": 2.51
+  },
+  {
+    "from_area": "HRBR Layout",
+    "to_area": "Cox Town",
+    "distance_km": 0.71
+  },
+  {
+    "from_area": "HRBR Layout",
+    "to_area": "Kammanahalli",
+    "distance_km": 0.39
+  },
+  {
+    "from_area": "HSR Layout",
+    "to_area": "Electronic City",
+    "distance_km": 8.02
+  },
+  {
+    "from_area": "HSR Layout",
+    "to_area": "Koramangala",
+    "distance_km": 3.11
+  },
+  {
+    "from_area": "HSR Layout",
+    "to_area": "Sarjapur Road",
+    "distance_km": 3.86
+  },
+  {
+    "from_area": "Hebbal",
+    "to_area": "RT Nagar",
     "distance_km": 2.11
   },
   {
-    "from_area": "Banashankari",
+    "from_area": "Hebbal",
+    "to_area": "Sadashivanagar",
+    "distance_km": 3.9
+  },
+  {
+    "from_area": "Hebbal",
+    "to_area": "Yelahanka",
+    "distance_km": 5.84
+  },
+  {
+    "from_area": "Indiranagar",
+    "to_area": "CV Raman Nagar",
+    "distance_km": 3.63
+  },
+  {
+    "from_area": "Indiranagar",
     "to_area": "MG Road Bengaluru",
-    "distance_km": 4.76
+    "distance_km": 3.51
   },
   {
-    "from_area": "Banashankari",
-    "to_area": "Vijayanagar",
-    "distance_km": 5.16
+    "from_area": "JP Nagar",
+    "to_area": "BTM Layout",
+    "distance_km": 2.81
   },
   {
-    "from_area": "Indiranagar",
-    "to_area": "Koramangala",
-    "distance_km": 4.24
+    "from_area": "JP Nagar",
+    "to_area": "Jayanagar",
+    "distance_km": 2.79
   },
   {
-    "from_area": "Indiranagar",
-    "to_area": "MG Road Bengaluru",
-    "distance_km": 3.45
-  },
-  {
-    "from_area": "Indiranagar",
-    "to_area": "Whitefield",
-    "distance_km": 11.07
+    "from_area": "Jayanagar",
+    "to_area": "BTM Layout",
+    "distance_km": 2.85
   },
   {
     "from_area": "Jayanagar",
     "to_area": "Banashankari",
-    "distance_km": 2.11
+    "distance_km": 2.04
   },
   {
     "from_area": "Jayanagar",
-    "to_area": "Koramangala",
-    "distance_km": 4.36
+    "to_area": "Basavanagudi",
+    "distance_km": 2.26
+  },
+  {
+    "from_area": "Jayanagar",
+    "to_area": "JP Nagar",
+    "distance_km": 2.79
+  },
+  {
+    "from_area": "Kammanahalli",
+    "to_area": "Banaswadi",
+    "distance_km": 1.34
+  },
+  {
+    "from_area": "Kammanahalli",
+    "to_area": "Cox Town",
+    "distance_km": 0.53
+  },
+  {
+    "from_area": "Kammanahalli",
+    "to_area": "HRBR Layout",
+    "distance_km": 0.39
   },
   {
     "from_area": "Koramangala",
+    "to_area": "BTM Layout",
+    "distance_km": 2.9
+  },
+  {
+    "from_area": "Koramangala",
+    "to_area": "HSR Layout",
+    "distance_km": 3.11
+  },
+  {
+    "from_area": "MG Road Bengaluru",
+    "to_area": "Church Street Bengaluru",
+    "distance_km": 0.45
+  },
+  {
+    "from_area": "MG Road Bengaluru",
     "to_area": "Indiranagar",
-    "distance_km": 4.24
-  },
-  {
-    "from_area": "Koramangala",
-    "to_area": "Jayanagar",
-    "distance_km": 4.36
-  },
-  {
-    "from_area": "Koramangala",
-    "to_area": "Whitefield",
-    "distance_km": 13.22
+    "distance_km": 3.51
   },
   {
     "from_area": "MG Road Bengaluru",
-    "to_area": "Banashankari",
-    "distance_km": 4.76
+    "to_area": "Richmond Town",
+    "distance_km": 0.71
   },
   {
     "from_area": "MG Road Bengaluru",
-    "to_area": "Indiranagar",
-    "distance_km": 3.45
+    "to_area": "Shivaji Nagar Bengaluru",
+    "distance_km": 1.2
   },
   {
     "from_area": "MG Road Bengaluru",
+    "to_area": "Ulsoor",
+    "distance_km": 0.38
+  },
+  {
+    "from_area": "Malleshwaram",
     "to_area": "Rajajinagar",
-    "distance_km": 7.37
+    "distance_km": 1.92
   },
   {
-    "from_area": "MG Road Bengaluru",
+    "from_area": "Malleshwaram",
+    "to_area": "Sadashivanagar",
+    "distance_km": 1.51
+  },
+  {
+    "from_area": "Marathahalli",
+    "to_area": "Bellandur",
+    "distance_km": 3.3
+  },
+  {
+    "from_area": "Marathahalli",
+    "to_area": "Sarjapur Road",
+    "distance_km": 4.61
+  },
+  {
+    "from_area": "Marathahalli",
+    "to_area": "Whitefield",
+    "distance_km": 5.48
+  },
+  {
+    "from_area": "RT Nagar",
+    "to_area": "Hebbal",
+    "distance_km": 2.11
+  },
+  {
+    "from_area": "RT Nagar",
+    "to_area": "Sadashivanagar",
+    "distance_km": 2.04
+  },
+  {
+    "from_area": "RT Nagar",
     "to_area": "Yelahanka",
-    "distance_km": 13.38
+    "distance_km": 7.56
   },
   {
     "from_area": "Rajajinagar",
-    "to_area": "MG Road Bengaluru",
-    "distance_km": 7.37
+    "to_area": "Malleshwaram",
+    "distance_km": 1.92
+  },
+  {
+    "from_area": "Rajajinagar",
+    "to_area": "Sadashivanagar",
+    "distance_km": 3.22
   },
   {
     "from_area": "Rajajinagar",
     "to_area": "Vijayanagar",
-    "distance_km": 4.29
+    "distance_km": 3.8
   },
   {
-    "from_area": "Rajajinagar",
-    "to_area": "Yelahanka",
-    "distance_km": 10.66
-  },
-  {
-    "from_area": "Vijayanagar",
+    "from_area": "Rajarajeshwari Nagar",
     "to_area": "Banashankari",
-    "distance_km": 5.16
+    "distance_km": 5.86
+  },
+  {
+    "from_area": "Rajarajeshwari Nagar",
+    "to_area": "Vijayanagar",
+    "distance_km": 6.24
+  },
+  {
+    "from_area": "Richmond Town",
+    "to_area": "Church Street Bengaluru",
+    "distance_km": 0.39
+  },
+  {
+    "from_area": "Richmond Town",
+    "to_area": "MG Road Bengaluru",
+    "distance_km": 0.71
+  },
+  {
+    "from_area": "Sadashivanagar",
+    "to_area": "Hebbal",
+    "distance_km": 3.9
+  },
+  {
+    "from_area": "Sadashivanagar",
+    "to_area": "Malleshwaram",
+    "distance_km": 1.51
+  },
+  {
+    "from_area": "Sadashivanagar",
+    "to_area": "RT Nagar",
+    "distance_km": 2.04
+  },
+  {
+    "from_area": "Sadashivanagar",
+    "to_area": "Rajajinagar",
+    "distance_km": 3.22
+  },
+  {
+    "from_area": "Sarjapur Road",
+    "to_area": "Bellandur",
+    "distance_km": 1.64
+  },
+  {
+    "from_area": "Sarjapur Road",
+    "to_area": "Electronic City",
+    "distance_km": 8.24
+  },
+  {
+    "from_area": "Sarjapur Road",
+    "to_area": "HSR Layout",
+    "distance_km": 3.86
+  },
+  {
+    "from_area": "Sarjapur Road",
+    "to_area": "Marathahalli",
+    "distance_km": 4.61
+  },
+  {
+    "from_area": "Shivaji Nagar Bengaluru",
+    "to_area": "Frazer Town",
+    "distance_km": 2.02
+  },
+  {
+    "from_area": "Shivaji Nagar Bengaluru",
+    "to_area": "MG Road Bengaluru",
+    "distance_km": 1.2
+  },
+  {
+    "from_area": "Shivaji Nagar Bengaluru",
+    "to_area": "Ulsoor",
+    "distance_km": 0.83
+  },
+  {
+    "from_area": "Ulsoor",
+    "to_area": "Church Street Bengaluru",
+    "distance_km": 0.48
+  },
+  {
+    "from_area": "Ulsoor",
+    "to_area": "Frazer Town",
+    "distance_km": 2.51
+  },
+  {
+    "from_area": "Ulsoor",
+    "to_area": "MG Road Bengaluru",
+    "distance_km": 0.38
+  },
+  {
+    "from_area": "Ulsoor",
+    "to_area": "Shivaji Nagar Bengaluru",
+    "distance_km": 0.83
+  },
+  {
+    "from_area": "Vijayanagar",
+    "to_area": "Basavanagudi",
+    "distance_km": 4.7
   },
   {
     "from_area": "Vijayanagar",
     "to_area": "Rajajinagar",
-    "distance_km": 4.29
+    "distance_km": 3.8
+  },
+  {
+    "from_area": "Vijayanagar",
+    "to_area": "Rajarajeshwari Nagar",
+    "distance_km": 6.24
   },
   {
     "from_area": "Whitefield",
-    "to_area": "Indiranagar",
-    "distance_km": 11.07
+    "to_area": "CV Raman Nagar",
+    "distance_km": 6.97
   },
   {
     "from_area": "Whitefield",
-    "to_area": "Koramangala",
-    "distance_km": 13.22
+    "to_area": "Marathahalli",
+    "distance_km": 5.48
   },
   {
     "from_area": "Yelahanka",
-    "to_area": "MG Road Bengaluru",
-    "distance_km": 13.38
+    "to_area": "Hebbal",
+    "distance_km": 5.84
   },
   {
     "from_area": "Yelahanka",
-    "to_area": "Rajajinagar",
-    "distance_km": 10.66
+    "to_area": "RT Nagar",
+    "distance_km": 7.56
   }
 ]

@@ -34,6 +34,7 @@ def build_fulltext_query(name: str, fuzziness: int = 1) -> str:
 class QueryIntent(BaseModel):
     category: Optional[str] = None  # must match one of the schema's known Category values, or None
     area: Optional[str] = None  # must match one of the schema's known Area values, or None
+    specialty: Optional[str] = None  # must match one of the schema's known Specialty values, or None
     reference_place_name: Optional[str] = None  # a specific named place, for proximity queries
     tier: Optional[Literal["S", "A", "B"]] = None
     relationship: Literal["none", "near_each_other", "near_reference_place", "expand_to_adjacent_areas"] = "none"
@@ -52,6 +53,10 @@ def build_intent_system_prompt() -> str:
 Extract these fields:
 - category: the food/drink category being asked about, if any (must be one of the known categories, or null)
 - area: the neighborhood being asked about, if any
+- specialty: if the question asks about a specific dish/drink a place is KNOWN FOR (e.g. "good croissants near Toit",
+  "places famous for filter coffee in Koramangala", "best biryani spots"), map it to one of the known Specialty
+  values above, or null. Don't confuse this with category (broad type of place, e.g. "cafes") -- specialty is
+  about what a place is specifically famous for.
 - reference_place_name: if the question refers to a SPECIFIC named place (e.g. "near 4P's Pizza", "after visiting X"), extract that name
 - tier: "S", "A", or "B" if the question asks about a specific popularity tier, else null
 - relationship: which kind of question this is --
@@ -98,14 +103,18 @@ def intent_to_cypher(intent: QueryIntent) -> tuple[str, dict]:
         if intent.category:
             category_clause = "MATCH (p)-[:IN_CATEGORY]->(:Category {name: $category}) "
             params["category"] = intent.category
+        specialty_clause = ""
+        if intent.specialty:
+            specialty_clause = "MATCH (p)-[:FAMOUS_FOR]->(:Specialty {name: $specialty}) "
+            params["specialty"] = intent.specialty
         cypher = (
             "CALL db.index.fulltext.queryNodes('place_name_fulltext', $ref_query) "
             "YIELD node AS ref, score "
             "WITH ref, score ORDER BY score DESC LIMIT 1 "
             f"MATCH (ref)-[r:ADJACENT_TO]-(p:Place{tier_label}) "
-            f"{category_clause}"
+            f"{category_clause}{specialty_clause}"
             "RETURN ref.name AS reference, score AS reference_match_confidence, "
-            "p.name AS suggestion, r.distance_km AS distance_km "
+            "p.name AS suggestion, p.things_to_try AS things_to_try, r.distance_km AS distance_km "
             "ORDER BY r.distance_km LIMIT $limit"
         )
         return cypher, params
@@ -147,6 +156,9 @@ def intent_to_cypher(intent: QueryIntent) -> tuple[str, dict]:
     if intent.category:
         match_clauses.append("MATCH (p)-[:IN_CATEGORY]->(:Category {name: $category})")
         params["category"] = intent.category
+    if intent.specialty:
+        match_clauses.append("MATCH (p)-[:FAMOUS_FOR]->(:Specialty {name: $specialty})")
+        params["specialty"] = intent.specialty
 
     order_clause = ""
     if intent.sort_by == "rating":
@@ -154,7 +166,8 @@ def intent_to_cypher(intent: QueryIntent) -> tuple[str, dict]:
 
     cypher = (
         " ".join(match_clauses)
-        + " RETURN p.name AS name, p.rating AS rating, p.user_rating_count AS user_rating_count "
+        + " RETURN p.name AS name, p.rating AS rating, p.user_rating_count AS user_rating_count, "
+        + "p.things_to_try AS things_to_try "
         + order_clause
         + "LIMIT $limit"
     )
