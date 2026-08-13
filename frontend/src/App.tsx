@@ -13,14 +13,15 @@ type Message = {
 // to call itself.
 const API_URL = `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'}/chat`
 
-// Mirrors the sample queries in the README -- picked because they're
-// confirmed to exercise the pipeline well (fuzzy name resolution, area
-// adjacency, category filtering), not just generic-sounding examples.
+// Deliberately varied across query shapes (specialty+area, near-a-place,
+// near-each-other, category+area) and areas, not just Indiranagar-centric --
+// each one confirmed to return real results against the current dataset.
 const SAMPLE_PROMPTS = [
-  'What bars in Indiranagar are near each other?',
+  'Where can I get good filter coffee in Basavanagudi?',
   "What's a good dessert spot near Toit?",
-  'Which areas are near Koramangala?',
-  'Show me breweries in Indiranagar',
+  "What's the best biryani in Marathahalli?",
+  'What bars in Indiranagar are near each other?',
+  'Show me craft breweries in Whitefield',
 ]
 
 function CopyButton({ text }: { text: string }) {
@@ -66,6 +67,13 @@ function App() {
   const [loading, setLoading] = useState(false)
   const bottomRef = useRef<HTMLDivElement>(null)
 
+  // Conversation memory sent back to the backend each turn so follow-up
+  // suggestions steer away from places/questions already covered instead of
+  // bouncing between the same tightly-connected cluster forever. Refs, not
+  // state -- mutated in place, never need to trigger a re-render themselves.
+  const seenPlacesRef = useRef<Set<string>>(new Set())
+  const askedQuestionsRef = useRef<Set<string>>(new Set())
+
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages])
@@ -74,6 +82,7 @@ function App() {
     const question = (overrideText ?? input).trim()
     if (!question || loading) return
 
+    askedQuestionsRef.current.add(question)
     setMessages((prev) => [...prev, { role: 'user', content: question }])
     setInput('')
     setLoading(true)
@@ -82,10 +91,15 @@ function App() {
       const res = await fetch(API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ question }),
+        body: JSON.stringify({
+          question,
+          seen_places: Array.from(seenPlacesRef.current),
+          asked_questions: Array.from(askedQuestionsRef.current),
+        }),
       })
       if (!res.ok) throw new Error(`Backend returned ${res.status}`)
       const data = await res.json()
+      for (const name of data.place_names ?? []) seenPlacesRef.current.add(name)
       setMessages((prev) => [...prev, { role: 'assistant', content: data.answer, suggestions: data.suggestions }])
     } catch {
       setMessages((prev) => [

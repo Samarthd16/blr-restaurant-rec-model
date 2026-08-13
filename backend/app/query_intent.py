@@ -107,6 +107,9 @@ def intent_to_cypher(intent: QueryIntent) -> tuple[str, dict]:
         if intent.specialty:
             specialty_clause = "MATCH (p)-[:FAMOUS_FOR]->(:Specialty {name: $specialty}) "
             params["specialty"] = intent.specialty
+        # sort_by was previously ignored here -- "top-rated near X" and
+        # "what's near X" silently ran the identical distance-ordered query.
+        order_clause = "ORDER BY p.rating DESC " if intent.sort_by == "rating" else "ORDER BY r.distance_km "
         cypher = (
             "CALL db.index.fulltext.queryNodes('place_name_fulltext', $ref_query) "
             "YIELD node AS ref, score "
@@ -115,7 +118,8 @@ def intent_to_cypher(intent: QueryIntent) -> tuple[str, dict]:
             f"{category_clause}{specialty_clause}"
             "RETURN ref.name AS reference, score AS reference_match_confidence, "
             "p.name AS suggestion, p.things_to_try AS things_to_try, r.distance_km AS distance_km "
-            "ORDER BY r.distance_km LIMIT $limit"
+            + order_clause
+            + "LIMIT $limit"
         )
         return cypher, params
 

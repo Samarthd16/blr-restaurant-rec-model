@@ -67,11 +67,21 @@ app.add_middleware(
 
 class ChatRequest(BaseModel):
     question: str
+    # Conversation memory, tracked client-side and echoed back each turn --
+    # the backend is otherwise stateless per request. Used only to steer
+    # follow-up suggestions away from ground already covered (never to
+    # filter the actual answer -- a repeated user question still gets
+    # answered normally).
+    seen_places: list[str] = []
+    asked_questions: list[str] = []
 
 
 class ChatResponse(BaseModel):
     answer: str
     suggestions: list[str] = []
+    # Distinct place names surfaced in this answer -- the frontend folds
+    # these into seen_places for the next request.
+    place_names: list[str] = []
 
 
 NEO4J_DOWN_MESSAGE = "The knowledge graph instance is down. Please try again later."
@@ -116,7 +126,26 @@ def chat(req: ChatRequest) -> ChatResponse:
         if answer_override:
             return ChatResponse(answer=answer_override, suggestions=[])
 
-    return ChatResponse(answer=format_answer(results), suggestions=generate_suggestions(intent, results))
+    seen_places = set(req.seen_places)
+    asked_questions = set(req.asked_questions)
+    return ChatResponse(
+        answer=format_answer(results),
+        suggestions=generate_suggestions(intent, results, seen_places, asked_questions),
+        place_names=extract_place_names(results),
+    )
+
+
+def extract_place_names(results: list[dict]) -> list[str]:
+    """Distinct place names appearing anywhere in a result set, regardless of
+    shape. The frontend folds these into seen_places for its next request --
+    this is what lets generate_suggestions() steer away from places already
+    surfaced instead of bouncing between the same tight cluster forever."""
+    names: set[str] = set()
+    for r in results:
+        for key in ("suggestion", "place_a", "place_b", "name", "reference"):
+            if r.get(key):
+                names.add(r[key])
+    return sorted(names)
 
 
 def retry_near_reference_place(intent: QueryIntent, params: dict) -> tuple[list[dict], str | None]:
@@ -204,39 +233,128 @@ def format_answer(results: list[dict]) -> str:
     return str(results)
 
 
-def generate_suggestions(intent: QueryIntent, results: list[dict]) -> list[str]:
-    """Deterministic follow-up questions, not another LLM call -- built only
-    from values already known (the parsed intent, the top result), same
-    reasoning as format_answer(). Branches on result shape like format_answer
-    does, since that's already a reliable signal of what kind of question
-    this was."""
+def _probe_has_results(candidate_intent: QueryIntent) -> bool:
+    """Existence check for a candidate follow-up question -- same
+    deterministic Cypher path a real query would take, just capped to 1 row
+    so it's cheap. A suggestion is only ever shown to the user after this
+    passes, so clicking a chip can never dead-end into "couldn't find
+    anything" the way a blind-guessed suggestion could."""
+    probe = candidate_intent.model_copy(update={"limit": 1})
+    cypher, params = intent_to_cypher(probe)
+    try:
+        return len(run_cypher(cypher, params)) > 0
+    except ServiceUnavailable:
+        return False
+
+
+def generate_suggestions(
+    intent: QueryIntent,
+    results: list[dict],
+    seen_places: set[str] | None = None,
+    asked_questions: set[str] | None = None,
+) -> list[str]:
+    """Follow-up questions, not another LLM call -- built from values already
+    known (the parsed intent, the top result), same reasoning as
+    format_answer(). Each candidate is built as a real QueryIntent and
+    verified against the graph with _probe_has_results() before being
+    offered -- candidates are listed most specific first, so a broader
+    fallback (e.g. "top-rated in the area" instead of "near this exact
+    place") gets a chance if the specific one comes back empty.
+
+    seen_places/asked_questions are conversation memory from the client:
+    without them, "near X" style candidates always anchor on the current
+    top result, and in a tightly-connected cluster (everything near
+    everything else within a couple hundred metres) that oscillates between
+    the same handful of places turn after turn. Anchoring on the first
+    not-yet-seen place instead, and dropping any candidate whose exact text
+    was already asked, breaks the loop and pushes the conversation outward."""
     if not results:
         return []
 
+    seen_places = seen_places or set()
+    asked_questions = asked_questions or set()
     first = results[0]
-    suggestions: list[str] = []
+    candidates: list[tuple[QueryIntent, str]] = []
+
+    def add(candidate_intent: QueryIntent, text: str) -> None:
+        candidates.append((candidate_intent, text))
+
+    def first_unseen(key: str) -> str:
+        return next((r[key] for r in results if r.get(key) not in seen_places), first[key])
 
     if "suggestion" in first:
         ref = first.get("reference") or intent.reference_place_name
-        suggestions.append(f"What's near {first['suggestion']}?")
+        anchor = first_unseen("suggestion")
+        add(
+            QueryIntent(relationship="near_reference_place", reference_place_name=anchor),
+            f"What's near {anchor}?",
+        )
         if intent.sort_by != "rating":
-            suggestions.append(f"What's the top-rated place near {ref}?")
+            add(
+                QueryIntent(relationship="near_reference_place", reference_place_name=ref, sort_by="rating"),
+                f"What's the top-rated place near {ref}?",
+            )
+        if intent.area:
+            add(
+                QueryIntent(relationship="none", area=intent.area, sort_by="rating"),
+                f"What's the top-rated place in {intent.area}?",
+            )
 
     elif "place_a" in first:
-        suggestions.append(f"What's near {first['place_a']}?")
+        anchor = first_unseen("place_a")
+        add(
+            QueryIntent(relationship="near_reference_place", reference_place_name=anchor),
+            f"What's near {anchor}?",
+        )
         if intent.area:
-            suggestions.append(f"What areas are near {intent.area}?")
+            add(
+                QueryIntent(relationship="expand_to_adjacent_areas", area=intent.area),
+                f"What areas are near {intent.area}?",
+            )
+            add(
+                QueryIntent(relationship="none", area=intent.area, sort_by="rating"),
+                f"What's the top-rated place in {intent.area}?",
+            )
 
     elif "area" in first and "distance_km" in first:
-        suggestions.append(f"What's the top-rated place in {first['area']}?")
+        add(
+            QueryIntent(relationship="none", area=first["area"], sort_by="rating"),
+            f"What's the top-rated place in {first['area']}?",
+        )
 
     elif "name" in first:
-        suggestions.append(f"What's near {first['name']}?")
-        if intent.area:
-            suggestions.append(f"What areas are near {intent.area}?")
-        if intent.category and intent.sort_by != "rating":
-            suggestions.append(f"What are the top-rated {intent.category}?")
+        anchor = first_unseen("name")
+        add(
+            QueryIntent(relationship="near_reference_place", reference_place_name=anchor),
+            f"What's near {anchor}?",
+        )
         if intent.specialty and intent.sort_by != "rating":
-            suggestions.append(f"What are the top-rated places famous for {intent.specialty}?")
+            add(
+                QueryIntent(relationship="none", specialty=intent.specialty, sort_by="rating"),
+                f"What are the top-rated places famous for {intent.specialty}?",
+            )
+        if intent.category and intent.sort_by != "rating":
+            add(
+                QueryIntent(relationship="none", category=intent.category, sort_by="rating"),
+                f"What are the top-rated {intent.category}?",
+            )
+        if intent.area:
+            add(
+                QueryIntent(relationship="expand_to_adjacent_areas", area=intent.area),
+                f"What areas are near {intent.area}?",
+            )
+            if intent.sort_by != "rating":
+                add(
+                    QueryIntent(relationship="none", area=intent.area, sort_by="rating"),
+                    f"What's the top-rated place in {intent.area}?",
+                )
 
-    return suggestions[:3]
+    suggestions: list[str] = []
+    for candidate_intent, text in candidates:
+        if text in asked_questions:
+            continue
+        if _probe_has_results(candidate_intent):
+            suggestions.append(text)
+        if len(suggestions) == 3:
+            break
+    return suggestions
