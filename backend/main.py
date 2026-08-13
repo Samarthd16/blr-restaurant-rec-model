@@ -15,8 +15,10 @@ sys.path.insert(0, str(Path(__file__).parent / "app"))
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from neo4j.exceptions import ServiceUnavailable
 from pydantic import BaseModel
 
+from alerts import send_neo4j_down_alert
 from nl_to_cypher import openai_client, run_cypher
 from query_intent import build_intent_system_prompt, intent_to_cypher, parse_intent
 
@@ -67,7 +69,19 @@ class ChatResponse(BaseModel):
 def chat(req: ChatRequest) -> ChatResponse:
     intent = parse_intent(openai_client, req.question, system_prompt=_system_prompt)
     cypher, params = intent_to_cypher(intent)
-    results = run_cypher(cypher, params)
+
+    try:
+        results = run_cypher(cypher, params)
+    except ServiceUnavailable:
+        # Most common cause: Neo4j Aura free tier auto-pauses after
+        # inactivity. Alert the owner (cooldown-limited, see alerts.py) and
+        # give the user a clear, honest message instead of a generic
+        # "something went wrong."
+        send_neo4j_down_alert()
+        return ChatResponse(
+            answer="The knowledge graph instance is down. Please try again later."
+        )
+
     return ChatResponse(answer=format_answer(results))
 
 

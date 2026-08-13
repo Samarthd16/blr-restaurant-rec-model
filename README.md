@@ -103,6 +103,9 @@ Full architecture notes, every design decision, and the "why" behind each one li
   accuracy
 - FastAPI backend + React/Vite chat frontend, wired end to end
 - Docker + Railway (backend) / Vercel (frontend) deployment scaffolding
+- Graceful handling when Neo4j Aura is paused (free-tier auto-pause after inactivity): a fast
+  connection timeout instead of a long hang, a clear in-chat message instead of a generic error, and
+  a cooldown-limited email alert to the owner so the instance can be resumed
 
 ## Planned / not yet built
 
@@ -132,7 +135,8 @@ frontend/       React + Vite + TypeScript chat UI
 ## Running locally
 
 **Backend** (needs a `.env` in `backend/` with `NEO4J_URI`, `NEO4J_USERNAME`, `NEO4J_PASSWORD`,
-`OPENAI_API_KEY`, `GCP_PLACES_API`, `MIN_RATING_COUNT`):
+`OPENAI_API_KEY`, `GCP_PLACES_API`, `MIN_RATING_COUNT` — plus optional `ALERT_EMAIL_FROM`,
+`ALERT_EMAIL_APP_PASSWORD`, `ALERT_EMAIL_TO` for the Neo4j-down email alert, silently skipped if unset):
 ```
 cd backend
 uv sync
