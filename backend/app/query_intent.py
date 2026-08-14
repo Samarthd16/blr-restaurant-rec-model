@@ -112,6 +112,13 @@ def intent_to_cypher(intent: QueryIntent) -> tuple[str, dict]:
         # places (p), not the reference place itself -- naming a specific
         # place has nothing to do with its own tier.
         params["ref_query"] = build_fulltext_query(intent.reference_place_name)
+        # area previously wasn't applied here at all -- "best filter coffee
+        # near Toit in Basavanagudi" silently ignored the area and searched
+        # all of Toit's neighbors city-wide.
+        area_clause = ""
+        if intent.area:
+            area_clause = "MATCH (p)-[:LOCATED_IN]->(:Area {name: $area}) "
+            params["area"] = intent.area
         category_clause = ""
         if intent.category:
             category_clause = "MATCH (p)-[:IN_CATEGORY]->(:Category {name: $category}) "
@@ -128,7 +135,7 @@ def intent_to_cypher(intent: QueryIntent) -> tuple[str, dict]:
             "YIELD node AS ref, score "
             "WITH ref, score ORDER BY score DESC LIMIT 1 "
             f"MATCH (ref)-[r:ADJACENT_TO]-(p:Place{tier_label}) "
-            f"{category_clause}{specialty_clause}"
+            f"{area_clause}{category_clause}{specialty_clause}"
             "RETURN ref.name AS reference, score AS reference_match_confidence, "
             "p.name AS suggestion, p.rating AS rating, p.user_rating_count AS user_rating_count, "
             "p.things_to_try AS things_to_try, r.distance_km AS distance_km "
@@ -159,9 +166,26 @@ def intent_to_cypher(intent: QueryIntent) -> tuple[str, dict]:
 
     if intent.relationship == "expand_to_adjacent_areas":
         params["area"] = intent.area
+        # category/specialty previously had no effect here at all -- "which
+        # areas near Koramangala have good bars" just returned every nearby
+        # area, silently dropping "bars". `p` is shared across both clauses
+        # so "bars famous for craft beer" requires the SAME place to match
+        # both, not just some bar and separately some craft-beer place.
+        place_clause = ""
+        if intent.category or intent.specialty:
+            place_clause = "MATCH (other)<-[:LOCATED_IN]-(p:Place) "
+        category_clause = ""
+        if intent.category:
+            category_clause = "MATCH (p)-[:IN_CATEGORY]->(:Category {name: $category}) "
+            params["category"] = intent.category
+        specialty_clause = ""
+        if intent.specialty:
+            specialty_clause = "MATCH (p)-[:FAMOUS_FOR]->(:Specialty {name: $specialty}) "
+            params["specialty"] = intent.specialty
         cypher = (
             "MATCH (:Area {name: $area})-[r:NEAR]-(other:Area) "
-            "RETURN other.name AS area, r.distance_km AS distance_km "
+            f"{place_clause}{category_clause}{specialty_clause}"
+            "RETURN DISTINCT other.name AS area, r.distance_km AS distance_km "
             "ORDER BY r.distance_km LIMIT $limit"
         )
         return cypher, params
