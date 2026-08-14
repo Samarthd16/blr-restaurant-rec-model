@@ -53,7 +53,8 @@ def main():
         print(f"  {area}: ({lat:.4f}, {lng:.4f})")
 
     areas = list(centroids.keys())
-    edges = set()
+    seen = set()
+    adjacency_edges = []
 
     print("\nNearest areas:")
     for area in areas:
@@ -68,14 +69,18 @@ def main():
         nearest = distances[:K_NEAREST]
         print(f"  {area} -> {[(f'{d:.1f}km', a) for d, a in nearest]}")
         for dist, other in nearest:
-            # symmetric: materialize both directions regardless of which
-            # side's top-k picked it
-            edges.add((area, other, round(dist, 2)))
-            edges.add((other, area, round(dist, 2)))
+            # symmetric: materialize a pair if EITHER side's top-k picked
+            # it, deduped -- same pattern as build_proximity.py's
+            # ADJACENT_TO. Storing both directions as separate edge records
+            # (the previous behaviour) meant load_graph.py's directed
+            # MERGE created two relationship objects per pair, and the
+            # undirected NEAR query then matched both, doubling every row.
+            key = tuple(sorted((area, other)))
+            if key not in seen:
+                seen.add(key)
+                adjacency_edges.append({"from_area": key[0], "to_area": key[1], "distance_km": round(dist, 2)})
 
-    adjacency_edges = [
-        {"from_area": a, "to_area": b, "distance_km": d} for a, b, d in sorted(edges)
-    ]
+    adjacency_edges.sort(key=lambda e: (e["from_area"], e["to_area"]))
 
     OUT_PATH.write_text(json.dumps(adjacency_edges, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"\n{len(adjacency_edges)} Area NEAR edges -> {OUT_PATH}")

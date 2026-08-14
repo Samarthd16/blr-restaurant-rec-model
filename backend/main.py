@@ -92,6 +92,11 @@ class PlacePairResult(BaseModel):
     distance_km: float
 
 
+class AreaResult(BaseModel):
+    name: str
+    distance_km: float
+
+
 class GraphNode(BaseModel):
     id: str
     label: str
@@ -127,6 +132,9 @@ class ChatResponse(BaseModel):
     # Separate shape for near_each_other results -- two places per row, no
     # rating/things_to_try, so it doesn't fit PlaceResult.
     place_pairs: list[PlacePairResult] = []
+    # expand_to_adjacent_areas results -- area name + distance, no rating/
+    # things_to_try (areas aren't places).
+    areas: list[AreaResult] = []
     # Small illustrative subgraph of the actual nodes/edges that produced
     # this answer -- not the full knowledge graph, just this query's slice
     # of it. Static (no coordinates), the frontend does its own layout.
@@ -230,6 +238,7 @@ def chat(req: ChatRequest, request: Request) -> ChatResponse:
         place_names=extract_place_names(results),
         places=extract_places(results),
         place_pairs=extract_place_pairs(results),
+        areas=extract_areas(results),
         graph=extract_graph_snippet(intent, results),
     )
 
@@ -326,6 +335,14 @@ def extract_graph_snippet(intent: QueryIntent, results: list[dict]) -> GraphSnip
                 edges.append(GraphEdge(source=place_id, target=hub_id, type=edge_type))
 
     return GraphSnippet(nodes=list(nodes.values()), edges=edges)
+
+
+def extract_areas(results: list[dict]) -> list[AreaResult]:
+    """Structured version of the expand_to_adjacent_areas shape -- same
+    reasoning as extract_places()/extract_place_pairs()."""
+    if not results or "area" not in results[0] or "distance_km" not in results[0]:
+        return []
+    return [AreaResult(name=r["area"], distance_km=r["distance_km"]) for r in results]
 
 
 def extract_place_pairs(results: list[dict]) -> list[PlacePairResult]:

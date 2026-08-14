@@ -132,6 +132,13 @@
   margin-left: auto;
 }
 
+.area-card {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
 .place-card-header {
   display: flex;
   align-items: baseline;
@@ -225,6 +232,10 @@
 
 .graph-edge-label {
   fill: var(--text-muted);
+  paint-order: stroke;
+  stroke: var(--card-bg);
+  stroke-width: 3px;
+  stroke-linejoin: round;
 }
 
 .graph-node {

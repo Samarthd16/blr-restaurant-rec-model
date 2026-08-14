@@ -15,6 +15,11 @@ type PlacePairResult = {
   distance_km: number
 }
 
+type AreaResult = {
+  name: string
+  distance_km: number
+}
+
 type GraphNode = {
   id: string
   label: string
@@ -39,25 +44,40 @@ type Message = {
   suggestions?: string[]
   places?: PlaceResult[]
   placePairs?: PlacePairResult[]
+  areas?: AreaResult[]
   graph?: GraphSnippetData
 }
 
-// Reference/hub node (if any) sits at the center; everything else is spread
-// evenly around it on a circle. Deliberately not a real force-directed
-// layout -- a snippet of 5-10 nodes doesn't need physics, just something
-// legible at a glance.
+// Hub-type nodes (reference/area/category/specialty) cluster on a small
+// inner ring; place nodes spread out on a bigger outer ring around them.
+// A "name" branch snippet often has 2-3 hubs (area + category + specialty
+// all matched against the same places) -- treating them all as one flat
+// ring mixed in with the places is what caused the tangled crossing-edges
+// mess. Deliberately not a real force-directed layout -- a snippet of
+// 5-10 nodes doesn't need physics, just something legible at a glance.
 function layoutGraph(nodes: GraphNode[], size: number): Record<string, { x: number; y: number }> {
   const center = size / 2
-  const radius = size * 0.36
   const positions: Record<string, { x: number; y: number }> = {}
-  const hub = nodes.find((n) => n.type === 'reference') ?? nodes[0]
-  const rest = nodes.filter((n) => n.id !== hub?.id)
+  const hubTypes = new Set(['reference', 'area', 'category', 'specialty'])
+  const hubs = nodes.filter((n) => hubTypes.has(n.type))
+  const places = nodes.filter((n) => !hubTypes.has(n.type))
 
-  if (hub) positions[hub.id] = { x: center, y: center }
-  rest.forEach((n, i) => {
-    const angle = (2 * Math.PI * i) / Math.max(rest.length, 1) - Math.PI / 2
-    positions[n.id] = { x: center + radius * Math.cos(angle), y: center + radius * Math.sin(angle) }
-  })
+  const ring = (items: GraphNode[], radius: number) => {
+    items.forEach((n, i) => {
+      const angle = (2 * Math.PI * i) / Math.max(items.length, 1) - Math.PI / 2
+      positions[n.id] = { x: center + radius * Math.cos(angle), y: center + radius * Math.sin(angle) }
+    })
+  }
+
+  if (hubs.length === 1) {
+    positions[hubs[0].id] = { x: center, y: center }
+    ring(places, size * 0.36)
+  } else if (hubs.length > 1) {
+    ring(hubs, size * 0.15)
+    ring(places, size * 0.4)
+  } else {
+    ring(nodes, size * 0.36)
+  }
 
   return positions
 }
@@ -71,7 +91,7 @@ function GraphSnippetSvg({ graph, size }: { graph: GraphSnippetData; size: numbe
   const r = size * 0.055
   const hubR = r * 1.4
   const labelSize = Math.max(size * 0.032, 8)
-  const edgeLabelSize = Math.max(size * 0.026, 7)
+  const edgeLabelSize = Math.max(size * 0.02, 6)
 
   return (
     <svg viewBox={`0 0 ${size} ${size}`} width={size} height={size} className="graph-svg">
@@ -80,16 +100,24 @@ function GraphSnippetSvg({ graph, size }: { graph: GraphSnippetData; size: numbe
         const t = positions[e.target]
         if (!s || !t) return null
         const edgeText = e.label ? `${e.type} · ${e.label}` : e.type
+        const midX = (s.x + t.x) / 2
+        const midY = (s.y + t.y) / 2
+        // Angle the label along the line itself instead of always
+        // horizontal -- flip by 180° when that would render upside down,
+        // so it always reads left-to-right.
+        let angleDeg = (Math.atan2(t.y - s.y, t.x - s.x) * 180) / Math.PI
+        if (angleDeg > 90 || angleDeg < -90) angleDeg += 180
         return (
           <g key={i}>
             <line x1={s.x} y1={s.y} x2={t.x} y2={t.y} className="graph-edge" />
             {edgeText && (
               <text
-                x={(s.x + t.x) / 2}
-                y={(s.y + t.y) / 2 - 4}
+                x={midX}
+                y={midY - 3}
                 textAnchor="middle"
                 className="graph-edge-label"
                 style={{ fontSize: edgeLabelSize }}
+                transform={`rotate(${angleDeg} ${midX} ${midY})`}
               >
                 {edgeText}
               </text>
@@ -124,6 +152,12 @@ function GraphSnippetView({ graph }: { graph: GraphSnippetData }) {
   const [zoomed, setZoomed] = useState(false)
   if (!graph.nodes.length) return null
 
+  // Canvas scales with node count instead of a fixed 640 -- a 4-node
+  // snippet doesn't need the same real estate as a 10-node one. Bounded
+  // both ends: 320 floor stays readable, 640 cap keeps dense graphs from
+  // becoming unwieldy.
+  const modalSize = Math.min(640, Math.max(320, 140 + graph.nodes.length * 60))
+
   return (
     <>
       <button className="graph-view-button" onClick={() => setZoomed(true)}>
@@ -141,7 +175,7 @@ function GraphSnippetView({ graph }: { graph: GraphSnippetData }) {
             <button className="graph-modal-close" onClick={() => setZoomed(false)} aria-label="Close">
               ✕
             </button>
-            <GraphSnippetSvg graph={graph} size={640} />
+            <GraphSnippetSvg graph={graph} size={modalSize} />
           </div>
         </div>
       )}
@@ -198,6 +232,15 @@ function PlacePairCard({ pair }: { pair: PlacePairResult }) {
       <span className="place-pair-sep">↔</span>
       <span className="place-name">{pair.place_b}</span>
       <span className="place-distance">{Math.round(pair.distance_km * 1000)}m apart</span>
+    </div>
+  )
+}
+
+function AreaCard({ area }: { area: AreaResult }) {
+  return (
+    <div className="place-card area-card">
+      <span className="place-name">{area.name}</span>
+      <span className="place-distance">{area.distance_km.toFixed(1)}km away</span>
     </div>
   )
 }
@@ -303,6 +346,7 @@ function App() {
           suggestions: data.suggestions,
           places: data.places,
           placePairs: data.place_pairs,
+          areas: data.areas,
           graph: data.graph,
         },
       ])
@@ -356,6 +400,12 @@ function App() {
                   <div className="place-list">
                     {m.placePairs.map((pair) => (
                       <PlacePairCard pair={pair} key={`${pair.place_a}-${pair.place_b}`} />
+                    ))}
+                  </div>
+                ) : m.areas && m.areas.length > 0 ? (
+                  <div className="place-list">
+                    {m.areas.map((area) => (
+                      <AreaCard area={area} key={area.name} />
                     ))}
                   </div>
                 ) : (
