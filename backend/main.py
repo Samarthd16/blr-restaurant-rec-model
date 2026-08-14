@@ -8,12 +8,14 @@ Run from backend/: uvicorn main:app --reload
 
 import os
 import sys
+import time
+from collections import defaultdict, deque
 from contextlib import asynccontextmanager
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent / "app"))
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from neo4j.exceptions import ServiceUnavailable
 from pydantic import BaseModel
@@ -132,11 +134,53 @@ class ChatResponse(BaseModel):
 
 
 NEO4J_DOWN_MESSAGE = "The knowledge graph instance is down. Please try again later."
+OUT_OF_SCOPE_MESSAGE = (
+    "I can only help with Bengaluru cafes, bars, and food spots -- try asking about "
+    "a place, area, category, or specialty (e.g. filter coffee, craft beer, biryani)."
+)
+RATE_LIMIT_MESSAGE = "Too many requests, please try again later."
+
+# Simple in-memory sliding-window rate limit -- deliberately not a new
+# dependency (slowapi/redis/etc): a plain per-client deque of request
+# timestamps is enough for a single-process deployment, and this checks
+# BEFORE the OpenAI call, so a burst can't drain tokens. Resets on restart
+# and doesn't share state across multiple server instances/workers -- fine
+# for this project's scale, but wouldn't hold up if horizontally scaled.
+RATE_LIMIT_WINDOW_SECONDS = 10
+RATE_LIMIT_MAX_REQUESTS = 10
+_request_log: dict[str, deque] = defaultdict(deque)
+
+
+def is_rate_limited(client_id: str) -> bool:
+    now = time.monotonic()
+    log = _request_log[client_id]
+    while log and now - log[0] > RATE_LIMIT_WINDOW_SECONDS:
+        log.popleft()
+    if len(log) >= RATE_LIMIT_MAX_REQUESTS:
+        return True
+    log.append(now)
+    return False
+
+
+def client_id_for(request: Request) -> str:
+    # Railway (and most PaaS) sit behind a proxy -- request.client.host on
+    # its own would be the proxy's IP for every user, rate-limiting everyone
+    # together instead of individually. X-Forwarded-For's first entry is the
+    # original client when present; fall back to the direct peer for local dev.
+    forwarded = request.headers.get("x-forwarded-for")
+    if forwarded:
+        return forwarded.split(",")[0].strip()
+    return request.client.host if request.client else "unknown"
 
 
 @app.post("/chat", response_model=ChatResponse)
-def chat(req: ChatRequest) -> ChatResponse:
+def chat(req: ChatRequest, request: Request) -> ChatResponse:
     global _system_prompt
+
+    client_id = client_id_for(request)
+    if is_rate_limited(client_id):
+        print(f"[chat] rate limited: {client_id}")
+        return ChatResponse(answer=RATE_LIMIT_MESSAGE)
 
     if _system_prompt is None:
         # Startup's schema introspection failed (or hasn't run yet) --
@@ -149,10 +193,15 @@ def chat(req: ChatRequest) -> ChatResponse:
             return ChatResponse(answer=NEO4J_DOWN_MESSAGE)
 
     intent = parse_intent(openai_client, req.question, system_prompt=_system_prompt)
-    cypher, params = intent_to_cypher(intent)
 
     print(f"\n[chat] Q: {req.question}")
     print(f"[chat] intent: {intent.model_dump()}")
+
+    if not intent.in_scope:
+        print("[chat] out of scope -- refusing without running Cypher")
+        return ChatResponse(answer=OUT_OF_SCOPE_MESSAGE)
+
+    cypher, params = intent_to_cypher(intent)
     print(f"[chat] cypher: {cypher}")
     print(f"[chat] params: {params}")
 
