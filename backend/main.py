@@ -90,6 +90,26 @@ class PlacePairResult(BaseModel):
     distance_km: float
 
 
+class GraphNode(BaseModel):
+    id: str
+    label: str
+    # "reference" is visually distinguished (bigger, accent-colored) as the
+    # hub of the snippet -- everything else is drawn around it.
+    type: str  # "reference" | "place" | "area" | "category" | "specialty"
+
+
+class GraphEdge(BaseModel):
+    source: str
+    target: str
+    type: str  # "ADJACENT_TO" | "LOCATED_IN" | "IN_CATEGORY" | "FAMOUS_FOR" | "NEAR"
+    label: str | None = None
+
+
+class GraphSnippet(BaseModel):
+    nodes: list[GraphNode] = []
+    edges: list[GraphEdge] = []
+
+
 class ChatResponse(BaseModel):
     answer: str
     suggestions: list[str] = []
@@ -105,6 +125,10 @@ class ChatResponse(BaseModel):
     # Separate shape for near_each_other results -- two places per row, no
     # rating/things_to_try, so it doesn't fit PlaceResult.
     place_pairs: list[PlacePairResult] = []
+    # Small illustrative subgraph of the actual nodes/edges that produced
+    # this answer -- not the full knowledge graph, just this query's slice
+    # of it. Static (no coordinates), the frontend does its own layout.
+    graph: GraphSnippet = GraphSnippet()
 
 
 NEO4J_DOWN_MESSAGE = "The knowledge graph instance is down. Please try again later."
@@ -157,6 +181,7 @@ def chat(req: ChatRequest) -> ChatResponse:
         place_names=extract_place_names(results),
         places=extract_places(results),
         place_pairs=extract_place_pairs(results),
+        graph=extract_graph_snippet(intent, results),
     )
 
 
@@ -194,6 +219,64 @@ def extract_places(results: list[dict]) -> list[PlaceResult]:
             for r in results
         ]
     return []
+
+
+def extract_graph_snippet(intent: QueryIntent, results: list[dict]) -> GraphSnippet:
+    """Builds the small subgraph that actually produced this answer, from
+    data already in hand -- no extra Neo4j round-trip. Not the whole graph,
+    just this query's slice of it: the reference place and its ADJACENT_TO
+    neighbors, or the shared Area/Category/Specialty node a filtered list
+    matched against, whichever applies to this result shape."""
+    if not results:
+        return GraphSnippet()
+
+    nodes: dict[str, GraphNode] = {}
+    edges: list[GraphEdge] = []
+
+    def node(node_id: str, label: str, node_type: str) -> str:
+        if node_id not in nodes:
+            nodes[node_id] = GraphNode(id=node_id, label=label, type=node_type)
+        return node_id
+
+    first = results[0]
+
+    if "suggestion" in first:
+        ref_name = first.get("reference") or intent.reference_place_name
+        ref_id = node(f"place:{ref_name}", ref_name, "reference")
+        for r in results:
+            place_id = node(f"place:{r['suggestion']}", r["suggestion"], "place")
+            dist_m = round(r["distance_km"] * 1000)
+            edges.append(GraphEdge(source=ref_id, target=place_id, type="ADJACENT_TO", label=f"{dist_m}m"))
+
+    elif "place_a" in first:
+        for r in results:
+            a_id = node(f"place:{r['place_a']}", r["place_a"], "place")
+            b_id = node(f"place:{r['place_b']}", r["place_b"], "place")
+            dist_m = round(r["distance_km"] * 1000)
+            edges.append(GraphEdge(source=a_id, target=b_id, type="ADJACENT_TO", label=f"{dist_m}m"))
+
+    elif "area" in first and "distance_km" in first:
+        origin_id = node(f"area:{intent.area}", intent.area, "reference")
+        for r in results:
+            area_id = node(f"area:{r['area']}", r["area"], "area")
+            edges.append(GraphEdge(source=origin_id, target=area_id, type="NEAR", label=f"{r['distance_km']:.1f}km"))
+
+    elif "name" in first:
+        # The shared node(s) every place in this list matched against --
+        # that's the actual graph structure behind a plain filter query.
+        hub_ids = []
+        if intent.area:
+            hub_ids.append((node(f"area:{intent.area}", intent.area, "area"), "LOCATED_IN"))
+        if intent.category:
+            hub_ids.append((node(f"category:{intent.category}", intent.category, "category"), "IN_CATEGORY"))
+        if intent.specialty:
+            hub_ids.append((node(f"specialty:{intent.specialty}", intent.specialty, "specialty"), "FAMOUS_FOR"))
+        for r in results[:8]:  # cap so the diagram stays legible
+            place_id = node(f"place:{r['name']}", r["name"], "place")
+            for hub_id, edge_type in hub_ids:
+                edges.append(GraphEdge(source=place_id, target=hub_id, type=edge_type))
+
+    return GraphSnippet(nodes=list(nodes.values()), edges=edges)
 
 
 def extract_place_pairs(results: list[dict]) -> list[PlacePairResult]:
