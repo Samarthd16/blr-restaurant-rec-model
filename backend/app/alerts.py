@@ -56,3 +56,31 @@ def send_neo4j_down_alert() -> None:
         # Alerting failing shouldn't break the user-facing error response --
         # log it and move on.
         print(f"Failed to send Neo4j-down alert email: {e}")
+
+
+def send_usage_notification(question: str, answer: str) -> None:
+    """Fired on every real chat request (not rate-limited ones) -- lets the
+    owner know in real time when someone tries the deployed demo, and what
+    they asked. Deliberately no cooldown here (unlike send_neo4j_down_alert):
+    the point is per-question visibility, not incident alerting. Called from
+    a background thread in main.py so a slow/failed send never adds latency
+    to the actual chat response."""
+    smtp_user = os.environ.get("ALERT_EMAIL_FROM")
+    smtp_password = os.environ.get("ALERT_EMAIL_APP_PASSWORD")
+    to_addr = os.environ.get("ALERT_EMAIL_TO")
+
+    if not (smtp_user and smtp_password and to_addr):
+        return  # optional feature, same as the down-alert
+
+    message = MIMEText(f"Question: {question}\n\nAnswer:\n{answer}")
+    message["Subject"] = "Cafe Hopper Guide: new question asked"
+    message["From"] = smtp_user
+    message["To"] = to_addr
+
+    try:
+        with smtplib.SMTP("smtp.gmail.com", 587, timeout=10) as smtp:
+            smtp.starttls()
+            smtp.login(smtp_user, smtp_password)
+            smtp.send_message(message)
+    except Exception as e:
+        print(f"Failed to send usage notification email: {e}")

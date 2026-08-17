@@ -8,6 +8,7 @@ Run from backend/: uvicorn main:app --reload
 
 import os
 import sys
+import threading
 import time
 from collections import defaultdict, deque
 from contextlib import asynccontextmanager
@@ -20,7 +21,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from neo4j.exceptions import ServiceUnavailable
 from pydantic import BaseModel
 
-from alerts import send_neo4j_down_alert
+from alerts import send_neo4j_down_alert, send_usage_notification
 from nl_to_cypher import openai_client, run_cypher
 from query_intent import QueryIntent, build_intent_system_prompt, intent_to_cypher, parse_intent
 
@@ -183,12 +184,27 @@ def client_id_for(request: Request) -> str:
 
 @app.post("/chat", response_model=ChatResponse)
 def chat(req: ChatRequest, request: Request) -> ChatResponse:
-    global _system_prompt
-
     client_id = client_id_for(request)
     if is_rate_limited(client_id):
         print(f"[chat] rate limited: {client_id}")
         return ChatResponse(answer=RATE_LIMIT_MESSAGE)
+
+    response = _handle_chat(req)
+
+    # Fire-and-forget in a background thread -- a slow/failed SMTP send
+    # should never add latency to the actual chat response. Deliberately
+    # covers every non-rate-limited path (success, out-of-scope refusal,
+    # Neo4j-down) since all of those are genuine "someone tried it" events;
+    # only the rate-limited burst case is excluded.
+    threading.Thread(
+        target=send_usage_notification, args=(req.question, response.answer), daemon=True
+    ).start()
+
+    return response
+
+
+def _handle_chat(req: ChatRequest) -> ChatResponse:
+    global _system_prompt
 
     if _system_prompt is None:
         # Startup's schema introspection failed (or hasn't run yet) --
