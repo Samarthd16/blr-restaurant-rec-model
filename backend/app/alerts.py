@@ -1,8 +1,17 @@
 """
-Owner email alerts -- currently just "the Neo4j Aura instance looks paused,
-go resume it." Gmail SMTP (needs an App Password, not the regular account
-password -- https://myaccount.google.com/apppasswords) since it's free and
-needs no new service signup for a project this size.
+Owner email alerts -- Neo4j-down alerts, keep-alive pings, and per-question
+usage notifications. Sent via Resend's HTTP API (https://resend.com), not
+raw SMTP: Railway's network silently drops outbound connections on both the
+IPv6 and IPv4 paths to smtp.gmail.com:587 (confirmed via "[Errno 101]
+Network is unreachable" then a hard timeout once IPv4 was forced), which is
+a known limitation on their shared/hobby network tier. HTTPS egress isn't
+blocked, so an HTTP-based email API sidesteps the problem entirely.
+
+RESEND_API_KEY and ALERT_EMAIL_TO are required. ALERT_EMAIL_FROM should be
+Resend's sandbox sender ("onboarding@resend.dev") unless a custom domain has
+been verified in the Resend dashboard -- the sandbox sender can only deliver
+to the email address the Resend account was created with, which is fine
+here since ALERT_EMAIL_TO is the owner's own inbox.
 
 Cooldown is in-memory (module-level timestamp), not persisted -- resets on
 every backend restart/redeploy. Fine for a single-instance deployment; would
@@ -11,27 +20,37 @@ since each replica would otherwise track its own cooldown independently.
 """
 
 import os
-import smtplib
-import socket
 import time
-from email.mime.text import MIMEText
 
+import requests
+
+RESEND_API_URL = "https://api.resend.com/emails"
 ALERT_COOLDOWN_SECONDS = 30 * 60  # don't re-alert more than once per 30 min
 
 _last_alert_sent_at: float = 0.0
 
 
-class _IPv4SMTP(smtplib.SMTP):
-    """Some container hosts (Railway included) have a broken or absent IPv6
-    default route. smtp.gmail.com resolves to both A and AAAA records, and
-    if the connection picks the IPv6 one, it fails with "[Errno 101]
-    Network is unreachable" even though outbound IPv4 works fine. Force the
-    actual socket connection to IPv4 while leaving self._host untouched, so
-    starttls() still verifies the certificate against "smtp.gmail.com"."""
+def _send_email(subject: str, body: str) -> None:
+    api_key = os.environ.get("RESEND_API_KEY")
+    from_addr = os.environ.get("ALERT_EMAIL_FROM")
+    to_addr = os.environ.get("ALERT_EMAIL_TO")
 
-    def _get_socket(self, host, port, timeout):
-        ipv4_addr = socket.getaddrinfo(host, port, socket.AF_INET, socket.SOCK_STREAM)[0][4][0]
-        return socket.create_connection((ipv4_addr, port), timeout, self.source_address)
+    if not (api_key and from_addr and to_addr):
+        # Alerting is optional -- don't let missing config crash the actual
+        # chat request that triggered this.
+        print(f"Email alert skipped ('{subject}'): RESEND_API_KEY/ALERT_EMAIL_* not fully set.")
+        return
+
+    try:
+        resp = requests.post(
+            RESEND_API_URL,
+            headers={"Authorization": f"Bearer {api_key}"},
+            json={"from": from_addr, "to": [to_addr], "subject": subject, "text": body},
+            timeout=10,
+        )
+        resp.raise_for_status()
+    except Exception as e:
+        print(f"Failed to send email '{subject}': {e}")
 
 
 def send_neo4j_down_alert() -> None:
@@ -42,34 +61,12 @@ def send_neo4j_down_alert() -> None:
         return  # already alerted recently, don't spam
     _last_alert_sent_at = now
 
-    smtp_user = os.environ.get("ALERT_EMAIL_FROM")
-    smtp_password = os.environ.get("ALERT_EMAIL_APP_PASSWORD")
-    to_addr = os.environ.get("ALERT_EMAIL_TO")
-
-    if not (smtp_user and smtp_password and to_addr):
-        # Alerting is optional -- don't let a missing config crash the
-        # actual chat request that triggered this.
-        print("Neo4j appears down, but ALERT_EMAIL_* env vars aren't fully set -- skipping email alert.")
-        return
-
-    message = MIMEText(
+    _send_email(
+        "Cafe Hopper Guide: Neo4j instance is down",
         "The Neo4j Aura instance for Cafe Hopper Guide is unreachable -- "
         "likely auto-paused from inactivity (free tier). Resume it at "
-        "https://console.neo4j.io to restore the chat backend."
+        "https://console.neo4j.io to restore the chat backend.",
     )
-    message["Subject"] = "Cafe Hopper Guide: Neo4j instance is down"
-    message["From"] = smtp_user
-    message["To"] = to_addr
-
-    try:
-        with _IPv4SMTP("smtp.gmail.com", 587, timeout=10) as smtp:
-            smtp.starttls()
-            smtp.login(smtp_user, smtp_password)
-            smtp.send_message(message)
-    except Exception as e:
-        # Alerting failing shouldn't break the user-facing error response --
-        # log it and move on.
-        print(f"Failed to send Neo4j-down alert email: {e}")
 
 
 def send_keep_alive_notification() -> None:
@@ -77,31 +74,14 @@ def send_keep_alive_notification() -> None:
     task) so these show up in the inbox clearly labeled as autonomous --
     distinguishable at a glance from send_usage_notification, which only
     fires when an actual visitor asks a question."""
-    smtp_user = os.environ.get("ALERT_EMAIL_FROM")
-    smtp_password = os.environ.get("ALERT_EMAIL_APP_PASSWORD")
-    to_addr = os.environ.get("ALERT_EMAIL_TO")
-
-    if not (smtp_user and smtp_password and to_addr):
-        return  # optional feature, same as the down-alert
-
-    message = MIMEText(
+    _send_email(
+        "Cafe Hopper Guide: autonomous keep-alive ping (no user involved)",
         "[AUTONOMOUS RUN -- not triggered by a user]\n\n"
         "This is a scheduled keep-alive ping (RETURN 1) sent automatically by "
         "the backend's background task, to stop the Neo4j Aura free-tier "
         "instance from auto-pausing due to inactivity. No one visited the "
-        "site to trigger this."
+        "site to trigger this.",
     )
-    message["Subject"] = "Cafe Hopper Guide: autonomous keep-alive ping (no user involved)"
-    message["From"] = smtp_user
-    message["To"] = to_addr
-
-    try:
-        with _IPv4SMTP("smtp.gmail.com", 587, timeout=10) as smtp:
-            smtp.starttls()
-            smtp.login(smtp_user, smtp_password)
-            smtp.send_message(message)
-    except Exception as e:
-        print(f"Failed to send keep-alive notification email: {e}")
 
 
 def send_usage_notification(question: str, answer: str) -> None:
@@ -111,22 +91,7 @@ def send_usage_notification(question: str, answer: str) -> None:
     the point is per-question visibility, not incident alerting. Called from
     a background thread in main.py so a slow/failed send never adds latency
     to the actual chat response."""
-    smtp_user = os.environ.get("ALERT_EMAIL_FROM")
-    smtp_password = os.environ.get("ALERT_EMAIL_APP_PASSWORD")
-    to_addr = os.environ.get("ALERT_EMAIL_TO")
-
-    if not (smtp_user and smtp_password and to_addr):
-        return  # optional feature, same as the down-alert
-
-    message = MIMEText(f"[USER REQUEST]\n\nQuestion: {question}\n\nAnswer:\n{answer}")
-    message["Subject"] = "Cafe Hopper Guide: new question asked"
-    message["From"] = smtp_user
-    message["To"] = to_addr
-
-    try:
-        with _IPv4SMTP("smtp.gmail.com", 587, timeout=10) as smtp:
-            smtp.starttls()
-            smtp.login(smtp_user, smtp_password)
-            smtp.send_message(message)
-    except Exception as e:
-        print(f"Failed to send usage notification email: {e}")
+    _send_email(
+        "Cafe Hopper Guide: new question asked",
+        f"[USER REQUEST]\n\nQuestion: {question}\n\nAnswer:\n{answer}",
+    )
