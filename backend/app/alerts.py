@@ -38,7 +38,7 @@ def _send_email(subject: str, body: str) -> None:
     if not (api_key and from_addr and to_addr):
         # Alerting is optional -- don't let missing config crash the actual
         # chat request that triggered this.
-        print(f"Email alert skipped ('{subject}'): RESEND_API_KEY/ALERT_EMAIL_* not fully set.")
+        print(f"[email] skipped ('{subject}'): RESEND_API_KEY/ALERT_EMAIL_* not fully set.")
         return
 
     try:
@@ -49,8 +49,9 @@ def _send_email(subject: str, body: str) -> None:
             timeout=10,
         )
         resp.raise_for_status()
+        print(f"[email] sent: {subject}")
     except Exception as e:
-        print(f"Failed to send email '{subject}': {e}")
+        print(f"[email] failed to send '{subject}': {e}")
 
 
 def send_neo4j_down_alert() -> None:
