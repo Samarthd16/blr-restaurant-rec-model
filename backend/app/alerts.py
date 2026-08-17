@@ -12,12 +12,26 @@ since each replica would otherwise track its own cooldown independently.
 
 import os
 import smtplib
+import socket
 import time
 from email.mime.text import MIMEText
 
 ALERT_COOLDOWN_SECONDS = 30 * 60  # don't re-alert more than once per 30 min
 
 _last_alert_sent_at: float = 0.0
+
+
+class _IPv4SMTP(smtplib.SMTP):
+    """Some container hosts (Railway included) have a broken or absent IPv6
+    default route. smtp.gmail.com resolves to both A and AAAA records, and
+    if the connection picks the IPv6 one, it fails with "[Errno 101]
+    Network is unreachable" even though outbound IPv4 works fine. Force the
+    actual socket connection to IPv4 while leaving self._host untouched, so
+    starttls() still verifies the certificate against "smtp.gmail.com"."""
+
+    def _get_socket(self, host, port, timeout):
+        ipv4_addr = socket.getaddrinfo(host, port, socket.AF_INET, socket.SOCK_STREAM)[0][4][0]
+        return socket.create_connection((ipv4_addr, port), timeout, self.source_address)
 
 
 def send_neo4j_down_alert() -> None:
@@ -48,7 +62,7 @@ def send_neo4j_down_alert() -> None:
     message["To"] = to_addr
 
     try:
-        with smtplib.SMTP("smtp.gmail.com", 587, timeout=10) as smtp:
+        with _IPv4SMTP("smtp.gmail.com", 587, timeout=10) as smtp:
             smtp.starttls()
             smtp.login(smtp_user, smtp_password)
             smtp.send_message(message)
@@ -82,7 +96,7 @@ def send_keep_alive_notification() -> None:
     message["To"] = to_addr
 
     try:
-        with smtplib.SMTP("smtp.gmail.com", 587, timeout=10) as smtp:
+        with _IPv4SMTP("smtp.gmail.com", 587, timeout=10) as smtp:
             smtp.starttls()
             smtp.login(smtp_user, smtp_password)
             smtp.send_message(message)
@@ -110,7 +124,7 @@ def send_usage_notification(question: str, answer: str) -> None:
     message["To"] = to_addr
 
     try:
-        with smtplib.SMTP("smtp.gmail.com", 587, timeout=10) as smtp:
+        with _IPv4SMTP("smtp.gmail.com", 587, timeout=10) as smtp:
             smtp.starttls()
             smtp.login(smtp_user, smtp_password)
             smtp.send_message(message)
