@@ -6,6 +6,7 @@ app/query_intent.py) behind a single POST /chat endpoint.
 Run from backend/: uvicorn main:app --reload
 """
 
+import asyncio
 import os
 import sys
 import threading
@@ -21,13 +22,37 @@ from fastapi.middleware.cors import CORSMiddleware
 from neo4j.exceptions import ServiceUnavailable
 from pydantic import BaseModel
 
-from alerts import send_neo4j_down_alert, send_usage_notification
+from alerts import send_keep_alive_notification, send_neo4j_down_alert, send_usage_notification
 from nl_to_cypher import openai_client, run_cypher
 from query_intent import QueryIntent, build_intent_system_prompt, intent_to_cypher, parse_intent
 
 # Introspected once at startup (schema rarely changes mid-run), not on every
 # request -- same reasoning as the CLI loop in nl_to_cypher.py.
 _system_prompt: str | None = None
+
+# Aura Free auto-pauses after a few days of total inactivity. Daily is well
+# inside that window (safety margin in case a ping or two gets missed), and
+# pinging keeps the instance from ever going idle long enough to pause in
+# the first place -- simpler than detecting a pause after the fact and
+# resuming it via Aura's separate Management API (different credentials,
+# a whole other integration). Only works as long as the backend process
+# itself stays running continuously, which it already does on Railway.
+KEEP_ALIVE_INTERVAL_SECONDS = 24 * 60 * 60
+
+
+async def _keep_neo4j_alive():
+    while True:
+        await asyncio.sleep(KEEP_ALIVE_INTERVAL_SECONDS)
+        try:
+            await asyncio.to_thread(run_cypher, "RETURN 1", {})
+            print("[keep-alive] ping ok")
+            send_keep_alive_notification()
+        except ServiceUnavailable as e:
+            # Don't alert/crash over this -- if a real user hits a paused
+            # instance, /chat's own ServiceUnavailable handling already
+            # sends the down-alert. This is just a missed ping, try again
+            # next cycle.
+            print(f"[keep-alive] ping failed: {e}")
 
 
 @asynccontextmanager
@@ -42,7 +67,10 @@ async def lifespan(app: FastAPI):
         # rather than requiring a manual restart once it's resumed.
         print("Neo4j unreachable at startup -- will retry lazily on the next chat request.")
         send_neo4j_down_alert()
+
+    keep_alive_task = asyncio.create_task(_keep_neo4j_alive())
     yield
+    keep_alive_task.cancel()
 
 
 app = FastAPI(title="Cafe Hopper Guide API", lifespan=lifespan)

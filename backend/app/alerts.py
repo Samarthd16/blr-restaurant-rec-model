@@ -58,6 +58,38 @@ def send_neo4j_down_alert() -> None:
         print(f"Failed to send Neo4j-down alert email: {e}")
 
 
+def send_keep_alive_notification() -> None:
+    """Fired on every successful keep-alive ping (see main.py's background
+    task) so these show up in the inbox clearly labeled as autonomous --
+    distinguishable at a glance from send_usage_notification, which only
+    fires when an actual visitor asks a question."""
+    smtp_user = os.environ.get("ALERT_EMAIL_FROM")
+    smtp_password = os.environ.get("ALERT_EMAIL_APP_PASSWORD")
+    to_addr = os.environ.get("ALERT_EMAIL_TO")
+
+    if not (smtp_user and smtp_password and to_addr):
+        return  # optional feature, same as the down-alert
+
+    message = MIMEText(
+        "[AUTONOMOUS RUN -- not triggered by a user]\n\n"
+        "This is a scheduled keep-alive ping (RETURN 1) sent automatically by "
+        "the backend's background task, to stop the Neo4j Aura free-tier "
+        "instance from auto-pausing due to inactivity. No one visited the "
+        "site to trigger this."
+    )
+    message["Subject"] = "Cafe Hopper Guide: autonomous keep-alive ping (no user involved)"
+    message["From"] = smtp_user
+    message["To"] = to_addr
+
+    try:
+        with smtplib.SMTP("smtp.gmail.com", 587, timeout=10) as smtp:
+            smtp.starttls()
+            smtp.login(smtp_user, smtp_password)
+            smtp.send_message(message)
+    except Exception as e:
+        print(f"Failed to send keep-alive notification email: {e}")
+
+
 def send_usage_notification(question: str, answer: str) -> None:
     """Fired on every real chat request (not rate-limited ones) -- lets the
     owner know in real time when someone tries the deployed demo, and what
@@ -72,7 +104,7 @@ def send_usage_notification(question: str, answer: str) -> None:
     if not (smtp_user and smtp_password and to_addr):
         return  # optional feature, same as the down-alert
 
-    message = MIMEText(f"Question: {question}\n\nAnswer:\n{answer}")
+    message = MIMEText(f"[USER REQUEST]\n\nQuestion: {question}\n\nAnswer:\n{answer}")
     message["Subject"] = "Cafe Hopper Guide: new question asked"
     message["From"] = smtp_user
     message["To"] = to_addr
